@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            border: 1px solid black;
+            
+        }
+        .container{
+            width: 1440px;
+            margin: 0 auto;
+        }
+        /* --광고배너-- */
+        .banner_advertise{
+            height: 500px;
+        }
+        .banner ul{
+            overflow: hidden;
+            display: flex;
+        }
+        .banner ul li{
+            width: 100%;
+            animation: slidimg 12s infinite steps(1);
+        }
+        @keyframes slidimg{
+            25%{transform: translate3d(-1440px, 0px, 0px);}
+            50%{transform: translate3d(-2880px, 0px, 0px);}
+            75%{transform: translate3d(-4320px, 0px, 0px);}
+            100%{transform: translate3d(-5760px, 0px, 0px);}
+        }
+        /* --------------------------------------------------------------------------- */
+        /* --화제의 신상-- */
+        .new_book{
+            height: 500px;
+        }
+        .new_book_btn button{
+            back
+        }
+        .new_book ul{
+            display: flex;
+        }
+        .new_book_list{
+            position: relative;
+        }
+        .cate{
+            position: absolute;
+            top: 0px;
+            display: none;
+        }
+        .all_book{
+            display: block;
+        }
+        /* --------------------------------------------------------------------------- */
+        /* --베스트-- */
+        .bestseller ul{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .bestseller ul li{
+            width: 260px;
+            height: 400px;
+        }
+        .best_txt span{
+            font-size: 14px;
+            color: #444;
+        }
+        /* --------------------------------------------------------------------------- */
+    </style>
+    <script>
+        function btn0(){
+            let booklist=document.querySelectorAll(".cate");
+            booklist[0].style.display = "block";
+            booklist[1].style.display = "none";
+            booklist[2].style.display = "none";
+            booklist[3].style.display = "none";
+        }
+        function btn1(){
+            let booklist=document.querySelectorAll(".cate");
+            booklist[0].style.display = "none";
+            booklist[1].style.display = "block";
+            booklist[2].style.display = "none";
+            booklist[3].style.display = "none";
+        }
+        function btn2(){
+            let booklist=document.querySelectorAll(".cate");
+            booklist[0].style.display = "none";
+            booklist[1].style.display = "none";
+            booklist[2].style.display = "block";
+            booklist[3].style.display = "none";
+        }
+        function btn3(){
+            let booklist=document.querySelectorAll(".cate");
+            booklist[0].style.display = "none";
+            booklist[1].style.display = "none";
+            booklist[2].style.display = "none";
+            booklist[3].style.display = "block";
+        }
+    </script>
+</head>
+<body onload="init()">
+    <main>
+        <div class="container">
+            <!-- 광고배너 -->
+            <div class="banner_advertise">
+                <div class="banner">
+                    <ul>
+                        <li class="">
+                            <a href="">
+                                <img src="media/bnY_1624_450.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="">
+                                <img src="media/i_1624_450_01.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="">
+                                <img src="media/INK_01_웰컴_01_메인배너_1624x450-(1)_6ec289db0df04b5a857d936331031f4f.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="">
+                                <img src="media/i_1624_450.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <input type="checkbox" onclick="paused(this)">
+                    </div>
+                </div>
+            </div>
+            <!-- 화제의 신상 -->
+            <div class="new_book">
+                <h2>화제의 신상</h2>
+                <div class="new_book_btn">
+                    <ul>
+                        <li>
+                            <button onclick="btn0()">전체</button>
+                        </li>
+                        <li>
+                            <button onclick="btn1()">국내도서</button>
+                        </li>
+                        <li>
+                            <button onclick="btn2()">외국도서</button>
+                        </li>
+                        <li>
+                            <button onclick="btn3()">eBook</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="new_book_list">
+                    <div class="cate all_book">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img2">
+                                        <img src="media/9791190538510.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791190382915.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img2">
+                                        <img src="media/9791168473690.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9788997575169.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791158511586.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cate kor_book">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791168473690.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img2">
+                                        <img src="media/9791190538510.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img2">
+                                        <img src="media/9791190538510.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791158511586.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791158511586.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cate eng_book">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9788936438838.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img2">
+                                        <img src="media/9791190538510.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img2">
+                                        <img src="media/9788997575169.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791158511586.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791158511586.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cate e_book">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9788959897094.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img2">
+                                        <img src="media/9791190382915.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img2">
+                                        <img src="media/9791190538510.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791158511586.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="best_img best_img1">
+                                        <img src="media/9791158511586.jpg" alt="">
+                                    </div>
+                                    <div class="best_txt">
+                                        <p>세이노의 가르침</p>
+                                        <span>세이노 · 데이원</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 베스트 -->
+            <div class="bestseller">
+                <h2>베스트셀러</h2>
+                <ul>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img1">
+                                <img src="media/9791168473690.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img2">
+                                <img src="media/9791190538510.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img3">
+                                <img src="media/9791168473690.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img4">
+                                <img src="media/9791190538510.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img5">
+                                <img src="media/9791168473690.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img6">
+                                <img src="media/9791190538510.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img7">
+                                <img src="media/9791168473690.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img8">
+                                <img src="media/9791190538510.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img9">
+                                <img src="media/9791168473690.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="best_img best_img10">
+                                <img src="media/9791190538510.jpg" alt="">
+                            </div>
+                            <div class="best_txt">
+                                <p>세이노의 가르침</p>
+                                <span>세이노 · 데이원</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
