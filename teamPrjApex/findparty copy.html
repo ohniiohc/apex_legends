@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* border: 1px solid black; */
+        }
+        #find_party{
+            width: 1180px;
+            margin: 0 auto;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            border: 1px solid #000;
+        }
+        form input, form textarea{
+            width: 100%;
+        }
+        </style>
+</head>
+<body>
+    <div id="find_party">
+        <form name="frm" action="" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <select name="rank" id="">
+                            <option value="0">랭크</option>
+                            <option value="1">루키</option>
+                            <option value="2">브론즈</option>
+                            <option value="3">실버</option>
+                            <option value="4">골드</option>
+                            <option value="5">플레티넘</option>
+                            <option value="6">다이아</option>
+                            <option value="7">마스터</option>
+                            <option value="8">프레데터</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="title" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="content" id="" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="">등록</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
