@@ -1,84 +1,206 @@
 @charset "UTF-8";
 
-@font-face {
-    font-family: 'Hanson';
-    src: url('../fonts/Hanson-Bold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+#header_bottom a:nth-child(1){
+	border-bottom: 4px solid #DA292A;
 }
-@font-face {
-    font-family: 'YdestreetB';
-    src: url('../fonts/YdestreetB.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
-body{
-    min-width: 1440px;
-    position: relative;
-    font-family: 'Hanson';
-    background: #05162B;
+#section_legend-img-back{
+	width: 100%;
+	height: 688px;
+	background: url(images/legends/fuse_32_crop_bg.png);
+	background-size: cover;
+	background-position: 50% 10%;
+	margin-top: 0;
 }
-
-
-/* ------------------------------header_start------------------------------ */
-
-header{
-    width: 100%;
+#section_legend-img-front{
+	width: 960px;
+	height: 640px;
+	margin: 48px auto auto;
+	background: center url(images/legends/fuse_32_crop.png);
+	background-size: cover;
 }
-#header_top,#header_bottom{
-    padding: 0 36px;
-    background: linear-gradient(90deg, #0B1422 0%, #042D56 100%);
+#section_gradient{
+	height: 480px;
+	position: relative;
+	top: -96px;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #05162B 18%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-#header_top{
-    height: 60px;
-    display: flex;
-    align-items: center;
+#s_g_name{
+	display: flex;	
+	flex-direction: column;
+	align-items: center;
 }
-#h_t_logo{
-    font-size: 24px;
-    color: #F5F5F5;
-    text-decoration: none;
-    border-bottom: 4px solid #DA292A;
+#s_g_n_aka,#s_g_n_name{
+	color: #F5F5F5;
 }
-#header_bottom{
-    height: 40px;
-    display: flex;
+#s_g_n_aka{
+	font-size: 14px;
 }
-.h_b_link{
-    height: 100%;
-    padding: 0 12px;
-    color: #F5F5F5;
-    line-height: 40px;
-    text-decoration: none;
-    box-sizing: border-box;
+#s_g_n_name{
+	margin-top: 12px;
+	font-size: 48px;
 }
-.h_b_link:hover{
-    color: #DA292A;
-    /* border-bottom: 4px solid #DA292A; */
+/* --------------------------------------------------------------- */
+#s_g_legends{
+	width: 1440px;
+	padding-top: 64px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
-
-/* ------------------------------header_end------------------------------ */
-
-
-/* ------------------------------footer_start------------------------------ */
-
-footer{
-    height: 180px;
-    padding-top: 36px;
-    font-family: 'YdestreetB';
-    color: #445C76;
-    background-color: #0B1422;
+#s_g_l_class{
+	margin: 20px 32px;
 }
-#footer_left{
-    padding: 36px;
-    border-top: 1px solid #445C76;
+#s_g_l_c_wrap{
+	display: flex;
 }
-#f_l_title{
-    font-size: 14px;
-    margin-bottom: 12px;
+#s_g_l_c_deco{
+	border-top: 4px solid #DA292A;
+	display: flex;
+	justify-content: center;
 }
-#f_l_content{
-    font-size: 10px;
+#s_g_l_c_d_mid{
+	box-sizing: border-box;
+	width: 192px;
+	height: 24px;
+	background: #DA292A;
+	color: #F5F5F5;
+	text-align: center;
+	padding-top: 2px;
 }
-
-/* ------------------------------footer_end------------------------------ */
+#s_g_l_c_d_left,#s_g_l_c_d_right{
+	position: relative;
+	border-bottom: calc( 24px * 1.732 ) solid #05162B;
+	border-left: 24px solid transparent;
+	border-right: 24px solid transparent;
+}
+#s_g_l_c_d_left{
+	left: 24px;
+}
+#s_g_l_c_d_right{
+	right: 24px;
+}
+.legends-img{
+	width: 84px;
+	height: 84px;
+	margin: 0 4px;
+	border-top: 4px solid #DA292A;
+}
+.legends-img:first-child,.legends-img:last-child{
+	margin: 0;
+}
+.legends-img:first-child{
+	margin-right: 4px;
+}
+.legends-img:last-child{
+	margin-left: 4px;
+}
+/* --------------------------------------------------------------- */
+#bangalore_Professional_Soldier{
+	background: center url(images/legends/assault/Bangalore_square.png);
+	background-size: cover;
+}
+#revenant_Synthetic_Nightmare{
+	background: center url(images/legends/assault/Revenant_square.png);
+	background-size: cover;
+}
+#fuse{
+	background: center url(images/legends/assault/Fuse_square.png);
+	background-size: cover;
+}
+#ash{
+	background: center url(images/legends/assault/Ash_square.png);
+	background-size: cover;
+}
+#madmaggie{
+	background: center url(images/legends/assault/Mad_Maggie_square.png);
+	background-size: cover;
+}
+#ballistic{
+	background: center url(images/legends/assault/Ballistic_square.png);
+	background-size: cover;
+}
+/* --------------------------------------------------------------- */
+#pathfinder{
+	background: center url(images/legends/skirmisher/Pathfinder_square.png);
+	background-size: cover;
+}
+#wraith{
+	background: center url(images/legends/skirmisher/Wraith_square.png);
+	background-size: cover;
+}
+#octane{
+	background: center url(images/legends/skirmisher/Octane_square.png);
+	background-size: cover;
+}
+#horizon{
+	background: center url(images/legends/skirmisher/Horizon_square.png);
+	background-size: cover;
+}
+#valkyrie{
+	background: center url(images/legends/skirmisher/Valkyrie_square.png);
+	background-size: cover;
+}
+/* --------------------------------------------------------------- */
+#bloodhound{
+	background: center url(images/legends/recon/Bloodhound_square.png);
+	background-size: cover;
+}
+#crypto{
+	background: center url(images/legends/recon/Crypto_square.png);
+	background-size: cover;
+}
+#seer{
+	background: center url(images/legends/recon/Seer_square.png);
+	background-size: cover;
+}
+#vantage{
+	background: center url(images/legends/recon/Vantage_square.png);
+	background-size: cover;
+}
+/* --------------------------------------------------------------- */
+#gibraltar{
+	background: center url(images/legends/support/Gibraltar_square.png);
+	background-size: cover;
+}
+#lifeline{
+	background: center url(images/legends/support/Lifeline_square.png);
+	background-size: cover;
+}
+#mirage{
+	background: center url(images/legends/support/Mirage_square.png);
+	background-size: cover;
+}
+#loba{
+	background: center url(images/legends/support/Loba_square.png);
+	background-size: cover;
+}
+#newcastle{
+	background: center url(images/legends/support/Newcastle_square.png);
+	background-size: cover;
+}
+/* --------------------------------------------------------------- */
+#caustic{
+	background: center url(images/legends/controller/Caustic_square.png);
+	background-size: cover;
+}
+#wattson{
+	background: center url(images/legends/controller/Wattson_square.png);
+	background-size: cover;
+}
+#rampart{
+	background: center url(images/legends/controller/Rampart_square.png);
+	background-size: cover;
+}
+#catalyst{
+	background: center url(images/legends/controller/Catalyst_square.png);
+	background-size: cover;
+}
+/* --------------------------------------------------------------- */
