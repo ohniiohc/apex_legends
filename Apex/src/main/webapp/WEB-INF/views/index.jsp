@@ -8,8 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel='stylesheet' href="<c:url value="/css/reset.css" />">
-	<link rel='stylesheet' href="<c:url value="/css/header&footer.css" />">
+	<link rel='stylesheet' href='<c:url value="/resources/css/reset.css"/>'>
+	<link rel='stylesheet' href='<c:url value="/resources/css/header_footer.css"/>'>
 	<style>
 		section{
 			position: relative;
@@ -88,7 +88,7 @@
 		</div>
 	</header>
 	<section>
-		<video id="section_background" muted autoplay loop src="videos/apex-legends-aresenal-section-bg-video-xl.mp4"></video>
+		<video id="section_background" muted autoplay loop src="<c:url value="resources/videos/index-bg-video.mp4"/>"></video>
 		<div id="section_wrap">
 			<div id="section_wrap_logo">
 				<img id="s_w_l_icon" src="images/icon/apex_logo_icon.svg" alt="">
