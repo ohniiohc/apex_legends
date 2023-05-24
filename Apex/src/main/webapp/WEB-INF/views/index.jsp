@@ -7,7 +7,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>FUSE.GG</title>
+	<link rel="icon" href="<c:url value='resources/images/icon/fuse_gg_16.ico'/>" type="image/x-icon">
 	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/index.css'/>">
@@ -15,16 +16,16 @@
 <body>
 	<header>
 		<div id="header_top">
-			<a id="h_t_logo" href="">FUSE.GG</a>
+			<a id="h_t_logo" href="<c:url value='/index'/>">FUSE.GG</a>
 		</div>
 		<div id="header_bottom">
-			<a class="h_b_link" href="">
+			<a class="h_b_link" href="<c:url value='/legends'/>">
 				Legends
 			</a>
 			<a class="h_b_link" href="">
 				Weapons
 			</a>
-			<a class="h_b_link" href="">
+			<a class="h_b_link" href="<c:url value='/maps'/>">
 				Maps
 			</a>
 			<a class="h_b_link" href="">
@@ -36,8 +37,8 @@
 		<video id="section_background" muted autoplay loop src="<c:url value='resources/videos/index-bg-video.mp4'/>"></video>
 		<div id="section_wrap">
 			<div id="section_wrap_logo">
-				<img id="s_w_l_icon" src="<c:url value='resources/images/icon/apex_logo_icon.svg'/>" alt="">
-				<img id="s_w_l_logo" src="<c:url value='resources/images/icon/apex_txtlogo_icon.svg'/>" alt="">
+				<img id="s_w_l_icon" src="<c:url value='resources/images/icon/apex_logo.svg'/>" alt="">
+				<img id="s_w_l_logo" src="<c:url value='resources/images/icon/apex_txtlogo.svg'/>" alt="">
 			</div>
 			<div id="section_wrap_search">
 				<form id="s_w_s_form" name="frm" action="" method="post">

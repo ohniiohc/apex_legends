@@ -50,7 +50,7 @@ section{
 }
 #s_w_s_f_button{
 	width: 36px;
-	background: center no-repeat url("../images/icon/search_icon.svg");
+	background: center no-repeat url("../images/icon/search.svg");
 	background-size: 50%;
 	filter: invert(25%)
 }
