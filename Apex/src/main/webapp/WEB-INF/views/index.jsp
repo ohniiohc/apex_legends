@@ -8,64 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel='stylesheet' href='<c:url value="/resources/css/reset.css"/>'>
-	<link rel='stylesheet' href='<c:url value="/resources/css/header_footer.css"/>'>
-	<style>
-		section{
-			position: relative;
-		}
-		#section_background{
-			width: 100%;
-			z-index: -2;
-		}
-		#section_wrap{
-			position: absolute;
-			top: 40%;
-			left: 50%;
-			transform: translate(-50%,-50%);
-			display: flex;
-			flex-direction: column;
-		}
-		#section_wrap_logo{
-			margin: 0 auto;
-		}
-		#s_w_l_icon,#s_w_l_logo{
-			width: 216px;
-		}
-		#s_w_l_icon{
-			position: absolute;
-			z-index: -1;
-			filter: brightness(0) saturate(100%) invert(26%) sepia(63%) saturate(3417%) hue-rotate(344deg) brightness(86%) contrast(99%);
-		}
-		#s_w_l_logo{
-			margin-top: 36px;
-		}
-		#s_w_s_form{
-			width: 384px;
-			padding: 0 8px;
-			margin-top: 48px;
-			display: flex;
-			justify-content: space-between;
-			border-radius: 48px;
-			background-color: #F5F5F5;
-		}
-		#s_w_s_f_input,#s_w_s_f_button{
-			height: 36px;
-			background: none;
-			border: none;
-			outline: none;
-			box-sizing: border-box;
-		}
-		#s_w_s_f_input{
-			width: 348px;
-		}
-		#s_w_s_f_button{
-			width: 36px;
-			background: center no-repeat url("images/icon/search_icon.svg");
-			background-size: 50%;
-			filter: invert(25%)
-		}
-		</style>
+	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
+	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
+	<link rel="stylesheet" href="<c:url value='/resources/css/index.css'/>">
 </head>
 <body>
 	<header>
@@ -88,11 +33,11 @@
 		</div>
 	</header>
 	<section>
-		<video id="section_background" muted autoplay loop src="<c:url value="resources/videos/index-bg-video.mp4"/>"></video>
+		<video id="section_background" muted autoplay loop src="<c:url value='resources/videos/index-bg-video.mp4'/>"></video>
 		<div id="section_wrap">
 			<div id="section_wrap_logo">
-				<img id="s_w_l_icon" src="images/icon/apex_logo_icon.svg" alt="">
-				<img id="s_w_l_logo" src="images/icon/apex_txtlogo_icon.svg" alt="">
+				<img id="s_w_l_icon" src="<c:url value='resources/images/icon/apex_logo_icon.svg'/>" alt="">
+				<img id="s_w_l_logo" src="<c:url value='resources/images/icon/apex_txtlogo_icon.svg'/>" alt="">
 			</div>
 			<div id="section_wrap_search">
 				<form id="s_w_s_form" name="frm" action="" method="post">

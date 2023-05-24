@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+section{
+	position: relative;
+}
+#section_background{
+	width: 100%;
+	z-index: -2;
+}
+#section_wrap{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: column;
+}
+#section_wrap_logo{
+	margin: 0 auto;
+}
+#s_w_l_icon,#s_w_l_logo{
+	width: 216px;
+}
+#s_w_l_icon{
+	position: absolute;
+	z-index: -1;
+	filter: brightness(0) saturate(100%) invert(26%) sepia(63%) saturate(3417%) hue-rotate(344deg) brightness(86%) contrast(99%);
+}
+#s_w_l_logo{
+	margin-top: 36px;
+}
+#s_w_s_form{
+	width: 384px;
+	padding: 0 8px;
+	margin-top: 48px;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 48px;
+	background-color: #F5F5F5;
+}
+#s_w_s_f_input,#s_w_s_f_button{
+	height: 36px;
+	background: none;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+}
+#s_w_s_f_input{
+	width: 348px;
+}
+#s_w_s_f_button{
+	width: 36px;
+	background: center no-repeat url("../images/icon/search_icon.svg");
+	background-size: 50%;
+	filter: invert(25%)
+}

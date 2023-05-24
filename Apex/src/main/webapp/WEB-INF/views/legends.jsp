@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel='stylesheet' href='reset.css'>
-	<link rel='stylesheet' href='header&footer.css'>
-	<style>
-		
-	</style>
+	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
+	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
+	<link rel="stylesheet" href="<c:url value='/resources/css/legends.css'/>">
 	<script>
 		function change_legend(id) {
 			let s_g_n_aka = document.getElementById("s_g_n_aka");

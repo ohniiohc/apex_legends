@@ -19,9 +19,7 @@ body{
     background: #05162B;
 }
 
-
 /* ------------------------------header_start------------------------------ */
-
 header{
     width: 100%;
 }
@@ -54,14 +52,10 @@ header{
 }
 .h_b_link:hover{
     color: #DA292A;
-    /* border-bottom: 4px solid #DA292A; */
 }
-
 /* ------------------------------header_end------------------------------ */
 
-
 /* ------------------------------footer_start------------------------------ */
-
 footer{
     height: 180px;
     padding-top: 36px;
@@ -80,5 +74,4 @@ footer{
 #f_l_content{
     font-size: 10px;
 }
-
 /* ------------------------------footer_end------------------------------ */
