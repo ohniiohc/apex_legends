@@ -58,8 +58,6 @@
             s_g_n_aka.innerHTML = aka
             s_g_n_name.innerHTML = upper;
         }
-					<% Map<String, ArrayList<String>> map=(Map<String, ArrayList<String>>)request.getAttribute("map"); %>
-					<% String rootPath = request.getContextPath(); %>
     </script>
 </head>
 <body>
@@ -84,6 +82,8 @@
 	</header>
 	<section>
 		<!-- Write user code here -->
+		<% Map<String, ArrayList<String>> map=(Map<String, ArrayList<String>>)request.getAttribute("map"); %>
+		<% String rootPath = request.getContextPath(); %>
 		<div id="section_legend-img-back">
 			<div id="section_legend-img-front"></div>
 		</div>
