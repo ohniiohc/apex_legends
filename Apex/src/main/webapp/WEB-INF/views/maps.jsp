@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.acorn.apex.Model.MapsDTO" %>
+<% String rootPath = request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +14,39 @@
 	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/maps.css'/>">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		function change_map(id) {
+			$.ajax({
+				type:"GET",
+				url:"<%=rootPath%>/getmap",
+				data:{id,id},
+				success:function(data){
+					console.log(data);
+					$("#s_w_title").html(data.name);
+					$("#section_content").html(data.par);
+					$("#section_img").css({"background":"url(<%=rootPath%>/resources/images/maps/"+data.id+".png)"});
+				},
+				error:function(err){
+					console.log(err);
+				}
+			});
+		}
+	</script>
 </head>
 <body>
 	<header>
 		<div id="header_top">
-			<a id="h_t_logo" href="">FUSE.GG</a>
+			<a id="h_t_logo" href="<c:url value='/index'/>">FUSE.GG</a>
 		</div>
 		<div id="header_bottom">
-			<a class="h_b_link" href="">
+			<a class="h_b_link" href="<c:url value='/legends'/>">
 				Legends
 			</a>
-			<a class="h_b_link" href="">
+			<a class="h_b_link" href="<c:url value='/weapons'/>">
 				Weapons
 			</a>
-			<a class="h_b_link" href="">
+			<a class="h_b_link" href="<c:url value='/maps'/>">
 				Maps
 			</a>
 			<a class="h_b_link" href="">
@@ -36,11 +58,10 @@
 		<div id="section_wrap">
 			<h2 id="s_w_title">OLYMPUS</h2>
 			<div id="s_w_maps">
-				<div class="map" id="s_w_m_broken-moon"></div>
-				<div class="map" id="s_w_m_kings-canyon"></div>
-				<div class="map" id="s_w_m_worlds-edge"></div>
-				<div class="map" id="s_w_m_olympus"></div>
-				<div class="map" id="s_w_m_storm-point"></div>
+				<% ArrayList<String> list=(ArrayList<String>)request.getAttribute("list"); %>
+				<% for(String map:list){ %>
+				<div class="map" id="<%=map%>" style="background-image: url(<%=rootPath%>/resources/images/maps/<%=map%>.png)" onclick="change_map(this.id)"></div>
+				<% } %>
 			</div>
 		</div>
 		<p id="section_content">

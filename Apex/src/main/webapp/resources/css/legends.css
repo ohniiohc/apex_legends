@@ -37,11 +37,12 @@ section{
 	flex-direction: column;
 	align-items: center;
 }
-#s_g_n_aka,#s_g_n_name{
+#s_g_n_job,#s_g_n_name{
 	color: #F5F5F5;
 }
-#s_g_n_aka{
+#s_g_n_job{
 	font-size: 14px;
+	letter-spacing: 1px;
 }
 #s_g_n_name{
 	margin-top: 12px;
@@ -55,18 +56,18 @@ section{
 	flex-wrap: wrap;
 	justify-content: center;
 }
-#s_g_l_class{
+.s_g_l_class{
 	margin: 20px 32px;
 }
-#s_g_l_c_wrap{
+.s_g_l_c_wrap{
 	display: flex;
 }
-#s_g_l_c_deco{
+.s_g_l_c_deco{
 	border-top: 4px solid #DA292A;
 	display: flex;
 	justify-content: center;
 }
-#s_g_l_c_d_mid{
+.s_g_l_c_d_mid{
 	box-sizing: border-box;
 	width: 192px;
 	height: 24px;
@@ -75,16 +76,16 @@ section{
 	text-align: center;
 	padding-top: 2px;
 }
-#s_g_l_c_d_left,#s_g_l_c_d_right{
+.s_g_l_c_d_left,.s_g_l_c_d_right{
 	position: relative;
 	border-bottom: calc( 24px * 1.732 ) solid #05162B;
 	border-left: 24px solid transparent;
 	border-right: 24px solid transparent;
 }
-#s_g_l_c_d_left{
+.s_g_l_c_d_left{
 	left: 24px;
 }
-#s_g_l_c_d_right{
+.s_g_l_c_d_right{
 	right: 24px;
 }
 .legends-img{
@@ -92,6 +93,11 @@ section{
 	height: 84px;
 	margin: 0 4px;
 	border-top: 4px solid #DA292A;
+	background: center;
+	background-size: cover;
+}
+.legends-img:hover{
+	cursor: pointer;
 }
 .legends-img:first-child,.legends-img:last-child{
 	margin: 0;
@@ -101,106 +107,5 @@ section{
 }
 .legends-img:last-child{
 	margin-left: 4px;
-}
-/* --------------------------------------------------------------- */
-#bangalore_Professional_Soldier{
-	background: center url("../images/legends/assault/bangalore_square.png");
-	background-size: cover;
-}
-#revenant_Synthetic_Nightmare{
-	background: center url("../images/legends/assault/revenant_square.png");
-	background-size: cover;
-}
-#fuse{
-	background: center url("../images/legends/assault/fuse_square.png");
-	background-size: cover;
-}
-#ash{
-	background: center url("../images/legends/assault/ash_square.png");
-	background-size: cover;
-}
-#madmaggie{
-	background: center url("../images/legends/assault/mad_maggie_square.png");
-	background-size: cover;
-}
-#ballistic{
-	background: center url("../images/legends/assault/ballistic_square.png");
-	background-size: cover;
-}
-/* --------------------------------------------------------------- */
-#pathfinder{
-	background: center url("../images/legends/skirmisher/pathfinder_square.png");
-	background-size: cover;
-}
-#wraith{
-	background: center url("../images/legends/skirmisher/wraith_square.png");
-	background-size: cover;
-}
-#octane{
-	background: center url("../images/legends/skirmisher/octane_square.png");
-	background-size: cover;
-}
-#horizon{
-	background: center url("../images/legends/skirmisher/horizon_square.png");
-	background-size: cover;
-}
-#valkyrie{
-	background: center url("../images/legends/skirmisher/valkyrie_square.png");
-	background-size: cover;
-}
-/* --------------------------------------------------------------- */
-#bloodhound{
-	background: center url("../images/legends/recon/bloodhound_square.png");
-	background-size: cover;
-}
-#crypto{
-	background: center url("../images/legends/recon/crypto_square.png");
-	background-size: cover;
-}
-#seer{
-	background: center url("../images/legends/recon/seer_square.png");
-	background-size: cover;
-}
-#vantage{
-	background: center url("../images/legends/recon/vantage_square.png");
-	background-size: cover;
-}
-/* --------------------------------------------------------------- */
-#gibraltar{
-	background: center url("../images/legends/support/gibraltar_square.png");
-	background-size: cover;
-}
-#lifeline{
-	background: center url("../images/legends/support/lifeline_square.png");
-	background-size: cover;
-}
-#mirage{
-	background: center url("../images/legends/support/mirage_square.png");
-	background-size: cover;
-}
-#loba{
-	background: center url("../images/legends/support/loba_square.png");
-	background-size: cover;
-}
-#newcastle{
-	background: center url("../images/legends/support/newcastle_square.png");
-	background-size: cover;
-}
-/* --------------------------------------------------------------- */
-#caustic{
-	background: center url("../images/legends/controller/caustic_square.png");
-	background-size: cover;
-}
-#wattson{
-	background: center url("../images/legends/controller/wattson_square.png");
-	background-size: cover;
-}
-#rampart{
-	background: center url("../images/legends/controller/rampart_square.png");
-	background-size: cover;
-}
-#catalyst{
-	background: center url("../images/legends/controller/catalyst_square.png");
-	background-size: cover;
 }
 /* --------------------------------------------------------------- */

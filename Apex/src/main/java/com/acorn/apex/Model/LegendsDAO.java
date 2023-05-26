@@ -20,7 +20,7 @@ public class LegendsDAO {
 	@Autowired
 	DataSource ds;
 	
-	public Map<String, ArrayList<String>> selectAllLegends() throws SQLException {
+	public Map<String, ArrayList<String>> selectAllLegendsId() throws SQLException {
 		
 		Map map=new HashMap<String,ArrayList<String>>(); 
 		String[] arr = {"assault", "skirmisher", "recon", "support", "controller"};
@@ -80,10 +80,7 @@ public class LegendsDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		
-		
-		return null;
+		return legend;
 	}
 	
 }

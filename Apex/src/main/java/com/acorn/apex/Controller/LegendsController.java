@@ -19,18 +19,13 @@ public class LegendsController {
 	
 	@Autowired
 	LegendsDAO dao;
-	
-	@GetMapping("/legends")
-	public void method() {
-		
-	}
 
-	@GetMapping("/legends2")
-	public String method2(Model model) {
+	@GetMapping("/legends")
+	public String legends(Model model) {
 		
 		Map map=null;
 		try {
-			map = dao.selectAllLegends();
+			map = dao.selectAllLegendsId();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,16 +33,17 @@ public class LegendsController {
 		
 		model.addAttribute("map", map);
 		
-		return "legends2";
+		return "legends";
 		
 	}
 	
 	@ResponseBody
-	@GetMapping("/legends3")
-	public LegendsDTO method2(String id) {
+	@GetMapping("/getlegend")
+	public LegendsDTO getlegend(String id) {
 		
+		LegendsDTO legend=dao.selectLegend(id);
 		
-		return null;
+		return legend;
 	}
 	
 }

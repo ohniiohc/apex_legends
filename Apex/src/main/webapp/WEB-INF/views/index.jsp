@@ -22,7 +22,7 @@
 			<a class="h_b_link" href="<c:url value='/legends'/>">
 				Legends
 			</a>
-			<a class="h_b_link" href="">
+			<a class="h_b_link" href="<c:url value='/weapons'/>">
 				Weapons
 			</a>
 			<a class="h_b_link" href="<c:url value='/maps'/>">
