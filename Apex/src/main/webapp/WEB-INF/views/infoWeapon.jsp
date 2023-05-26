@@ -11,9 +11,12 @@
 	padding: 0;
 	margin: 0;
 }
+p{
+color:#F5F5F5;
+}
 
 section {
-	text-Align: Center
+	text-Align: Center;
 }
 
 weaponname {
@@ -42,17 +45,22 @@ weaponname {
 .WeaponFire {
 	margin-bottom: 20px;
 }
-.Attachment Slots p{
 
-margin-bottom: 20px;
-}
+
 .damage {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin-top: 10px; /* 간격 조정 */
-	margin-bottom: 20px;
-	margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #F5F5F5;
+}
+
+.damage > div {
+  width: 200px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 .technical p{
 margin-bottom: 20px;
@@ -60,6 +68,11 @@ margin-bottom: 20px;
 a{
 list-style: none;
 text-decoration: none;
+}
+.Attachment.Slots p {
+    color: #0A0A0A;
+    margin-bottom: 20px;
+    filter: none;
 }
 @font-face {
     font-family: 'Hanson';
@@ -172,8 +185,8 @@ footer{
 		<c:forEach items="${infoWeapon}" var="weapon">
 			<div class="weapon">
 
-				<p class="weaponname">${weapon.name}</p>
-				<img src="/apex${weapon.img}" alt="${weapon.name}">
+				<p class="weaponname" style="margin-top: 20px;">${weapon.name}</p>
+				<img src="/apex${weapon.img}" alt="${weapon.name}" style="filter: invert(100%); margin-top: 20px;">
 
 				<div class="profile">
 				<p> - Profile -</p>
@@ -182,16 +195,16 @@ footer{
 						Ammo: <img src="/apex${weapon.ammoimg}"> ${weapon.ammoname }
 					</p>
 					<p class="WeaponFire">
-						Fire modes: <img src="/apex${weapon.modeimg }">${weapon.modetype }</p>
+						Fire modes: <img src="/apex${weapon.modeimg }" style="filter: invert(100%);">${weapon.modetype }</p>
 					<c:if test="${not empty weapon.modeimg2}">
 						<p class="WeaponFire">
-							<img src="/apex${weapon.modeimg2}" alt="">
+							<img src="/apex${weapon.modeimg2}"  style="filter: invert(100%); margin-left: 90px;">
 							${weapon.modetype2}
 						</p>
 					</c:if>
 				</div>
-				<div class="Attachment Slots">
-					<p>- Attachment Slots -</p>
+				<div class="Attachment Slots" style="filter: invert(100%);">
+					<p >- Attachment Slots -</p>
 						<c:if test="${not empty weapon.attachment1}">
 						 <a href="#" onclick="redirectToPage('/apex/${weapon.attachment1}')">
 						 
@@ -224,14 +237,20 @@ footer{
 				<div class="damage">
 				
 					<div>
-						Body <br> ${weapon.body}
+					<div>Body</div> 
+					<div>${weapon.body}</div>
 					</div>
+					
 					<div>
-						Head <br> ${weapon.head}
+						<div>Head</div> 
+						<div> ${weapon.head}</div>
 					</div>
+					
 					<div>
-						Legs <br> ${weapon.legs}
+					<div>Legs </div>
+					<div>${weapon.legs}</div>
 					</div>
+					
 				</div>
 
 				<div class="technical">
@@ -273,11 +292,21 @@ footer{
     if (filename.includes("MagAttachment")) {
         filename = "MagAttachment";
       }
+    if (filename.includes("SightAttachment") || filename.includes()) {
+        filename = "BarrelAttachment";
+      }
+    
+    if(filename.includes("StockAttachment")){
+    	filename = "StockAttachmentStandard";
+    }
+    
     if (filename.includes("SkullpiercerAttachment") || 
     	    filename.includes("HammerpointRoundsAttachment") ||
     	    filename.includes("DoubleTapTriggerAttachment") ||
     	    filename.includes("ShatterCapsAttachment") ||
-    	    filename.includes("BoostedLoaderAttachment")) {
+    	    filename.includes("BoostedLoaderAttachment")||
+    	    filename.includes("TurbochargerAttachment")
+    ) {
     	  filename = "Hop-Up";
     	}
     // 동적으로 생성한 href 값으로 페이지 이동

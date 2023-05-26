@@ -69,12 +69,12 @@ section{
             padding: 10px;
              width: 150px;
     height: 50px;
-    border: 1px solid black;
+   
   background-color: #445C76;
     transform: skew(-20deg);
     text-align : center;
     margin-right: 15px;
-   border-bottom: 10px solid black;
+   border-bottom: 10px solid #DA292A;
     
         }
 
@@ -101,7 +101,7 @@ section{
     height: 0;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
-    border-bottom: 52px solid black;
+    border-bottom: 52px solid #DA292A;
     transform: scale(0.2) rotate(40deg);
     
     }
@@ -124,7 +124,7 @@ section{
         transform: translate(-50%, -50%);
         width: 100%;
         text-align: center;
-        color:black;
+        color:#F5F5F5;
     }
     .WeaponsType{
     display: flex;
@@ -135,17 +135,17 @@ section{
    
    }
    .weapon{
-   border:  1px solid black; 
+    
    margin: 0 auto;
    cursor: pointer;
             padding: 10px;
              width: 250px;
     height: 200px;
-
-    transform: skew(-20deg);
+	filter: invert(100%);
+    
     text-align : center;
     margin-right: 15px;
-   border-radius: 0px 30px 0 30px;
+   border-radius: 30px 30px 30px 30px;
    }   
 
    .weapon:hover{
