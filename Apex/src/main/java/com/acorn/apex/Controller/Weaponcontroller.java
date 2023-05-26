@@ -30,7 +30,7 @@ public class Weaponcontroller {
         return "WeaponsHome";
     }
 
-    @GetMapping("/infoWeapon")
+   /* @GetMapping("/infoWeapon")
     public ModelAndView infoWeapon(@RequestParam("name") String name) {
         ModelAndView modelAndView = new ModelAndView("infoWeapon");
         
@@ -38,7 +38,7 @@ public class Weaponcontroller {
         modelAndView.addObject("infoWeapon", infoWeapon);
         
         return modelAndView;
-    }
+    }*/
     
     
 
@@ -49,7 +49,7 @@ public class Weaponcontroller {
         return weaponsList; // 조회된 데이터를 JSON 형식으로 응답
     }
     
-    @GetMapping("/BarrelAttachment")
+   /* @GetMapping("/BarrelAttachment")
     public String Barrel() {
     	
     	return "BarrelAttachment";
@@ -80,5 +80,5 @@ public class Weaponcontroller {
     }
     
     
-
+*/
 }
