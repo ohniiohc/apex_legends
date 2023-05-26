@@ -17,47 +17,29 @@
 	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/legends2.css'/>">
 	<script>
-		function search(){
+		function change_legend(id){
+			alert(id);	
+		}
+		function change_legend123124(id){
 			alert("dkfkfkf");
 			
 			$.ajax(  {
-				type:"GET" ,
-				url: "/apex/api3"  ,
+				type:"GET",
+				url:"/apex/legends3",
+				data:{id:id},
 				success: function( data ){
 					alert( data);	
 					let result  = toHtml( data);
-					/*
-									
-					
-					 */				
 					
 					$("#wrap").html(result); 	  // div 태그 사이의 내용 가져오거나 변경할 때		
 					
 					console.log( data);
 				} ,
 				error: function(err){
-					console.log( err);
+					console.log(err);
 				}			
 			});  		
 		}
-		function change_legend(id) {
-			let s_g_n_aka = document.getElementById("s_g_n_aka");
-            let s_g_n_name = document.getElementById("s_g_n_name");
-			let img_front = document.getElementById("section_legend-img-front");
-            let img_back = document.getElementById("section_legend-img-back");
-			let arr=id.split("_").map(item => item.trim());
-			let aka="";
-			for(let i=1; i<arr.length; i++){
-				aka+=arr[i]+" ";
-			}
-			aka=aka.trimEnd();
-			let lower=arr[0].toLowerCase();
-			let upper=arr[0].toUpperCase();
-			img_front.style.backgroundImage = "url('images/legends/"+lower+"_32_crop.png')";
-			img_back.style.backgroundImage = "url('images/legends/"+lower+"_32_crop_bg.png')";
-            s_g_n_aka.innerHTML = aka
-            s_g_n_name.innerHTML = upper;
-        }
     </script>
 </head>
 <body>
@@ -89,7 +71,7 @@
 		</div>
 		<div id="section_gradient">
 			<div id="s_g_name">
-				<h3 id="s_g_n_aka">Bombastic Explosives Expert</h3>
+				<h3 id="s_g_n_job">Bombastic Explosives Expert</h3>
 				<h2 id="s_g_n_name">FUSE</h2>
 			</div>
 			<div id="s_g_legends">

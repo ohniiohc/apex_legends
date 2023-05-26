@@ -37,10 +37,10 @@ section{
 	flex-direction: column;
 	align-items: center;
 }
-#s_g_n_aka,#s_g_n_name{
+#s_g_n_job,#s_g_n_name{
 	color: #F5F5F5;
 }
-#s_g_n_aka{
+#s_g_n_job{
 	font-size: 14px;
 }
 #s_g_n_name{

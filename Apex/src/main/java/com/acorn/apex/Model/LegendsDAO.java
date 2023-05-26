@@ -20,7 +20,7 @@ public class LegendsDAO {
 	@Autowired
 	DataSource ds;
 	
-	public Map<String, ArrayList<String>> select() throws SQLException {
+	public Map<String, ArrayList<String>> selectAllLegends() throws SQLException {
 		
 		Map map=new HashMap<String,ArrayList<String>>(); 
 		String[] arr = {"assault", "skirmisher", "recon", "support", "controller"};
@@ -53,6 +53,37 @@ public class LegendsDAO {
 			
 		});
 		return map;
+	}
+	
+	public LegendsDTO selectLegend(String id) {
+		LegendsDTO legend=new LegendsDTO();
+		Connection con;
+		try {
+			con = ds.getConnection();
+			String sql ="select * from fuse_gg_legends where id=?";
+			PreparedStatement pst=con.prepareStatement(sql);
+			pst.setString(1, id);
+			ResultSet rs=pst.executeQuery();
+			if(rs.next()) {
+				legend.setId(rs.getString(1));
+				legend.setJob(rs.getString(2));
+				legend.setName(rs.getString(3));
+				legend.setL_class(rs.getString(4));
+				legend.setTac(rs.getString(5));
+				legend.setPas(rs.getString(6));
+				legend.setUlt(rs.getString(7));
+				legend.setTac_con(rs.getString(8));
+				legend.setPas_con(rs.getString(9));
+				legend.setUlt_con(rs.getString(10));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		
+		return null;
 	}
 	
 }
