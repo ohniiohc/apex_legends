@@ -50,7 +50,7 @@
 				Maps
 			</a>
 			<a class="h_b_link" href="">
-				Forums
+				Community
 			</a>
 		</div>
 	</header>

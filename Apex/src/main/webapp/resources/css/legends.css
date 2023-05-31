@@ -6,9 +6,9 @@
 section{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: center;
 }
-#section_legend-img-back{
+#section_legend_img_back{
 	width: 100%;
 	height: 688px;
 	background: url("../images/legends/back/fuse_32_crop_bg.png");
@@ -16,7 +16,7 @@ section{
 	background-position: 50% 10%;
 	margin-top: 0;
 }
-#section_legend-img-front{
+#section_legend_img_front{
 	width: 960px;
 	height: 640px;
 	margin: 48px auto auto;
@@ -88,7 +88,7 @@ section{
 .s_g_l_c_d_right{
 	right: 24px;
 }
-.legends-img{
+.legends_profile{
 	width: 84px;
 	height: 84px;
 	margin: 0 4px;
@@ -96,16 +96,106 @@ section{
 	background: center;
 	background-size: cover;
 }
-.legends-img:hover{
+.legends_profile:hover{
 	cursor: pointer;
 }
-.legends-img:first-child,.legends-img:last-child{
+.legends_profile:first-child,.legends_profile:last-child{
 	margin: 0;
 }
-.legends-img:first-child{
+.legends_profile:first-child{
 	margin-right: 4px;
 }
-.legends-img:last-child{
+.legends_profile:last-child{
 	margin-left: 4px;
 }
 /* --------------------------------------------------------------- */
+/* --------------------------------------------------------------- */
+/* --------------------------------------------------------------- */
+#section_ability{
+	width: 1440px;
+	height: 720px;
+	margin-top: -48px;
+	margin-bottom: 48px;
+	background: center url("../images/legends/class/class_assault.png");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#abil_left{
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+}
+#abil_btn_wrap{
+	display: flex;
+	justify-content: space-around;
+}
+.abil_btn{
+	width: 72px;
+	height: 72px;
+	border: none;
+	background: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#pas{
+	border: 2px solid #27CD66;
+}
+.abil_btn img{
+	height: 60px;
+}
+#abil_line{
+	margin: 24px 0;
+	height: 2px;
+	background-color: #445C76;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.outer_circle{
+	width: 16px;
+	height: 16px;
+	border-radius: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#pas_crcl_brdr{
+	border: 2px solid #27CD66;
+}
+.inner_circle{
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #445C76;
+}
+#pas_crcl{
+	background-color: #27CD66;
+}
+.abil_li{
+	height: 200px;
+	margin: 0 48px;
+}
+.abil_type{
+	color: #F5F5F5;
+	margin-bottom: 6px;
+	font-size: 12px;
+}
+.abil_name{
+	margin-bottom: 8px;
+	color: #DA292A;
+	font-size: 20px;
+}
+.abil_desc{
+	color: #F5F5F5;
+	font-size: 14px;
+}
+.abil_vid{
+	width: 640px;
+	height: 360px;
+}
+#tac_li,#ult_li,#tac_vid,#ult_vid{
+	display: none;
+}

@@ -26,15 +26,47 @@
 				data:{id:id},
 				success:function(data){
 					console.log(data);
-					$("#s_g_n_job").html(data.job);
-					$("#s_g_n_name").html(data.name);
-					$("#section_legend-img-back").css({"background":"url(<%=rootPath%>/resources/images/legends/back/"+data.id+"_32_crop_bg.png)"});
-					$("#section_legend-img-front").css({"background":"url(<%=rootPath%>/resources/images/legends/front/"+data.id+"_32_crop.png)"});
+					$('#s_g_n_job').html(data.job);
+					$('#s_g_n_name').html(data.name);
+					$('#section_legend_img_back').css({'background':'url(<%=rootPath%>/resources/images/legends/back/'+data.id+'_32_crop_bg.png)'});
+					$('#section_legend_img_front').css({'background':'url(<%=rootPath%>/resources/images/legends/front/'+data.id+'_32_crop.png)'});
+					$('#section_ability').css({'background':'url(<%=rootPath%>/resources/images/legends/class/class_'+data.l_class+'.png)'});
+					$('#pas_name').html(data.pas);
+					$('#pas_desc').html(data.pas_con);
+					$('#tac_name').html(data.tac);
+					$('#tac_desc').html(data.tac_con);
+					$('#ult_name').html(data.ult);
+					$('#ult_desc').html(data.ult_con);
+					$('#pas_img').attr('src', '<%=rootPath%>/resources/images/legends/ability/'+data.id+'_passive_ability.svg');
+					$('#tac_img').attr('src', '<%=rootPath%>/resources/images/legends/ability/'+data.id+'_tactical_ability.svg');
+					$('#ult_img').attr('src', '<%=rootPath%>/resources/images/legends/ability/'+data.id+'_ultimate_ability.svg');
+					$('#pas_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_passive_vid.mp4');
+					$('#tac_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_tactical_vid.mp4');
+					$('#ult_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_ultimate_vid.mp4');
 				} ,
 				error:function(err){
 					console.log(err);
 				}			
 			});  		
+		}
+		function change_vid(id) {
+			$('.abil_btn, .inner_circle, .outer_circle, .abil_li, .abil_vid').each(function() {
+		        $(this).css('border', 'none');
+		    });
+		    $('.inner_circle').css('backgroundColor', '#445C76');
+		    $('.outer_circle').css('border', 'none');
+		    $('.abil_li, .abil_vid').hide();
+		    
+		    let abil_btn_selected = $('#' + id);
+		    abil_btn_selected.css('border', '2px solid #27CD66');
+		    let outer_circle_selected = $('#' + id + '_crcl_brdr');
+		    outer_circle_selected.css('border', '2px solid #27CD66');
+		    let inner_circle_selected = $('#' + id + '_crcl');
+		    inner_circle_selected.css('backgroundColor', '#27CD66');
+		    let abil_li_selected = $('#' + id + '_li');
+		    abil_li_selected.show();
+		    let sk_vid_selected = $('#' + id + '_vid');
+		    sk_vid_selected.show();
 		}
     </script>
 </head>
@@ -54,14 +86,14 @@
 				Maps
 			</a>
 			<a class="h_b_link" href="">
-				Forums
+				Community
 			</a>
 		</div>
 	</header>
 	<section>
 		<!-- Write user code here -->
-		<div id="section_legend-img-back">
-			<div id="section_legend-img-front"></div>
+		<div id="section_legend_img_back">
+			<div id="section_legend_img_front"></div>
 		</div>
 		<div id="section_gradient">
 			<div id="s_g_name">
@@ -74,7 +106,7 @@
 						<% Map<String, ArrayList<String>> map=(Map<String, ArrayList<String>>)request.getAttribute("map"); %>
 						<% ArrayList<String> assault = map.get("assault"); %>
 					    <% for (String legend : assault) { %>
-							<div class="legends-img" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
+							<div class="legends_profile" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
 					    <% } %>
 					</div>
 					<div class="s_g_l_c_deco">
@@ -87,7 +119,7 @@
 					<div class="s_g_l_c_wrap">
 						<% ArrayList<String> skirmisher = map.get("skirmisher"); %>
 					    <% for (String legend : skirmisher) { %>
-							<div class="legends-img" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
+							<div class="legends_profile" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
 					    <% } %>
 					</div>
 					<div class="s_g_l_c_deco">
@@ -100,7 +132,7 @@
 					<div class="s_g_l_c_wrap">
 						<% ArrayList<String> recon = map.get("recon"); %>
 					    <% for (String legend : recon) { %>
-							<div class="legends-img" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
+							<div class="legends_profile" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
 					    <% } %>
 					</div>
 					<div class="s_g_l_c_deco">
@@ -113,7 +145,7 @@
 					<div class="s_g_l_c_wrap">
 						<% ArrayList<String> support = map.get("support"); %>
 					    <% for (String legend : support) { %>
-							<div class="legends-img" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
+							<div class="legends_profile" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
 					    <% } %>
 					</div>
 					<div class="s_g_l_c_deco">
@@ -126,7 +158,7 @@
 					<div class="s_g_l_c_wrap">
 						<% ArrayList<String> controller = map.get("controller"); %>
 					    <% for (String legend : controller) { %>
-							<div class="legends-img" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
+							<div class="legends_profile" id="<%=legend%>" style="background-image: url(<%=rootPath%>/resources/images/legends/profile/<%=legend%>_square.png)" onclick="change_legend(this.id)"></div>
 					    <% } %>
 					</div>
 					<div class="s_g_l_c_deco">
@@ -139,132 +171,20 @@
 		</div>
 		
 		
-		
-		
-		<style>
-			#skill_wrap{
-				width: 1440px;
-				margin-top: 100px;
-				background: center url(<%=rootPath%>/resources/images/legends/class/class_assault.png);
-				background-size: cover;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			#skill_ctrl{
-				display: flex;
-				flex-direction: column;
-			}
-			#sk_btn_wrap{
-				display: flex;
-				justify-content: space-around;
-			}
-			.skill_btn{
-				width: 72px;
-				height: 72px;
-				border: none;
-				background: none;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			#pas{
-				border: 2px solid #27CD66;
-			}
-			.skill_btn img{
-				height: 60px;
-			}
-			#sk_line{
-				margin: 24px 0;
-				height: 2px;
-				background-color: #445C76;
-				display: flex;
-				justify-content: space-around;
-				align-items: center;
-			}
-			.outer_circle{
-				width: 16px;
-				height: 16px;
-				border-radius: 16px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			#pas_crcl_brdr{
-				border: 2px solid #27CD66;
-			}
-			.inner_circle{
-				width: 10px;
-				height: 10px;
-				border-radius: 10px;
-				background-color: #445C76;
-			}
-			#pas_crcl{
-				background-color: #27CD66;
-			}
-			.content {
-				display: none; /* 버튼을 클릭하기 전에는 숨깁니다. */
-			}
-			ul li *{
-				color: #F5F5F5;
-			}
-			ul li h6{
-				margin-bottom: 6px;
-				font-size: 12px;
-			}
-			ul li h5{
-				margin-bottom: 8px;
-				color: #DA292A;
-				font-size: 20px;
-			}
-			ul li p{
-				font-size: 14px;
-			}
-			video{
-				width: 640px;
-				height: 360px;
-			}
-			#tac_txt,#ult_txt,#tac_vid,#ult_vid{
-				display: none;
-			}
-		</style>
-		<script>
-			function change_vid(id) {
-				$('.skill_btn, .inner_circle, .outer_circle, .skill_txt, .sk_vid').each(function() {
-			        $(this).css('border', 'none');
-			    });
-			    $('.inner_circle').css('backgroundColor', '#445C76');
-			    $('.outer_circle').css('border', 'none');
-			    $('.skill_txt, .sk_vid').hide();
-			    
-			    let skill_btn_selected = $('#' + id);
-			    skill_btn_selected.css('border', '2px solid #27CD66');
-			    let outer_circle_selected = $('#' + id + '_crcl_brdr');
-			    outer_circle_selected.css('border', '2px solid #27CD66');
-			    let inner_circle_selected = $('#' + id + '_crcl');
-			    inner_circle_selected.css('backgroundColor', '#27CD66');
-			    let skill_txt_selected = $('#' + id + '_txt');
-			    skill_txt_selected.show();
-			    let sk_vid_selected = $('#' + id + '_vid');
-			    sk_vid_selected.show();
-			}
-		</script>
-
-
-		<div id="skill_wrap">
-			<div id="skill_ctrl">
-				<div id="sk_btn_wrap">
-					<button id="pas" class="skill_btn" onclick="change_vid(this.id)">
-						<img id="img1" src="<%=rootPath%>/resources/images/apex-grid-tile-legends-abilities-passive-fuse.png.adapt.crop16x9.652w.png" alt="">
+		<div id="section_ability">
+			<div id="abil_left">
+				<div id="abil_btn_wrap">
+					<button id="pas" class="abil_btn" onclick="change_vid(this.id)">
+						<img id="pas_img" src="<%=rootPath%>/resources/images/legends/ability/fuse_passive_ability.svg" alt="">
 					</button>
-					<button id="tac" class="skill_btn" onclick="change_vid(this.id)">
-						<img id="img2" src="<%=rootPath%>/resources/images/apex-grid-tile-legends-abilities-tactical-fuse.png.adapt.crop16x9.652w.png" alt="">
+					<button id="tac" class="abil_btn" onclick="change_vid(this.id)">
+						<img id="tac_img" src="<%=rootPath%>/resources/images/legends/ability/fuse_tactical_ability.svg" alt="">
 					</button>
-					<button id="ult" class="skill_btn" onclick="change_vid(this.id)">
-						<img id="img3" src="<%=rootPath%>/resources/images/apex-grid-tile-legends-abilities-ultimate-fuse.png.adapt.crop16x9.652w.png" alt="">
+					<button id="ult" class="abil_btn" onclick="change_vid(this.id)">
+						<img id="ult_img" src="<%=rootPath%>/resources/images/legends/ability/fuse_ultimate_ability.svg" alt="">
 					</button>
 				</div>
-				<div id="sk_line">
+				<div id="abil_line">
 					<div id="pas_crcl_brdr" class="outer_circle">
 						<div id="pas_crcl" class="inner_circle"></div>
 					</div>
@@ -275,41 +195,36 @@
 						<div id="ult_crcl" class="inner_circle"></div>
 					</div>
 				</div>
-				<ul id="sk_con">
-					<li id="pas_txt" class="skill_txt">
-						<h6 class="sk_type">PASSIVE ABILITY</h6>
-						<h5 class="sk_name">GRENADIER</h5>
-						<p class="sk_exp">
-							Stack an extra grenade per inventory slot.
-							<br>
-							Fire grenades farther, faster, and more accurately.
+				<ul id="abil_ul">
+					<li id="pas_li" class="abil_li">
+						<h6 class="abil_type">PASSIVE ABILITY</h6>
+						<h5 id="pas_name" class="abil_name">GRENADIER</h5>
+						<p id="pas_desc" class="abil_desc">
+							Stack an extra grenade per inventory slot. Fire grenades farther, faster, and more accurately.
 						</p>
 					</li>
-					<li id="tac_txt" class="skill_txt">
-						<h6 class="sk_type">TACTICAL ABILITY</h6>
-						<h5 class="sk_name">KNUCKLE CLUSTER</h5>
-						<p class="sk_exp">
+					<li id="tac_li" class="abil_li">
+						<h6 class="abil_type">TACTICAL ABILITY</h6>
+						<h5 id="tac_name" class="abil_name">KNUCKLE CLUSTER</h5>
+						<p id="tac_desc" class="abil_desc">
 							Launch a cluster bomb that continuously expels airburst explosives on impact.
 						</p>
 					</li>
-					<li id="ult_txt" class="skill_txt">
-						<h6 class="sk_type">ULTIMATE ABILITY</h6>
-						<h5 class="sk_name">THE MOTHERLODE</h5>
-						<p class="sk_exp">
+					<li id="ult_li" class="abil_li">
+						<h6 class="abil_type">ULTIMATE ABILITY</h6>
+						<h5 id="ult_name" class="abil_name">THE MOTHERLODE</h5>
+						<p id="ult_desc" class="abil_desc">
 							Launch a bombardment that encircles a target area in a wall of flame.
 						</p>
 					</li>
 				</ul>
 			</div>
-			<div id="sk_vid_wrap">
-				<video id="pas_vid" class="sk_vid" src="video1.mp4" controls></video>
-				<video id="tac_vid" class="sk_vid" src="video1.mp4" controls></video>
-				<video id="ult_vid" class="sk_vid" src="video1.mp4" controls></video>
+			<div id="s_a_vidwrap">
+				<video id="pas_vid" class="abil_vid" src="<%=rootPath%>/resources/videos/video1.mp4" controls></video>
+				<video id="tac_vid" class="abil_vid" src="<%=rootPath%>/resources/videos/video1.mp4" controls></video>
+				<video id="ult_vid" class="abil_vid" src="<%=rootPath%>/resources/videos/video1.mp4" controls></video>
 			</div>
 		</div>
-		
-		
-		
 		
 		
 	</section>
