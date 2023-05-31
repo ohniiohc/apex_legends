@@ -1,9 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>채팅</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script type="text/javascript">
@@ -16,6 +18,7 @@
     function connect() {
      
         wsocket = new WebSocket(
+        		
                 "ws://localhost:8090/webchat/chat-ws");
         
       
@@ -360,6 +363,9 @@ height: 560px;
 left: 90px;
 top:320px;
 background: #D9D9D9;
+background-image: url(/resources/img/원신.jpg);
+background-size: cover;
+
 	}
 	.footerline{
 		position: absolute;
@@ -375,6 +381,22 @@ border: 1px solid #9e9e9e;
 		top:1100px;
 		left: 300px;
 	}
+	/* <!--이슈 버튼 긴급 수정 --> */
+	.issueButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  
+}
+	.issueButton:focus{ 	
+    outline:none !important;
+box-shadow:none !important;
+    }
 </style>
 </head>
 <body>
@@ -385,9 +407,7 @@ border: 1px solid #9e9e9e;
 	<div class=""></div>
 
 
-<div class="sidebox2">
-
-</div>
+<a  href="https://genshin.hoyoverse.com/ko" class="sidebox2" target="_blank"></a>
 
 <div class="box1">
 	<header>
@@ -405,9 +425,9 @@ border: 1px solid #9e9e9e;
 		<!-- Additional required wrapper -->
 		<div class="swiper-wrapper">
 			<!-- Slides -->
-			<div class="swiper-slide"><img src="/img/CGimg1.png" alt=""></div>
-			<div class="swiper-slide"><img src="/img/CGimg2.png" alt=""></div>
-			<div class="swiper-slide"><img src="/img/CGimg3.png" alt=""></div>
+			<div class="swiper-slide"><img src="<c:url value='/resources/img/CGimg1.png'/>" alt=""></div>
+			<div class="swiper-slide"><img src="<c:url value='/resources/img/CGimg2.png'/>" alt=""></div>
+			<div class="swiper-slide"><img src="<c:url value='/resources/img/CGimg3.png'/>" alt=""></div>
 		</div>
 	  
 		<!-- If we need navigation buttons -->
@@ -422,9 +442,10 @@ border: 1px solid #9e9e9e;
 			<p>Today Hot Topic</p>
 
 			<div class="topicText">
-				<p>자유게시판 이슈</p>
-				<p>토론장 이슈</p>
+ 			 <button type="button" class="issueButton">자유게시판 이슈</button>
+  			<button type="button" class="issueButton">토론장 이슈</button>
 			</div>
+
 
 			<div class="hotList">
 
@@ -443,7 +464,7 @@ border: 1px solid #9e9e9e;
 	<div class="idbox">
 		<div class="loginbox">
 			<input type="text" class="id" placeholder=" ID"></input>
-			<input type="text" class="pwd" placeholder=" PW"></input>
+			<input type="password" class="pwd" placeholder=" PW" ></input>
 		</div>
 
 		<div class="loginbox2">
