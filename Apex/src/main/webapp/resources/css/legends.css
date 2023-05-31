@@ -6,21 +6,21 @@
 section{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: center;
 }
-#section_legend-img-back{
+#section_legend_img_back{
 	width: 100%;
 	height: 688px;
-	background: url("../images/legends/fuse_32_crop_bg.png");
+	background: url("../images/legends/back/fuse_32_crop_bg.png");
 	background-size: cover;
 	background-position: 50% 10%;
 	margin-top: 0;
 }
-#section_legend-img-front{
+#section_legend_img_front{
 	width: 960px;
 	height: 640px;
 	margin: 48px auto auto;
-	background: center url("../images/legends/fuse_32_crop.png");
+	background: center url("../images/legends/front/fuse_32_crop.png");
 	background-size: cover;
 }
 #section_gradient{
@@ -37,11 +37,12 @@ section{
 	flex-direction: column;
 	align-items: center;
 }
-#s_g_n_aka,#s_g_n_name{
+#s_g_n_job,#s_g_n_name{
 	color: #F5F5F5;
 }
-#s_g_n_aka{
+#s_g_n_job{
 	font-size: 14px;
+	letter-spacing: 1px;
 }
 #s_g_n_name{
 	margin-top: 12px;
@@ -55,18 +56,18 @@ section{
 	flex-wrap: wrap;
 	justify-content: center;
 }
-#s_g_l_class{
+.s_g_l_class{
 	margin: 20px 32px;
 }
-#s_g_l_c_wrap{
+.s_g_l_c_wrap{
 	display: flex;
 }
-#s_g_l_c_deco{
+.s_g_l_c_deco{
 	border-top: 4px solid #DA292A;
 	display: flex;
 	justify-content: center;
 }
-#s_g_l_c_d_mid{
+.s_g_l_c_d_mid{
 	box-sizing: border-box;
 	width: 192px;
 	height: 24px;
@@ -75,132 +76,126 @@ section{
 	text-align: center;
 	padding-top: 2px;
 }
-#s_g_l_c_d_left,#s_g_l_c_d_right{
+.s_g_l_c_d_left,.s_g_l_c_d_right{
 	position: relative;
 	border-bottom: calc( 24px * 1.732 ) solid #05162B;
 	border-left: 24px solid transparent;
 	border-right: 24px solid transparent;
 }
-#s_g_l_c_d_left{
+.s_g_l_c_d_left{
 	left: 24px;
 }
-#s_g_l_c_d_right{
+.s_g_l_c_d_right{
 	right: 24px;
 }
-.legends-img{
+.legends_profile{
 	width: 84px;
 	height: 84px;
 	margin: 0 4px;
 	border-top: 4px solid #DA292A;
+	background: center;
+	background-size: cover;
 }
-.legends-img:first-child,.legends-img:last-child{
+.legends_profile:hover{
+	cursor: pointer;
+}
+.legends_profile:first-child,.legends_profile:last-child{
 	margin: 0;
 }
-.legends-img:first-child{
+.legends_profile:first-child{
 	margin-right: 4px;
 }
-.legends-img:last-child{
+.legends_profile:last-child{
 	margin-left: 4px;
 }
 /* --------------------------------------------------------------- */
-#bangalore_Professional_Soldier{
-	background: center url("../images/legends/assault/bangalore_square.png");
-	background-size: cover;
-}
-#revenant_Synthetic_Nightmare{
-	background: center url("../images/legends/assault/revenant_square.png");
-	background-size: cover;
-}
-#fuse{
-	background: center url("../images/legends/assault/fuse_square.png");
-	background-size: cover;
-}
-#ash{
-	background: center url("../images/legends/assault/ash_square.png");
-	background-size: cover;
-}
-#madmaggie{
-	background: center url("../images/legends/assault/mad_maggie_square.png");
-	background-size: cover;
-}
-#ballistic{
-	background: center url("../images/legends/assault/ballistic_square.png");
-	background-size: cover;
-}
 /* --------------------------------------------------------------- */
-#pathfinder{
-	background: center url("../images/legends/skirmisher/pathfinder_square.png");
-	background-size: cover;
-}
-#wraith{
-	background: center url("../images/legends/skirmisher/wraith_square.png");
-	background-size: cover;
-}
-#octane{
-	background: center url("../images/legends/skirmisher/octane_square.png");
-	background-size: cover;
-}
-#horizon{
-	background: center url("../images/legends/skirmisher/horizon_square.png");
-	background-size: cover;
-}
-#valkyrie{
-	background: center url("../images/legends/skirmisher/valkyrie_square.png");
-	background-size: cover;
-}
 /* --------------------------------------------------------------- */
-#bloodhound{
-	background: center url("../images/legends/recon/bloodhound_square.png");
+#section_ability{
+	width: 1440px;
+	height: 720px;
+	margin-top: -48px;
+	margin-bottom: 48px;
+	background: center url("../images/legends/classes/class_assault.png");
 	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-#crypto{
-	background: center url("../images/legends/recon/crypto_square.png");
-	background-size: cover;
+#abil_left{
+	width: 800px;
+	display: flex;
+	flex-direction: column;
 }
-#seer{
-	background: center url("../images/legends/recon/seer_square.png");
-	background-size: cover;
+#abil_btn_wrap{
+	display: flex;
+	justify-content: space-around;
 }
-#vantage{
-	background: center url("../images/legends/recon/vantage_square.png");
-	background-size: cover;
+.abil_btn{
+	width: 72px;
+	height: 72px;
+	border: none;
+	background: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-/* --------------------------------------------------------------- */
-#gibraltar{
-	background: center url("../images/legends/support/gibraltar_square.png");
-	background-size: cover;
+#pas{
+	border: 2px solid #27CD66;
 }
-#lifeline{
-	background: center url("../images/legends/support/lifeline_square.png");
-	background-size: cover;
+.abil_btn img{
+	height: 60px;
 }
-#mirage{
-	background: center url("../images/legends/support/mirage_square.png");
-	background-size: cover;
+#abil_line{
+	margin: 24px 0;
+	height: 2px;
+	background-color: #445C76;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
-#loba{
-	background: center url("../images/legends/support/loba_square.png");
-	background-size: cover;
+.outer_circle{
+	width: 16px;
+	height: 16px;
+	border-radius: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-#newcastle{
-	background: center url("../images/legends/support/newcastle_square.png");
-	background-size: cover;
+#pas_crcl_brdr{
+	border: 2px solid #27CD66;
 }
-/* --------------------------------------------------------------- */
-#caustic{
-	background: center url("../images/legends/controller/caustic_square.png");
-	background-size: cover;
+.inner_circle{
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #445C76;
 }
-#wattson{
-	background: center url("../images/legends/controller/wattson_square.png");
-	background-size: cover;
+#pas_crcl{
+	background-color: #27CD66;
 }
-#rampart{
-	background: center url("../images/legends/controller/rampart_square.png");
-	background-size: cover;
+.abil_li{
+	height: 200px;
+	margin: 0 48px;
 }
-#catalyst{
-	background: center url("../images/legends/controller/catalyst_square.png");
-	background-size: cover;
+.abil_type{
+	color: #F5F5F5;
+	margin-bottom: 6px;
+	font-size: 12px;
 }
-/* --------------------------------------------------------------- */
+.abil_name{
+	margin-bottom: 8px;
+	color: #DA292A;
+	font-size: 20px;
+}
+.abil_desc{
+	color: #F5F5F5;
+	font-size: 14px;
+}
+.abil_vid{
+	width: 640px;
+	height: 360px;
+}
+#tac_li,#ult_li,#tac_vid,#ult_vid{
+	display: none;
+}
