@@ -13,7 +13,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Legends - FUSE.GG</title>
+	<link rel="icon" href="<c:url value='resources/images/icon/fuse_gg_16.ico'/>" type="image/x-icon">
 	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/legends.css'/>">
@@ -30,7 +31,7 @@
 					$('#s_g_n_name').html(data.name);
 					$('#section_legend_img_back').css({'background':'url(<%=rootPath%>/resources/images/legends/back/'+data.id+'_32_crop_bg.png)'});
 					$('#section_legend_img_front').css({'background':'url(<%=rootPath%>/resources/images/legends/front/'+data.id+'_32_crop.png)'});
-					$('#section_ability').css({'background':'url(<%=rootPath%>/resources/images/legends/class/class_'+data.l_class+'.png)'});
+					$('#section_ability').css({'background':'url(<%=rootPath%>/resources/images/legends/classes/class_'+data.l_class+'.png)'});
 					$('#pas_name').html(data.pas);
 					$('#pas_desc').html(data.pas_con);
 					$('#tac_name').html(data.tac);
