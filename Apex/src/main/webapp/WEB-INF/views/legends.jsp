@@ -102,7 +102,7 @@
 				<h2 id="s_g_n_name">FUSE</h2>
 			</div>
 			<div id="s_g_legends">
-				<div class="s_g_l_class" id="">
+				<div class="s_g_l_class">
 					<div class="s_g_l_c_wrap">
 						<% Map<String, ArrayList<String>> map=(Map<String, ArrayList<String>>)request.getAttribute("map"); %>
 						<% ArrayList<String> assault = map.get("assault"); %>
@@ -116,7 +116,7 @@
 						<div class="s_g_l_c_d_right"></div>
 					</div>
 				</div>
-				<div class="s_g_l_class" id="">
+				<div class="s_g_l_class">
 					<div class="s_g_l_c_wrap">
 						<% ArrayList<String> skirmisher = map.get("skirmisher"); %>
 					    <% for (String legend : skirmisher) { %>
@@ -129,7 +129,7 @@
 						<div class="s_g_l_c_d_right"></div>
 					</div>
 				</div>
-				<div class="s_g_l_class" id="">
+				<div class="s_g_l_class">
 					<div class="s_g_l_c_wrap">
 						<% ArrayList<String> recon = map.get("recon"); %>
 					    <% for (String legend : recon) { %>
@@ -142,7 +142,7 @@
 						<div class="s_g_l_c_d_right"></div>
 					</div>
 				</div>
-				<div class="s_g_l_class" id="">
+				<div class="s_g_l_class">
 					<div class="s_g_l_c_wrap">
 						<% ArrayList<String> support = map.get("support"); %>
 					    <% for (String legend : support) { %>
@@ -155,7 +155,7 @@
 						<div class="s_g_l_c_d_right"></div>
 					</div>
 				</div>
-				<div class="s_g_l_class" id="">
+				<div class="s_g_l_class">
 					<div class="s_g_l_c_wrap">
 						<% ArrayList<String> controller = map.get("controller"); %>
 					    <% for (String legend : controller) { %>
