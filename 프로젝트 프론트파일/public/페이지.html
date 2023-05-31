@@ -1,0 +1,25 @@
+<!-- myTablePage.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Table Page</title>
+</head>
+<body>
+    <table>
+        <!-- 데이터를 반복하여 출력하는 부분 -->
+        <tr th:each="data : ${myTableData}">
+            <td th:text="${data.property1}"></td>
+            <td th:text="${data.property2}"></td>
+            <!-- 필요한 데이터의 속성을 출력합니다. -->
+        </tr>
+    </table>
+    
+    <!-- 페이지 네비게이션을 표시하는 부분 -->
+    <div>
+        <a th:href="@{/myTable?page=1}">1</a>
+        <a th:href="@{/myTable?page=2}">2</a>
+        <!-- 페이지 번호에 맞게 링크를 생성합니다. -->
+    </div>
+</body>
+</html>

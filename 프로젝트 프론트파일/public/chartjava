@@ -1,0 +1,31 @@
+const socket = new WebSocket('ws://localhost:3000'); // 웹소켓 연결 주소
+
+// 메시지 수신 시
+socket.onmessage = function(event) {
+  const message = event.data;
+  displayMessage(message);
+};
+
+// 메시지 전송 처리
+function sendMessage() {
+  const inputMessage = document.getElementById('inputMessage');
+  const message = inputMessage.value;
+
+  // 서버로 메시지 전송
+  socket.send(message);
+
+  // 채팅창 초기화
+  inputMessage.value = '';
+}
+
+// 메시지 출력
+function displayMessage(message) {
+  const messagesContainer = document.getElementById('messages');
+  const messageElement = document.createElement('div');
+  messageElement.textContent = message;
+  messagesContainer.appendChild(messageElement);
+}
+
+// 전송 버튼 클릭 이벤트 리스너 등록
+const sendButton = document.getElementById('sendButton');
+sendButton.addEventListener('click', sendMessage);

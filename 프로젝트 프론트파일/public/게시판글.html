@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+// 게시물 클릭 이벤트 핸들러
+document.getElementById('post').addEventListener('click', function() {
+  var postTitle = this.querySelector('.post-title').innerText;
+  var postContent = this.querySelector('p').innerText;
+  var postImageSrc = this.querySelector('img').getAttribute('src');
+  var likeCount = parseInt(document.getElementById('likeCount').innerText);
+  var viewCount = parseInt(document.getElementById('viewCount').innerText);
+  var authorId = document.getElementById('authorId').innerText;
+
+  // 가져온 정보를 원하는 위치에 표시하거나 다른 작업을 수행
+  console.log('게시물 제목:', postTitle);
+  console.log('게시물 내용:', postContent);
+  console.log('게시물 사진 경로:', postImageSrc);
+  console.log('추천 수:', likeCount);
+  console.log('조회 수:', viewCount);
+  console.log('작성자 아이디:', authorId);
+});
+
+// 댓글 등록 버튼 클릭 이벤트 핸들러
+document.getElementById('commentButton').addEventListener('click', function() {
+  var commentInput = document.getElementById('commentInput');
+  var commentText = commentInput.value;
+
+  if (commentText) {
+    // 댓글 목록에 새로운 댓글 추가
+    var commentList = document.getElementById('commentList');
+    var newComment = document.createElement('li');
+    newComment.innerText = commentText;
+    commentList.appendChild(newComment);
+
+    // 댓글 입력 필드 초기화
+    commentInput.value = '';
+  }
+
+});
+
+
+// 댓글 개수 업데이트 함수
+function updateCommentCount() {
+  const countElement = document.getElementById('count');
+  const commentList = document.getElementById('commentList');
+  const commentCount = commentList.getElementsByTagName('li').length;
+  countElement.innerText = commentCount;
+}
+
+// 댓글 작성 버튼 클릭 이벤트 처리
+const commentButton = document.getElementById('commentButton');
+commentButton.addEventListener('click', function() {
+
+ 
+
+  // 댓글 작성 후 댓글 개수 업데이트
+  updateCommentCount();
+});
+
+//추천 버튼 클릭 시 추천 수 업데이트 함수 아 시발 언제해 이걸 아
+    </script>
+    <style>
+        #post {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.post-info {
+  font-size: 14px;
+}
+
+.post-info span {
+  margin-right: 10px;
+}
+
+.post-likes,
+.post-views {
+  color: #888;
+}
+
+.post-author {
+  color: #333;
+}
+
+#comments {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#commentList {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#commentList li {
+  margin-bottom: 5px;
+}
+
+#commentInput {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#commentButton {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#commentButton:hover {
+  background-color: #45a049;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #333;
+  margin-right: 5px;
+}
+
+    </style>
+    
+</head>
+<body>
+    <div id="post">
+        <div class="post-header">
+          <h2 class="post-title">게시물 제목</h2>
+          <div class="post-info">
+            <span class="post-likes">추천 수: <span id="likeCount">0</span></span>
+            <span class="post-views">조회 수: <span id="viewCount">0</span></span>
+            <span class="post-author">작성자: <span id="authorId">사용자 아이디</span></span>
+          </div>
+        </div>
+        <p>게시물 내용</p>
+        <img src="이용자가 올린 사진 경로" alt="게시물 사진">
+      </div>
+      
+      <div id="comments">
+        <h3>댓글</h3> 
+        <h3></h3>
+        <ul id="commentList">
+            <li>
+                <span class="comment-author">작성자 아이디:</span>
+            </li>
+        </ul>
+        <input type="text" id="commentInput" placeholder="댓글 작성">
+        <button id="commentButton">댓글 등록</button>
+      </div>
+      
+</body>
+</html>

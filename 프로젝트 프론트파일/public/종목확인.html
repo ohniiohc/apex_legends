@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yahoo Finance API AJAX Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <h1>Yahoo Finance API AJAX Example</h1>
+
+  <div id="stockData"></div>
+
+  <script>
+   
+    $.ajax({
+      url: "https://query1.finance.yahoo.com/v7/finance/chart/AAPL",
+      method: "GET",
+      data: {
+        period1: new Date("2023-01-01").getTime() / 1000,
+        period2: new Date("2023-05-31").getTime() / 1000
+      },
+      success: function(response) {
+        const data = response;
+
+       
+        console.log(data);
+        
+        // 주식 데이터를 HTML에 표시
+        const stockDataElement = document.getElementById('stockData');
+        stockDataElement.innerHTML = JSON.stringify(data);
+
+        // 주식 종목의 종가 그래프 그리기
+        // ...
+      },
+      error: function(error) {
+        console.error(error);
+      }
+    });
+  </script>
+
+</body>
+</html>

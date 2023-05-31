@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #chat {
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#messages {
+  height: 300px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #ccc;
+}
+
+#inputMessage {
+  width: 200px;
+  margin-right: 10px;
+}
+
+#sendButton {
+  width: 70px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- 채팅창 -->
+<div id="chat">
+    <div id="messages"></div>
+    <input type="text" id="Message" placeholder="메시지를 입력하세요">
+    <button id="sendButton">전송</button>
+  </div>
+  
+</body>
+</html>
