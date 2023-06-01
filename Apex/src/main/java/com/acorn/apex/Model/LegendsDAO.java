@@ -39,19 +39,19 @@ public class LegendsDAO {
 				ResultSet rs=pst.executeQuery();
 				
 				while(rs.next()) {
-					
 					String id=rs.getString(1);
-					list.add(id);				
-					
-				}	
+					list.add(id);	
+				}
 				map.put(item, list);
-				
+				rs.close();
+				pst.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
 		});
+		con.close();
 		return map;
 	}
 	
@@ -76,6 +76,9 @@ public class LegendsDAO {
 				legend.setPas_con(rs.getString(9));
 				legend.setUlt_con(rs.getString(10));
 			}
+			rs.close();
+			pst.close();
+			con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

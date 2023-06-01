@@ -29,6 +29,9 @@ public class MapsDAO {
 			while(rs.next()) {
 				list.add(rs.getString(1));
 			}
+			rs.close();
+			pst.close();
+			con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -52,6 +55,9 @@ public class MapsDAO {
 				map.setName(rs.getString(2));
 				map.setPar(rs.getString(3));
 			}
+			rs.close();
+			pst.close();
+			con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

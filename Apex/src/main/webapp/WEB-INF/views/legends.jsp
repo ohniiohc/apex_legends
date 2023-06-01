@@ -41,9 +41,9 @@
 					$('#pas_img').attr('src', '<%=rootPath%>/resources/images/legends/ability/'+data.id+'_passive_ability.svg');
 					$('#tac_img').attr('src', '<%=rootPath%>/resources/images/legends/ability/'+data.id+'_tactical_ability.svg');
 					$('#ult_img').attr('src', '<%=rootPath%>/resources/images/legends/ability/'+data.id+'_ultimate_ability.svg');
-					$('#pas_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_passive_vid.mp4');
-					$('#tac_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_tactical_vid.mp4');
-					$('#ult_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_ultimate_vid.mp4');
+					$('#pas_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_passive_ability.mp4');
+					$('#tac_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_tactical_ability.mp4');
+					$('#ult_vid').attr('src', '<%=rootPath%>/resources/videos/legends/'+data.id+'_ultimate_ability.mp4');
 				} ,
 				error:function(err){
 					console.log(err);
@@ -171,7 +171,6 @@
 			</div>
 		</div>
 		
-		
 		<div id="section_ability">
 			<div id="abil_left">
 				<div id="abil_btn_wrap">
@@ -221,12 +220,11 @@
 				</ul>
 			</div>
 			<div id="s_a_vidwrap">
-				<video id="pas_vid" class="abil_vid" src="<%=rootPath%>/resources/videos/video1.mp4" controls></video>
-				<video id="tac_vid" class="abil_vid" src="<%=rootPath%>/resources/videos/video1.mp4" controls></video>
-				<video id="ult_vid" class="abil_vid" src="<%=rootPath%>/resources/videos/video1.mp4" controls></video>
+				<video id="pas_vid" class="abil_vid" muted autoplay loop src="<%=rootPath%>/resources/videos/legends/fuse_passive_ability.mp4"></video>
+				<video id="tac_vid" class="abil_vid" muted autoplay loop src="<%=rootPath%>/resources/videos/legends/fuse_tactical_ability.mp4"></video>
+				<video id="ult_vid" class="abil_vid" muted autoplay loop src="<%=rootPath%>/resources/videos/legends/fuse_ultimate_ability.mp4"></video>
 			</div>
 		</div>
-		
 		
 	</section>
 	<footer>
