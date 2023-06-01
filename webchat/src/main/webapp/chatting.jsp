@@ -5,129 +5,94 @@
 <head>
 <meta charset="utf-8">
 <title>채팅</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script type="text/javascript">
 
-    
-   
-     var wsocket;
-    
-  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	
+	<script type="text/javascript">
+    var wsocket;
+
     function connect() {
-     
-        wsocket = new WebSocket(
-        		
-                "ws://localhost:8090/webchat/chat-ws");
-        
-      
+        wsocket = new WebSocket("ws://localhost:8090/webchat/chat-ws");
+
         wsocket.onopen = onOpen;
         wsocket.onmessage = onMessage;
         wsocket.onclose = onClose;
-        
     }
-    
-    
+
     function disconnect() {
         wsocket.close();
     }
-        
-    
-     
+
     function onOpen(evt) {
-      //  appendMessage("연결되었습니다.");
-      alert("채팅창에 입장하였습니다.");
+        alert("채팅창에 입장하였습니다.");
     }
-     
+
     function onMessage(evt) {
         var data = evt.data;
         if (data.substring(0, 4) == "msg:") {
-        	appendRecvMessage(data.substring(4));
+            appendRecvMessage(data.substring(4));
         }
     }
-    
-     
+
     function onClose(evt) {
-      // appendMessage("연결을 끊었습니다.");
-      alert("채팅방을 나왔습니다.");
+        alert("채팅방을 나왔습니다.");
     }
-    
-   
+
     function send() {  
-    	
-    	//닉네임가져오기
         var nickname = $("#nickname").val();        
         var msg = $("#message").val();       
-        
         
         wsocket.send("msg:"+nickname+":" + msg);        
         $("#message").val("");
         
-         
-        //채팅창에 자신이 쓴 메시지 추가 
         appendSendMessage(msg);
-        
     }
 
-    
-    //받는 메시지 채팅창에 추가
     function appendRecvMessage(msg) {          
-        $("#chatMessageArea").append( "<div class='recv'>" + msg+"</div>");        
+        $("#chatMessageArea").append("<div class='recv'>" + msg + "</div>");        
         scrollTop();
     }
 
-    
-    function  scrollTop(){
-    	  var chatAreaHeight = $("#chatArea").height();         
-          var maxScroll = $("#chatMessageArea").height() - chatAreaHeight;  
-          $("#chatArea").scrollTop(maxScroll);
+    function scrollTop() {
+        var chatAreaHeight = $("#chatArea").height();         
+        var maxScroll = $("#chatMessageArea").height() - chatAreaHeight;  
+        $("#chatArea").scrollTop(maxScroll);
     }
-    
-    //보내는 메시지 채팅창에 추가
+
     function appendSendMessage(msg) {     
-        $("#chatMessageArea").append( "<div class='send' > " + msg+  "</div>"); 
+        $("#chatMessageArea").append("<div class='send'>" + msg + "</div>"); 
         scrollTop();
-        
     }
 
- 
-  
-   $(document).ready( function(){    
-	 
-           $('#message').keypress(function(event){
-		   var keycode =  event.keyCode  ;		            
+    $(document).ready(function() {    
+        $('#message').keypress(function(event) {
+            var keycode = event.keyCode;		            
 		  
-		       if(keycode == '13'){		    	  
-		                send(); 
-		       }  		 
-		            event.stopPropagation();  // 상위로 이벤트 전파 막음
-		        });
-       
-		        $('#sendBtn').click(function() { send(); });
-		        $('#enterBtn').click(function() { connect(); });
-		        $('#exitBtn').click(function() { disconnect(); });
-	   
-	   
-   });
+            if (keycode == '13') {		    	  
+                send(); 
+            }  		 
+            event.stopPropagation();  // 상위로 이벤트 전파 막음
+        });
+
+        $('#sendBtn').click(function() { send(); });
+        $('#enterBtn').click(function() { connect(); });
+        $('#exitBtn').click(function() { disconnect(); });
    
-   const swiper = new Swiper('.swiper', {
-		// Optional parameters
-		direction: 'horizontal',
-		loop: true,
-
-		// Navigation arrows
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-
-		// And if we need scrollbar
-		scrollbar: {
-			el: '.swiper-scrollbar',
-		},
-	});
-</script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    });
+</script>	
 <style>
 html{
 		position: relative;

@@ -27,8 +27,15 @@
             <version>2.9.6</version>
         </dependency>
 		
-		
-		
+		<!-- ojdbc6 -->
+      <!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
+      <dependency>
+         <groupId>com.oracle.database.jdbc</groupId>
+         <artifactId>ojdbc6</artifactId>
+         <version>11.2.0.4</version>
+      </dependency>
+
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -106,6 +113,7 @@
 		</dependency>
 				
 		<!-- Servlet -->
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>

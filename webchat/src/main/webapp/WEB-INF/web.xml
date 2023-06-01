@@ -25,6 +25,16 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<!--페이징 관련 서블렛임 돈 터치  --> 
+	<servlet>
+    <servlet-name>PageController</servlet-name>
+    <servlet-class>PageController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>PageController</servlet-name>
+    <url-pattern>/page1</url-pattern>
+</servlet-mapping>
+	
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
