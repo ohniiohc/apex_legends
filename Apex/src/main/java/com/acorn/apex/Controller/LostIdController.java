@@ -1,4 +1,4 @@
-package com.acorn.Apex.controller;
+package com.acorn.apex.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.acorn.Apex.Service.LostIdService;
+import com.acorn.apex.Model.LostIdService;
 
 @Controller
 public class LostIdController{

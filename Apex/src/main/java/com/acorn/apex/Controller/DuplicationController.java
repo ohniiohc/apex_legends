@@ -1,10 +1,10 @@
-package com.acorn.Apex.controller;
+package com.acorn.apex.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.acorn.Apex.Service.duplicationService;
+import com.acorn.apex.Model.duplicationService;
 
 @RestController
 public class DuplicationController {

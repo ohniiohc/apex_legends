@@ -1,4 +1,4 @@
-package com.acorn.Apex.controller;
+package com.acorn.apex.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
