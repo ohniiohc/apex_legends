@@ -13,9 +13,8 @@ public class ApexApiDto {
 	    private String rankName;
 	    private String rankImg;
 	    private String legendName;
-	    private List<LegendDataDTO> legendDataList;
-	    private String allchamp;
-	    
+	    private List<SelectDto> selecteddata;
+	    private List<LegendInfoDTO> legendInfo;
 		public String getName() {
 			return name;
 		}
@@ -64,31 +63,26 @@ public class ApexApiDto {
 		public void setLegendName(String legendName) {
 			this.legendName = legendName;
 		}
-		public List<LegendDataDTO> getLegendDataList() {
-			return legendDataList;
+		public List<SelectDto> getSelecteddata() {
+			return selecteddata;
 		}
-		public void setLegendDataList(List<LegendDataDTO> legendDataList) {
-			this.legendDataList = legendDataList;
+		public void setSelecteddata(List<SelectDto> selecteddata) {
+			this.selecteddata = selecteddata;
 		}
-		public String getAllchamp() {
-			return allchamp;
+		public List<LegendInfoDTO> getLegendInfo() {
+			return legendInfo;
 		}
-		public void setAllchamp(String allchamp) {
-			this.allchamp = allchamp;
+		public void setLegendInfo(List<LegendInfoDTO> legendInfo) {
+			this.legendInfo = legendInfo;
 		}
 		@Override
 		public String toString() {
-			return "ApexLegendsDTO [name=" + name + ", avatar=" + avatar + ", platform=" + platform + ", level=" + level
+			return "ApexApiDto [name=" + name + ", avatar=" + avatar + ", platform=" + platform + ", level=" + level
 					+ ", rankScore=" + rankScore + ", rankName=" + rankName + ", rankImg=" + rankImg + ", legendName="
-					+ legendName + ", legendDataList=" + legendDataList + ", allchamp=" + allchamp + "]";
-		}
-	
-		public ApexApiDto() {
-			super();
-			// TODO Auto-generated constructor stub
+					+ legendName + ", selecteddata=" + selecteddata + ", legendInfo=" + legendInfo + "]";
 		}
 		public ApexApiDto(String name, String avatar, String platform, int level, int rankScore, String rankName,
-				String rankImg, String legendName, List<LegendDataDTO> legendDataList, String allchamp) {
+				String rankImg, String legendName, List<SelectDto> selecteddata, List<LegendInfoDTO> legendInfo) {
 			super();
 			this.name = name;
 			this.avatar = avatar;
@@ -98,13 +92,14 @@ public class ApexApiDto {
 			this.rankName = rankName;
 			this.rankImg = rankImg;
 			this.legendName = legendName;
-			this.legendDataList = legendDataList;
-			this.allchamp = allchamp;
+			this.selecteddata = selecteddata;
+			this.legendInfo = legendInfo;
 		}
-	   
-	    
+		public ApexApiDto() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+
 	    
 		
-		
-	   
-	}
+}
