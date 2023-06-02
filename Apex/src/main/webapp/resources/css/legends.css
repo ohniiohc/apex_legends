@@ -24,6 +24,7 @@ section{
 	background-size: cover;
 }
 #section_gradient{
+	width: 100%;
 	height: 480px;
 	position: relative;
 	top: -96px;
@@ -40,7 +41,7 @@ section{
 #s_g_n_job,#s_g_n_name{
 	color: #F5F5F5;
 }
-#s_g_n_job{
+#s_g_n_job,.abil_desc{
 	font-size: 14px;
 	letter-spacing: 1px;
 }
@@ -190,7 +191,6 @@ section{
 }
 .abil_desc{
 	color: #F5F5F5;
-	font-size: 14px;
 }
 .abil_vid{
 	width: 640px;
