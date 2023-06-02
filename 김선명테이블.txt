@@ -1,0 +1,72 @@
+create table board(
+id
+작성자 닉네임
+작성시간
+추천수
+조회수
+title
+content
+);
+
+
+
+CREATE TABLE board (
+  postId VARCHAR2(50) PRIMARY KEY NOT NULL,
+  id VARCHAR2(50) NOT NULL,
+  writeDate DATE,
+  up INT,
+  views INT,
+  title VARCHAR2(30),
+  content CLOB
+);
+
+
+INSERT INTO board VALUES ('1', '1', '2023-06-01', 0, 0, '첫 번째 게시글', '안녕하세요. 첫 번째 게시글입니다.');
+INSERT INTO board VALUES ('2', '2', '2023-06-01', 0, 0, '두 번째 게시글', '안녕하세요. 두 번째 게시글입니다.');
+
+insert into board values('');
+
+<section>
+    <div class="titleline"></div>
+    <h2>${board.title}</h2><br>
+    <h4>${board.writeDate}</h4>
+    <div class="titleline"></div>
+    <p>${board.content}</p>
+    
+    <table>
+        <tr>
+            <th>추천 수</th>
+            <th>조회수</th>
+            <th>작성자 ID</th>
+        </tr>
+        <tr>
+            <td>${board.likes}</td>
+            <td>${board.views}</td>
+            <td>${board.author}</td>
+        </tr>
+    </table>
+
+    <img src="${board.image}" alt="Board Image">
+</section>
+
+
+public Board() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+CREATE TABLE boardwriting (
+  boardnumber NUMBER PRIMARY KEY,
+  title VARCHAR2(100) NOT NULL,
+  content CLOB NOT NULL,
+  id VARCHAR2(50) NOT NULL
+);
+
+CREATE SEQUENCE boardwriting_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER boardwriting_trigger
+BEFORE INSERT ON boardwriting
+FOR EACH ROW
+BEGIN
+  SELECT boardwriting_seq.NEXTVAL INTO :new.boardnumber FROM dual;
+END;
