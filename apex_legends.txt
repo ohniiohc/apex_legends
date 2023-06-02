@@ -1,1 +1,340 @@
 Acorn
+
+
+
+create table fuse_gg_legends(
+    id varchar2(12) not null primary key,
+    job varchar2(36) not null,
+	name varchar2(12) not null,
+	class varchar2(12) not null,
+    tac varchar2(24) not null,
+    pas varchar2(24) not null,
+    ult varchar2(24) not null,
+    tac_con varchar2(240) not null,
+    pas_con varchar2(240) not null,
+    ult_con varchar2(240) not null
+);
+
+
+insert into fuse_gg_legends values(
+    'bangalore',
+	'Professional Soldier',
+    'BANGALORE',
+    'assault',
+    'SMOKE LAUNCHER',
+    'DOUBLE TIME',
+    'ROLLING THUNDER',
+    'Fire a high-velocity smoke canister that explodes into a smoke wall on impact.',
+    'Taking fire while sprinting makes you move faster for a brief time.',
+    'Call in an artillery strike that slowly creeps across the landscape.'
+);
+insert into fuse_gg_legends values(
+    'revenant',
+	'Synthetic Nightmare',
+	'REVENANT',
+    'assault',
+    'SILENCE',
+    'STALKER',
+    'DEATH TOTEM',
+    'Throw a device that deals damage and disables enemy abilities for 15 seconds.',
+    'You crouch walk faster and can climb walls higher.',
+    'Drop a totem that protects users from death. Instead of getting killed or downed, you will return to the totem.'
+);
+insert into fuse_gg_legends values(
+    'fuse',
+	'Bombastic Explosives Expert',
+	'FUSE',
+    'assault',
+    'KNUCKLE CLUSTER',
+    'GRENADIER',
+    'THE MOTHERLODE',
+    'Launch a cluster bomb that continuously expels airburst explosives on impact.',
+    'Stack an extra grenade per inventory slot. Fire grenades farther, faster, and more accurately.',
+    'Launch a bombardment that encircles a target in a wall of flame.'
+);
+insert into fuse_gg_legends values(
+    'ash',
+	'Incisive Instigator',
+	'ASH',
+    'assault',
+    'ARC SNARE',
+    'MARKED FOR DEATH',
+    'PHASE BREACH',
+    'Throw a spinning snare that damages and tethers the first enemy that gets too close.',
+    'Ash''s map shows the location of recent deathboxes and marks surviving attackers.',
+    'Tear open a one-way portal to a targeted location.'
+);
+insert into fuse_gg_legends values(
+    'madmaggie',
+	'Rebel Warlord',
+	'MAD MAGGIE',
+    'assault',
+    'RIOT DRILL',
+    'WARLORD''S IRE',
+    'WRECKING BALL',
+    'Fire a drill that attaches to an obstacle and burns enemies on the other side.',
+    'Temporarily highlight enemies you''ve damaged. Move faster with shotguns.',
+    'Throw a ball that releases speed-boosting pads and detonates near enemies.'
+);
+insert into fuse_gg_legends values(
+    'ballistic',
+	'Refined Gunslinger',
+	'BALLISTIC',
+    'assault',
+    'WHISTLER',
+    'SLING',
+    'TEMPEST',
+    'Shoots a projectile that heats up an enemy''s gun as they shoot. Overheating causes damage. Hold the tactical to lock-on.',
+    'Store a third weapon in the sling. Access either via inventory or Character Utility Action. The sling weapon cannot take attachments.',
+    'When activated, nearby teammates get faster reloads, faster armed move speed, and infinite ammo. Ballistic''s sling weapon will be equipped and upgraded to gold.'
+);
+insert into fuse_gg_legends values(
+    'pathfinder',
+	'Forward Scout',
+	'PATHFINDER',
+    'skirmisher',
+    'GRAPPLING HOOK',
+    'INSIDER KNOWLEDGE',
+    'ZIPLINE GUN',
+    'Grapple to get to out-of-reach places quickly.',
+    'Scan a Care Package to reduce the cooldown of Zipline Gun Zipline Gun.',
+    'Create a zipline for everyone to use.'
+);
+insert into fuse_gg_legends values(
+    'wraith',
+	'Interdimensional Skirmisher',
+	'WRAITH',
+    'skirmisher',
+    'INTO THE VOID',
+    'VOICES FROM THE VOID',
+    'DIMENSIONAL RIFT',
+    'Reposition quickly through the safety of void space, avoiding all damage.',
+    'A voice warns you when danger approaches. As far as you can tell, it''s on your side.',
+    'Link two locations with portals for 45 seconds, allowing anyone to use them.'
+);
+insert into fuse_gg_legends values(
+    'octane',
+	'High-Speed Daredevil',
+	'OCTANE',
+    'skirmisher',
+    'STIM',
+    'SWIFT MEND',
+    'LAUNCH PAD',
+    'Increase walk speed by 30% and sprint speed by 40% for 6 seconds. Costs Health to use. Reduction to slows while active.',
+    'Automatically restores health over time.',
+    'Deploy a jump pad that catapults anyone through the air. Press the jump button to double jump.'
+);
+insert into fuse_gg_legends values(
+    'horizon',
+	'Gravitational Manipulator',
+	'HORIZON',
+    'skirmisher',
+    'GRAVITY LIFT',
+    'SPACEWALK',
+    'BLACK HOLE',
+    'Reverses the flow of gravity, lifting players upward and boosting them outward when they exit.',
+    'Increase air control and reduce fall impacts with Horizon''s custom spacesuit.',
+    'Deploy N.E.W.T. to create a micro black hole that pulls players in towards it.'
+);
+insert into fuse_gg_legends values(
+    'valkyrie',
+	'Winged Avenger',
+	'VALKYRIE',
+    'skirmisher',
+    'MISSILE SWARM',
+    'VTOL JETS',
+    'SKYWARD DIVE',
+    'Fire a swarm of mini-rockets that damage and disorient the enemy.',
+    'Press the jump key while in the air to engage jetpack. You can switch between hold and toggle mode in the options menu.',
+    'Press once to prepare for launch. Teammates can interact with Valkyrie to join the launch. Press again to launch into the air and skydive.'
+);
+insert into fuse_gg_legends values(
+    'bloodhound',
+	'Technological Tracker',
+	'BLOODHOUND',
+    'recon',
+    'EYE OF THE ALLFATHER',
+    'TRACKER',
+    'BEAST OF THE HUNT',
+    'Briefly reveal enemies, traps, and clues through all structures in front of you.',
+    'Foes leave behind clues for you to find. White Ravens may appear to guide you to battle and charge your abilities.',
+    'Transform into the ultimate hunter. Launches a White Raven and enhances senses to see cold tracks and move faster. Knockdowns extend duration.'
+);
+insert into fuse_gg_legends values(
+    'crypto',
+	'Surveillance Expert',
+	'CRYPTO',
+    'recon',
+    'SURVEILLANCE DRONE',
+    'NEUROLINK',
+    'DRONE EMP',
+    'Deploy an aerial camera drone that can remotely interact with Survey Beacon Survey Beacons, Respawn Beacon Respawn Beacons, and ally Banner cards.',
+    'Crypto and his teammates see what his Surveillance Drone detects up to a 30m distance.',
+    'Charge up an EMP from your drone. The blast deals 50 shield damage, slows players, and destroys traps.'
+);
+insert into fuse_gg_legends values(
+    'seer',
+	'Ambush Artist',
+	'SEER',
+    'recon',
+    'FOCUS OF ATTENTION',
+    'HEART SEEKER',
+    'EXHIBIT',
+    'Summon micro-drones to emit a delayed blast that goes through walls interrupting and revealing enemies.',
+    'Hear and visualize the heartbeats of enemies within 75m when aiming down sights.',
+    'Create a sphere of micro-drones that reveal the location of enemies moving quickly or firing their weapons within.'
+);
+insert into fuse_gg_legends values(
+    'vantage',
+	'Sniper Savant',
+	'VANTAGE',
+    'recon',
+    'ECHO RELOCATION',
+    'SPOTTER''S LENS',
+    'SNIPER''S MARK',
+    'Position your winged companion Echo and then Launch toward him. Must have line of sight for Echo to launch.',
+    'Aim down sights to scout with your eyepiece (unarmed or with mid- to long-range scopes) and use a bullet drop indicator to see where your shots will land.',
+    'Use your custom sniper rifle to mark enemy targets which applies a damage bonus for you and your team.'
+);
+insert into fuse_gg_legends values(
+    'gibraltar',
+	'Shielded Fortress',
+	'GIBRALTAR',
+    'support',
+    'DOME OF PROTECTION',
+    'GUN SHIELD',
+    'DEFENSIVE BOMBARDMENT',
+    'Blocks incoming and outgoing attacks.',
+    'Aiming down sights deploys a gun shield that blocks incoming fire.',
+    'Call in a concentrated mortar strike on a marked position.'
+);
+insert into fuse_gg_legends values(
+    'lifeline',
+	'Combat Medic',
+	'LIFELINE',
+    'support',
+    'D.O.C. HEAL DRONE',
+    'COMBAT REVIVE',
+    'CARE PACKAGE',
+    'The Drone Of Compassion (DOC) automatically heals those near it over time.',
+    'Deploy D.O.C to revive teammates, leaving Lifeline free to defend.',
+    'Call in a droppod full of high quality defensive gear.'
+);
+insert into fuse_gg_legends values(
+    'mirage',
+	'Holographic Trickster',
+	'MIRAGE',
+    'support',
+    'PSYCHE OUT',
+    'NOW YOU SEE ME...',
+    'LIFE OF THE PARTY',
+    'Send out a holographic decoy to confuse the enemy. Press ⧄ to control the decoy.',
+    'Automatically cloak when using Respawn Beacon Respawn Beacons and reviving teammates. Spawn a decoy and cloak when downed.',
+    'Mirage deploys a team of controllable decoys to distract enemies.'
+);
+insert into fuse_gg_legends values(
+    'loba',
+	'Translocating Thief',
+	'LOBA',
+    'support',
+    'BURGLAR''S BEST FRIEND',
+    'EYE FOR QUALITY',
+    'BLACK MARKET BOUTIQUE',
+    'Teleport to hard-to-reach places or escape trouble quickly by throwing your jump drive bracelet.',
+    'Nearby epic and legendary loot can be seen through walls. The range is the same as Black Market Boutique Black Market Boutique.',
+    'Place a portable device that allows you to teleport nearby loot to your inventory. Each friendly or enemy Legend can take up to two items.'
+);
+insert into fuse_gg_legends values(
+    'newcastle',
+	'Heroic Defender',
+	'NEWCASTLE',
+    'support',
+    'MOBILE SHIELD',
+    'RETRIEVE THE WOUNDED',
+    'CASTLE WALL',
+    'Throw a drone that projects a moveable energy shield.',
+    'Drag downed allies as you revive and protect them with your Revive Shield.',
+    'Leap to an ally or target area and slam down, creating a fortified stronghold.'
+);
+insert into fuse_gg_legends values(
+    'caustic',
+	'Toxic Trapper',
+	'CAUSTIC',
+    'controller',
+    'NOX GAS TRAP',
+    'NOX VISION',
+    'NOX GAS GRENADE',
+    'Place up to 6 canisters that release deadly Nox gas when shot or triggered by enemies.',
+    'You gain threat vision on enemies moving through your gas.',
+    'Blankets a large area in Nox gas.'
+);
+insert into fuse_gg_legends values(
+    'wattson',
+	'Static Defender',
+	'WATTSON',
+    'controller',
+    'PERIMETER SECURITY',
+    'SPARK OF GENIUS',
+    'INTERCEPTION PYLON',
+    'Create electrified fences by connecting nodes. Fences damage and slow enemies.',
+    'Ultimate Accelerants fully charge Wattson''s ultimate and she can carry more Ultimate Accelerants. Wattson slowly restores her shields over time.',
+    'Place an electrified pylon that destroys incoming ordnance and repairs damaged shields. Standing near Pylons boosts Wattson''s tactical recharge rate.'
+);
+insert into fuse_gg_legends values(
+	'rampart',
+	'Amped Modder',
+    'RAMPART',
+    'controller',
+    'AMPED COVER',
+    'MODDED LOADER',
+    'MOBILE MINIGUN "SHEILA"',
+    'Build a crouch-cover wall, which deploys a full-cover amped wall that blocks incoming shots and amps outgoing shots.',
+    'Increased magazine/heat capacity and faster reloads/recharge when using LMGs and the Minigun.',
+    'Wield a mobile minigun with a single high capacity magazine. Place it down for anyone to use as a stationary and reloadable turret.'
+);
+insert into fuse_gg_legends values(
+	'catalyst',
+	'Defensive Conjurer',
+    'CATALYST',
+    'controller',
+    'PIERCING SPIKES',
+    'BARRICADE',
+    'DARK VEIL',
+    'Throw out a patch of ferrofluid which turns in to spikes when enemies are near. Catalyst remains immune to enemy spikes.',
+    'Reinforce doors, strengthening them and locking them to enemies. Spaces where doors have been destroyed can also be reinforced.',
+    'Raise a permeable wall of ferrofluid. Enemies who walk through it will be slowed and partially blinded for a brief time.'
+);
+
+
+create table fuse_gg_maps(
+	id varchar2(24) not null primary key,
+	name varchar2(24) not null,
+	par varchar2(2048) not null
+);
+
+insert into fuse_gg_maps values(
+	'brokenmoon',
+	'BROKEN MOON',
+	'Boreas'' moon, Cleo, was once whole–until a meteor and a myth broke it apart. Unbeknownst to the peoples of Boreas, the meteor didn''t just split the moon and cause surface-level destruction, but also sent the entire planet on a path to destruction. It wasn''t until researchers discovered the link between the moon and an increase in devastating weather events that the nations of Boreas came together and promised to heal Cleo, naming their efforts Project Hope. What previously was an unoccupied satellite became a teeming colony of researchers, engineers, and builders. Workers mended divides, celestial rock became fields, and new technologies were born.<br/>However, long years and slow progress caused the peoples'' hearts and wallets to turn from Hope. This forced the Cleo Restoration Committee to privatize the moon for funding–with townhomes, shopping centers, and prestige burial plots added. Now, Cleo is a collection of public and private enterprises, including the Apex Games, all with the hope of saving Cleo and Boreas..
+'
+);
+insert into fuse_gg_maps values(
+	'kingscanyon',
+	'KINGS CANYON',
+	'Once a simple settlement on Solace, the island known as Kings Canyon didn''t thrive until the IMC chose it as a hub for research and development. It housed an airbase, a water treatment plant, and a plethora of other facilities to support IMC operations. To blow off steam, the IMC soldiers stationed here would compete in a gladiator-esque combat arena they nicknamed ‘Thunderdome'', the predecessor of the Apex Games. Secretly, it was also home to underground facilities that hid the IMC''s more radical operations–like a highly classified project on Phase tech and a program to create a simulacra army powered by a single brain.<br/>In the years since the IMC left the Outlands, the island has undergone many changes due to Syndicate construction projects and freak incidents. The most notable being the destruction of the Repulsor Tower, an underground explosion that sank Thunderdome and Skulltown, and a ship crash that obliterated the northern edge of Kings Canyon. Now, the Syndicate is further altering the landscape with terraforming projects to its caves, and salvage operations for Relic (the area formerly known as Skull Town). But no matter how it changes, Kings Canyon will always be the first home of the Apex Games.'
+);
+insert into fuse_gg_maps values(
+	'worldsedge',
+	'WORLD''S EDGE',
+	'A harsh planet beset by intense volcanic activity, Talos was once deemed uninhabitable until a rare mineral compound was found beneath its surface. The IMC built heat-reducing towers to super-cool Talos''s natural lava flows and allow resource extraction—the facility that housed them was optimistically dubbed “New Dawn”, and the town of World''s Edge grew around it. Then, an explosion in one of the towers covered the surrounding area in a lethal flash freeze. World''s Edge was abandoned, save for a small community of hunters who once spurned technology (led by local hero, Bloodhound).<br/>Over time, the risks were forgotten and World''s Edge drew the attention of two new groups who sought to exploit the planet''s energy-rich soil: the Mercenary Syndicate and Hammond Robotics. Due to both groups'' experimental technologies, World''s Edge became unstable and the community of hunters were forced to relocate. In an attempt to divert from controversy, the Apex Games opened a museum dedicated to celebrating the Thunderdome, the Apex Games, and the people who made them great. Today, World''s Edge continues to be the second home of the Apex Games and a key operational center for Hammond Robotics.'
+);
+insert into fuse_gg_maps values(
+	'olympus',
+	'OLYMPUS',
+	'Once a city built on dreams, Olympus was a utopia floating in clouds above Psamathe. Here, the brightest minds in the Outlands could gather and exchange ideas, leading to breakthroughs in the sciences and arts. However, an accident in an experimental research facility led to the creation of the Phase Rift (a massive bubble of Phase energy), and the Outlands'' best and brightest quickly abandoned the city. With the support of the Mercenary Syndicate, Hammond Robotics stepped in to transform Olympus into a new stage for the Apex Games.<br/>Since then, a ship from the Icarus Fleet brought a deadly virus along with powerful Medusa Vines to Olympus. While the virus was cured, the vines remained and kept the ship docked to the city. Additionally, a disastrous attempt to transport Olympus to a new location using phase technology sent the city into a tailspin, its structures being littered across the terrain as it stabilized. The changes shook up the Games, creating new challenges for participating Legends.'
+);
+insert into fuse_gg_maps values(
+	'stormpoint',
+	'STORM POINT',
+	'This deserted island wasn''t always so deserted. Beautiful and teeming with resources, Storm Point was the prime candidate for early IMC expeditions to planet Gaea. However, IMC settlement teams quickly discovered that intense tropical storms plague the island and a permanent settlement was established nearby–the city of Suotamo. As the city grew, the IMC built power-generating storm catchers on Storm Point to keep up with their energy needs.<br/>When the IMC pulled out of the Outlands, the storm catchers fell into disrepair. Left with only one functional storm catcher and few resources, the naive citizens of Storm Point decided to pull it down for parts. The absence of the storm catcher exacerbated the surrounding storms, causing them to overtake the island. After the Syndicate Treaty brought peace and order to the Outlands, many of the storm catchers were restored and a survey of the area revealed previously unknown settlements but no survivors. The island was then abandoned for many years, save for the occasional scavenger or pirate, until it caught the eye of the Mercenary Syndicate.<br/>They knew there was old IMC tech and dangerous wildlife on Storm Point, but they didn''t realize how deadly the island was until the rumblings of a colossal sea beast woke the old IMC defenses. Now, Spectres roam fully-stocked IMC Armories, giving Apex Games competitors a new challenge.'
+);
