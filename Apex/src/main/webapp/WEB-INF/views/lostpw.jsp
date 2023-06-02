@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="/header.jsp"%>
 <link rel='stylesheet' href="resources/lost2.css">
 <script>
 function findpw() {
@@ -20,6 +19,7 @@ function findpw() {
 </script>
 </head>
 <body>
+<%@ include file="/header.jsp"%>
     <form action="<%=request.getContextPath()%>/lostpw2" name="lostpwform" method="post">
       <div id="lost_form">
         <div id="first">
@@ -50,6 +50,7 @@ function findpw() {
         </table>
       </div>
     </form>
+        <%@ include file="/footer.jsp"%>
   </body>
-    <%@ include file="/footer.jsp"%>
+
 </html>

@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="/header.jsp"%>
 <link rel='stylesheet' href="resources/lost.css">
 <script>
 function gotologinpage() {
@@ -19,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </head>
 <body>
+<%@ include file="/header.jsp"%>
   <input type="hidden" id="findid" value="${findid}">
 
     <form action="<%=request.getContextPath()%>/lostid2" name="lostid" method="post">
@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </table>
       </div>
     </form>
+      <%@ include file="/footer.jsp"%>
   </body>
-  <%@ include file="/footer.jsp"%>
+
 </html>

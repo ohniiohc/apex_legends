@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,6 +55,7 @@
 </script>
 </head>
 <body>
+<%@ include file="/header.jsp"%>
 	<input type="hidden" id="userNumber" value="${userNumber}">
 	<section>
 		<form action="<%=request.getContextPath()%>/signup2" name="regform"
@@ -173,6 +173,7 @@
 			}
 		</script>
 	</section>
+	<%@ include file="/footer.jsp"%>
 </body>
-<%@ include file="/footer.jsp"%>
+
 </html>
