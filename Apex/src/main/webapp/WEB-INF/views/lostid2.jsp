@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="/header.jsp"%>
 <link rel='stylesheet' href="resources/lost.css">
 <script>
 function gotologinpage() {
@@ -52,5 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </form>
   </body>
-  <%@ include file="/footer.jsp"%>
 </html>
