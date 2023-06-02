@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.acorn.apex.Model.TmpDTO" %>
-<%@ page import="com.acorn.apex.Model.TmpCommentDTO" %>
-<% String rootPath = request.getContextPath(); %>
+<%@ page import="com.acorn.apex.tmp.BoardDTO" %>
+<%@ page import="com.acorn.apex.tmp.CommentDTO" %>
+<%
+String rootPath = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +65,9 @@
 </script>
 </head>
 <body>
-	<% TmpDTO board=(TmpDTO)request.getAttribute("board"); %>
+	<%
+	BoardDTO board=(BoardDTO)request.getAttribute("board");
+	%>
 	<table>
 		<tr>
 			<td>			
@@ -98,8 +102,12 @@
 		</tr>
 	</table>
 	<table id="comment_table">
-		<% ArrayList<TmpCommentDTO> colist=(ArrayList<TmpCommentDTO>)request.getAttribute("colist"); %>
-		<% for(TmpCommentDTO item:colist){ %>
+		<%
+		ArrayList<CommentDTO> colist=(ArrayList<CommentDTO>)request.getAttribute("colist");
+		%>
+		<%
+		for(CommentDTO item:colist){
+		%>
 		<tr>
 			<td><%=item.getU_id()%></td>
 			<td><%=item.getC_con()%></td>
