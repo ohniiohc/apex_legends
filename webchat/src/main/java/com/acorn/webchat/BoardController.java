@@ -1,5 +1,7 @@
 package com.acorn.webchat;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,14 +15,20 @@ public class BoardController {
 	
 	
     @GetMapping("/board")
-    public String showBoard(Model model) {
+    public String showBoard(Model model,long id) {
         Board board = new Board();
         board.setTitle("Sample Title");
         board.setContent("Sample Content");
-        board.setImage("sample.jpg");
+        board.setId("Sample ID");
+        board.setPostId("Post ID");
+        board.setUp(10);
+        board.setViews(100);
+        board.setWriteDate(new Date());
+        
+     
 
         
-        Board  realBoard  = boardDAO.getBoardById(1l) ;      // model.addAttribute("board", board);
+        Board  realBoard  = boardDAO.getBoardById(id) ;      // model.addAttribute("board", board);
         System.out.println(realBoard) ;
         
         model.addAttribute("board", realBoard);

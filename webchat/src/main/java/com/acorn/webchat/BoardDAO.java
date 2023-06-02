@@ -51,9 +51,9 @@ public class BoardDAO {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     Board board = new Board();
-                    board.setTitle(rs.getString(1));
-                    board.setContent(rs.getString(2));
-                    board.setImage(rs.getString(3));
+                    board.setTitle(rs.getString("title"));
+                    board.setContent(rs.getString("content"));
+                  
 
                     return board;
                 }
@@ -80,7 +80,11 @@ public class BoardDAO {
                     Board board = new Board();
                     board.setTitle(rs.getString("title"));
                     board.setContent(rs.getString("content"));
-                    board.setImage(rs.getString("image"));
+                    board.setId(rs.getString("Id"));
+                    board.setPostId(rs.getString("postId"));
+                    board.setUp(rs.getInt(0));
+                    board.setViews(rs.getInt(0));
+                    board.setWriteDate(rs.getDate(00-00-00));
 
                     boards.add(board);
                 }
@@ -111,11 +115,32 @@ public class BoardDAO {
     
     
     
+    
+    
+    
     public static void main( String[]  args) {
     	
     	BoardDAO  dao = new BoardDAO();
-    	Board board  =dao.getBoardById(1l);
+    	Board board  =dao.getBoardById(2l);   // 1l 
     	System.out.println(  board);
+    	
+    	/*
+    	int  a=2100000000;   // 2200000000    	
+    	long  b = 3;      // 큰방 = 작은값     	
+    	
+    	long c  = 2200000000l;   //   상수값도 크기정보 갖음 , 정수값의 기본크기  int  
+    	                        //   long형 상수     숫자l
+    	                       
+    	*/
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
     	
     }
 }

@@ -341,9 +341,6 @@ top: 1074px;
 
 border: 1px solid #9e9e9e;
 	}
-	.titleline{
-	border:1px solid #9e9e9e;
-	}
 	.footertext {
 		position: absolute;
 		top:1100px;
@@ -364,10 +361,6 @@ border: 1px solid #9e9e9e;
 	.issueButton:focus{ 	
     outline:none !important;
 box-shadow:none !important;
-    }
-    .databox{
-    display:flex;
-    
     }
 </style>
 </head>
@@ -394,18 +387,15 @@ box-shadow:none !important;
 	<section>
 	<div class="titleline"></div>
 	 <h2>${board.title}</h2>
-	 <div class="databox">
-	 <h4>작성일: ${board.writeDate}</h4>
-	 <h4>추천수:${board.up} </h4>
-	 <h4>조회수:${board.views}</h4>
-	 </div>
+	 <h4>${board.writeDate}</h4>
+	 <h4>${board.up} </h4>
+	 <h4>${board.views}</h4>
 	 <div class="titleline"></div>
      <p>${board.content}</p>
     
    
 	</section>
 </div>
-
 <!-- box1끝 -->
 
 <div class="box2">
