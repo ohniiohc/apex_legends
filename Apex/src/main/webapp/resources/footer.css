@@ -1,0 +1,18 @@
+footer{
+    height: 180px;
+    padding-top: 36px;
+    font-family: 'YdestreetB';
+    color: #445C76;
+    background-color: #0B1422;
+}
+#footer_left{
+    padding: 36px;
+    border-top: 1px solid #445C76;
+}
+#f_l_title{
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+#f_l_content{
+    font-size: 10px;
+}

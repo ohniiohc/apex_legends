@@ -1,0 +1,116 @@
+body {
+	
+}
+
+#login_form {
+	border: 1px solid black;
+	width: 600px;
+	margin: 0 auto;
+	background-image: url(img/backgroundimg.jpg);
+}
+
+#logo {
+	width: 231px;
+	height: 148px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#id_put {
+	width: 395px;
+	height: 62px;
+	background: #ffffff;
+	/* border-radius: 35px; */
+	margin: 0 auto;
+	display: block;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-color: #27222F;
+}
+
+#pw_put {
+	width: 395px;
+	height: 62.4px;
+	background: #ffffff;
+	/* border-radius: 35px; */
+	transform: rotate(-0.14deg);
+	margin: 0 auto;
+	display: block;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-color: #27222F;
+}
+
+input::placeholder {
+	text-align: center;
+	font-size: 20px;
+}
+
+#login_button {
+	width: 400px;
+	height: 62.4px;
+	background: #ffffff;
+	/* border-radius: 80px; */
+	transform: rotate(-0.14deg);
+	margin: 0 auto;
+	display: block;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	background-color: #405A79;
+	font-size: 20px;
+	color: white;
+}
+
+#lost_id {
+	width: 395px;
+	height: 39px;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	color: #405a79;
+	margin: 0 auto;
+	display: block;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	
+	cursor: pointer;
+}
+
+#lost_pw {
+	width: 395px;
+	height: 39px;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	color: #405a79;
+	margin: 0 auto;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	
+	cursor: pointer;
+}
+
+#make_id {
+	width: 400px;
+	height: 62.4px;
+	background: #ffffff;
+	/* border-radius: 80px; */
+	transform: rotate(-0.14deg);
+	margin: 0 auto;
+	display: block;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 20px;
+	background-color: #27222F;
+	color: white;
+	
+	text-align: center;
+}

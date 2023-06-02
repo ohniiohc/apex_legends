@@ -1,0 +1,71 @@
+body {
+	
+}
+
+#signup_form {
+	border: 1px solid black;
+	width: 600px;
+	margin: 0 auto;
+	background-image: url(img/backgroundimg.jpg);
+}
+
+#sign_up {
+	color: white;
+	width: 300px;
+	font-size: 45px;
+	margin: 0 auto;
+	margin-top: 45px;
+	text-align: center;
+}
+
+#logo {
+	width: 231px;
+	height: 148px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+table {
+	color: white;
+	margin: 0 auto;
+	margin-top: 30px;
+	border-spacing: 15px;
+	font-size: 20px;
+}
+
+tr {
+	text-align: center;
+	margin-top: 220px;
+}
+
+td {
+	width: 100px;
+	height: 45px;
+}
+
+button {
+	width: 100px;
+	height: 33px;
+	color: white;
+	background-color: #405A79;
+	font-size: 20px;
+}
+
+#id_check {
+	width: 86px;
+	height: 33px;
+	color: white;
+	background-color: #405A79;
+	font-size: 17px;
+}
+
+.input {
+	width: 244px;
+	height: 37px;
+	background: #27222F;
+}
+
+input {
+	color: white;
+}
