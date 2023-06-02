@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="/header.jsp"%>
 <link rel='stylesheet' href="resources/lost2.css">
 <script>
 function findpw() {
@@ -51,5 +50,4 @@ function findpw() {
       </div>
     </form>
   </body>
-    <%@ include file="/footer.jsp"%>
 </html>
