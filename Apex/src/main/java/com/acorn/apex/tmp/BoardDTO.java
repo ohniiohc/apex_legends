@@ -1,6 +1,6 @@
-package com.acorn.apex.Model;
+package com.acorn.apex.tmp;
 
-public class TmpDTO {
+public class BoardDTO {
 	
 	String b_id;
 	String u_id;
@@ -39,16 +39,16 @@ public class TmpDTO {
 		this.r_cnt = r_cnt;
 	}
 	
-	public TmpDTO() {
+	public BoardDTO() {
 		// TODO Auto-generated constructor stub
 	}
-	public TmpDTO(String b_id, String u_id, String b_title) {
+	public BoardDTO(String b_id, String u_id, String b_title) {
 		super();
 		this.b_id = b_id;
 		this.u_id = u_id;
 		this.b_title = b_title;
 	}
-	public TmpDTO(String b_id, String u_id, String b_title, String b_con, String r_cnt) {
+	public BoardDTO(String b_id, String u_id, String b_title, String b_con, String r_cnt) {
 		super();
 		this.b_id = b_id;
 		this.u_id = u_id;

@@ -1,4 +1,4 @@
-package com.acorn.apex.Model;
+package com.acorn.apex.tmp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,15 +17,15 @@ public class TmpDAO {
 	@Autowired
 	DataSource ds;
 	
-	public ArrayList<TmpDTO> selectList() {
-		ArrayList<TmpDTO> list=new ArrayList<>();
+	public ArrayList<BoardDTO> selectList() {
+		ArrayList<BoardDTO> list=new ArrayList<>();
 		try {
 			Connection con=ds.getConnection();
 			String sql="select b_id,u_id,b_title from board_tmp_230601";
 			PreparedStatement pst=con.prepareStatement(sql);
 			ResultSet rs=pst.executeQuery();
 			while(rs.next()) {
-				list.add(new TmpDTO(rs.getString(1), rs.getString(2), rs.getString(3)));
+				list.add(new BoardDTO(rs.getString(1), rs.getString(2), rs.getString(3)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -35,8 +35,8 @@ public class TmpDAO {
 		return list;
 	}
 	
-	public TmpDTO selectboard(String b_id){
-		TmpDTO board=new TmpDTO();
+	public BoardDTO selectboard(String b_id){
+		BoardDTO board=new BoardDTO();
 		try {
 			Connection con=ds.getConnection();
 			String sql="select b.b_id,b.u_id,b.b_title,b.b_con,count(r.u_id) ";
@@ -62,8 +62,8 @@ public class TmpDAO {
 		return board;
 	}
 	
-	public ArrayList<TmpCommentDTO> selectcomment(String b_id){
-		ArrayList<TmpCommentDTO> colist=new ArrayList<TmpCommentDTO>();
+	public ArrayList<CommentDTO> selectcomment(String b_id){
+		ArrayList<CommentDTO> colist=new ArrayList<CommentDTO>();
 		try {
 			Connection con=ds.getConnection();
 			String sql="select c_id,c_con,u_id,b_id from comment_tmp_230601 where b_id=?";
@@ -71,7 +71,7 @@ public class TmpDAO {
 			pst.setString(1, b_id);
 			ResultSet rs=pst.executeQuery();
 			while(rs.next()) {
-				colist.add(new TmpCommentDTO(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4)));
+				colist.add(new CommentDTO(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -150,4 +150,21 @@ public class TmpDAO {
 		
 		return r_cnt;
 	}
+	
+	public void deletecomment(String c_con,String u_id,String b_id){
+		
+		try {
+			Connection con=ds.getConnection();
+			String sql="insert into comment_tmp_230601 values('c' || TO_CHAR(comment_seq_tmp.NEXTVAL, 'FM000'),?,?,?)";
+			PreparedStatement pst=con.prepareStatement(sql);
+			pst.setString(1, c_con);
+			pst.setString(2, u_id);
+			pst.setString(3, b_id);
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }

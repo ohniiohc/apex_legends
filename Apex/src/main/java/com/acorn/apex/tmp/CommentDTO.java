@@ -1,6 +1,6 @@
-package com.acorn.apex.Model;
+package com.acorn.apex.tmp;
 
-public class TmpCommentDTO {
+public class CommentDTO {
 	
 	String c_id;
     String c_con;
@@ -32,10 +32,10 @@ public class TmpCommentDTO {
 		this.b_id = b_id;
 	}
 	
-	public TmpCommentDTO() {
+	public CommentDTO() {
 		// TODO Auto-generated constructor stub
 	}
-	public TmpCommentDTO(String c_id, String c_con, String u_id, String b_id) {
+	public CommentDTO(String c_id, String c_con, String u_id, String b_id) {
 		super();
 		this.c_id = c_id;
 		this.c_con = c_con;
