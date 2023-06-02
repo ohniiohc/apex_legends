@@ -1,4 +1,4 @@
-package com.acorn.Apex.Dao;
+package com.acorn.apex.Model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

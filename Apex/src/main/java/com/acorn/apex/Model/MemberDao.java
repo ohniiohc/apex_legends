@@ -1,4 +1,4 @@
-package com.acorn.Apex.Dao;
+package com.acorn.apex.Model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.stereotype.Component;
-
-import com.acorn.Apex.Dto.MemberDto;
 
 @Component
 public class MemberDao {

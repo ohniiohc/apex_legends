@@ -1,4 +1,4 @@
-package com.acorn.Apex.Dto;
+package com.acorn.apex.Model;
 
 public class MemberDto {
 	String user_number;

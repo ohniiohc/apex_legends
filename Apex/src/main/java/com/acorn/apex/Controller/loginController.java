@@ -1,4 +1,4 @@
-package com.acorn.Apex.controller;
+package com.acorn.apex.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.acorn.Apex.Service.LoginService;
-import com.acorn.Apex.Service.duplicationService;
+import com.acorn.apex.Model.LoginService;
+import com.acorn.apex.Model.duplicationService;
  
 
 @Controller

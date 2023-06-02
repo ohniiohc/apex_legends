@@ -1,9 +1,7 @@
-package com.acorn.Apex.Service;
+package com.acorn.apex.Model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.acorn.Apex.Dao.LostIdDao;
 
 @Component
 public class LostIdService {

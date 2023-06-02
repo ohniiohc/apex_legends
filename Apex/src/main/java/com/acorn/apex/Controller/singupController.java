@@ -1,4 +1,4 @@
-package com.acorn.Apex.controller;
+package com.acorn.apex.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.acorn.Apex.Dto.MemberDto;
-import com.acorn.Apex.Service.MemberService;
+import com.acorn.apex.Model.MemberDto;
+import com.acorn.apex.Model.MemberService;
 
 @Controller
 public class singupController{
