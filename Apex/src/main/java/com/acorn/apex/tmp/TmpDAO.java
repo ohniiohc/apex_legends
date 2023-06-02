@@ -150,4 +150,21 @@ public class TmpDAO {
 		
 		return r_cnt;
 	}
+	
+	public void deletecomment(String c_con,String u_id,String b_id){
+		
+		try {
+			Connection con=ds.getConnection();
+			String sql="insert into comment_tmp_230601 values('c' || TO_CHAR(comment_seq_tmp.NEXTVAL, 'FM000'),?,?,?)";
+			PreparedStatement pst=con.prepareStatement(sql);
+			pst.setString(1, c_con);
+			pst.setString(2, u_id);
+			pst.setString(3, b_id);
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }

@@ -12,6 +12,12 @@ String rootPath = request.getContextPath();
 <title>Insert title here</title>
 </head>
 <body>
+	<c:if test="${sessionId == null}">
+		<a href='<c:url value="/tlogin" />'>로그인</a>
+	</c:if>
+	<c:if test="${sessionId != null}">
+		<a href='<c:url value="/tlogout" />'>로그아웃</a>
+	</c:if>
 	<table>
 		<tr>
 			<td>제목</td>
