@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="/header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,6 +82,7 @@
 </script>
 </head>
 <body>
+<%@ include file="/header.jsp"%>
 	<input type="hidden" id="idfalse" value="${idfalse}">
 	<input type="hidden" id="loginsuccess" value="${loginsuccess}">
 	<input type="hidden" id="loginfalse" value="${loginfalse}">
@@ -100,6 +100,6 @@
 			<input id="make_id" type="button" value="계정 생성" onclick="maketheid()">
 		</div>
 	</form>
-</body>
 <%@ include file="/footer.jsp"%>
+</body>
 </html>
