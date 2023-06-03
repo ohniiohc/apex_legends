@@ -41,8 +41,8 @@
 				<img id="s_w_l_logo" src="<c:url value='resources/images/icon/apex_txtlogo.svg'/>" alt="">
 			</div>
 			<div id="section_wrap_search">
-				<form id="s_w_s_form" name="frm" action="" method="post">
-					<input id="s_w_s_f_input" type="text" placeholder="UID">
+				<form id="s_w_s_form" name="frm" action="<c:url value='/getPlayerInfo'/>" method="get">
+					<input id="s_w_s_f_input" type="text" name="name" placeholder="UID">
 					<button id="s_w_s_f_button"></button>
 				</form>
 			</div>
