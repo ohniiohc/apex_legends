@@ -23,13 +23,18 @@
 	margin-right: 36px;
 }
 .map{
+	width: 144px;
+	height: 144px;
+	box-sizing: border-box;
 	border-top: 4px solid #DA292A;
 	margin-left: -12px;
-	height: 144px;
-	width: 144px;
 	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-	background: center;
-	background-size: cover;
+	background-position: 50% 100%;
+	background-size: auto 144px;
+}
+.map:hover{
+	cursor: pointer;
+	border-top: 4px solid #27CD66;
 }
 #section_content{
 	height: 240px;

@@ -99,6 +99,7 @@ section{
 }
 .legends_profile:hover{
 	cursor: pointer;
+	border-top: 4px solid #27CD66;
 }
 .legends_profile:first-child,.legends_profile:last-child{
 	margin: 0;

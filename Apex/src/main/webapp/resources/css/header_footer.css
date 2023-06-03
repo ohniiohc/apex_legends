@@ -63,15 +63,19 @@ footer{
     color: #445C76;
     background-color: #0B1422;
 }
-#footer_left{
+#footer_wrap{
     padding: 36px;
     border-top: 1px solid #445C76;
 }
-#f_l_title{
+#f_w_title,#f_w_content{
+    width: 1440px;
+	margin: 0 auto;
+}
+#f_w_title{
     font-size: 14px;
     margin-bottom: 12px;
 }
-#f_l_content{
+#f_w_content{
     font-size: 10px;
 }
 /* ------------------------------footer_end------------------------------ */
