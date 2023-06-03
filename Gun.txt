@@ -1,0 +1,229 @@
+CREATE SEQUENCE WeaponsSeq;
+
+CREATE SEQUENCE AmmoTypeseq;
+
+CREATE SEQUENCE modeTypeseq;
+
+CREATE SEQUENCE AttachmentSlotsseq;
+
+
+
+CREATE TABLE Weapons (
+    id NUMBER(30) PRIMARY KEY,
+    name VARCHAR2(255) Unique,
+    type VARCHAR2(255) ,
+    img varchar2(255),
+    body VARCHAR2(255),
+    head VARCHAR2(255),
+    legs VARCHAR2(255),
+    rpm VARCHAR2(255),
+    dps varchar(255),
+    magazine VARCHAR2(38),
+    tac VARCHAR2(255),
+    Full VARCHAR2(255)
+);
+
+--ar
+insert into Weapons values(WeaponsSeq.nextval,'R-301Carbine','AssaultRifle','/resources/images/ApexGuns/R-301Carbine.svg','13','23(1.75x)','10(0.75x)','810','176','18/20/25/28','2.4/2.32/2.24/2.16','3.2/3.09/2.99/2.88');
+insert into Weapons(id,name,type,img,body,head,legs,rpm,dps,magazine,full) values(WeaponsSeq.nextval,'NemesisBurstAR','AssaultRifle','/resources/images/ApexGuns/NemesisBurstAR.svg','17','30 (1.75×)','13 (0.75×)','637~692','180-196','20/24/28/32','2.7/2.61/2.52/2.43');
+insert into Weapons values(WeaponsSeq.nextval,'HemlokBurstAR','AssaultRifle','/resources/images/ApexGuns/HemlokBurstAR.svg','23','40(1.8×)','17(0.75×)','414','159','30/39','2.16/1.75','2.57');
+insert into Weapons(id,name,type,img,body,head,legs,rpm,dps,magazine,full) values(WeaponsSeq.nextval,'HAVOCRifle','AssaultRifle','/resources/images/ApexGuns/HAVOCRifle.svg','18/17','32(1.75×)/30(1.75x)','15(0.85×)/14(0.85x)','672','202/190','24/28/32/36','3.2/3.09/2.99/2.88');
+insert into Weapons values(WeaponsSeq.nextval,'VK-47Flatline','AssaultRifle','/resources/images/ApexGuns/VK-47Flatline.svg','18','32(1.75×)','14(0.75×)','600','180','20/25/28/30','2.4/2.32/2.24/2.16','3.1/3/2.89/2.79');
+
+
+--smg
+insert into Weapons values(WeaponsSeq.nextval,'AlternatorSMG','SMG','/resources/images/ApexGuns/AlternatorSMG.svg','16','24(1.5×)','13(0.8×)','600','160','19/22/25/27','1.9/1.84/1.77/1.71','2.23/2.16/2.08/2.01');
+insert into Weapons values(WeaponsSeq.nextval,'ProwlerBurstPDW','SMG','/resources/images/ApexGuns/ProwlerBurstPDW.svg','15','22(1.5×)','12(0.8×)','697','174','20/25/30/35','2/1.93/1.87/1.8','2.6/2.51/2.43/2.34');
+insert into Weapons values(WeaponsSeq.nextval,'R-99SMG','SMG','/resources/images/ApexGuns/R-99SMG.svg','12','18(1.5×)','10(0.8×)','1080','216','19/21/24/27','1.8/1.74/1.68/1.62','2.45/2.37/2.29/2.21');
+insert into Weapons values(WeaponsSeq.nextval,'VoltSMG','SMG','/resources/images/ApexGuns/VoltSMG.svg','15','23(1.5×)','12(0.8×)','720','180','19/21/23/26','1.44/1.39/1.34/1.3','2.03/1.96/1.89/1.83');
+insert into Weapons values(WeaponsSeq.nextval,'C.A.R.SMG','SMG','/resources/images/ApexGuns/C.A.R.SMG.svg','13','20(1.5×)','10(0.8×)','930','202','19/21/23/26','1.7/1.64/1.59/1.53','2.13/2.06/1.99/1.92');
+
+--LMG
+
+insert into Weapons values(WeaponsSeq.nextval,'DevotionLMG','LMG','/resources/images/ApexGuns/DevotionLMG.svg','15/14','23(1.5×)/21(1.5×)','13(0.85×)/12(0.85×)','300-900/408-900','75-225/95-210','36/40/44/48','2.8/2.71/2.61/2.52','3.63/3.51/3.39/3.27');
+insert into Weapons values(WeaponsSeq.nextval,'L-STAREMG','LMG','/resources/images/ApexGuns/L-STAREMG.svg','16/25','24(1.5×)/38(1.5×)','14(0.85×)/21(0.85×)','600','160','∞'    ,null,'2.21');
+insert into Weapons values(WeaponsSeq.nextval,'M600Spitfire','LMG','/resources/images/ApexGuns/M600Spitfire.svg','18','27(1.5×)','15(0.85×)','540','162','35/40/45/50','3.4/3.29/3.17/3.06','4.2/4.06/3.92/3.78');
+insert into Weapons values(WeaponsSeq.nextval,'RampageLMG','LMG','/resources/images/ApexGuns/RampageLMG.svg','26','39(1.5×)','22(0.85×)','300/390','130/169','28/32/36/40','3.1/3/2.89/2.79','4/3.87/3.73/3.6');
+
+-- Marksman
+insert into Weapons values(WeaponsSeq.nextval,'G7Scout','Marksman','/resources/images/ApexGuns/G7Scout.svg','32','56(1.75×)','24(0.75×)','240/253','128/135','10/15/18/20','2.16/2.09/2.02/1.94','2.7/2.61/2.52/2.43');
+insert into Weapons values(WeaponsSeq.nextval,'TripleTake','Marksman','/resources/images/ApexGuns/TripleTake.svg','21×3','37×3(1.75×)','19×3(0.9×)','81','85','6/7/8/10','2.34/2.26/2.18/2.11','3.06/2.96/2.85/2.75');
+insert into Weapons values(WeaponsSeq.nextval,'30-30Repeater','Marksman','/resources/images/ApexGuns/30-30Repeater.svg','42~57','74~100(1.75×)/88-120(2.1×)','36~48(0.85×)','139','97','6/8/10/12','Segmented','Segmented');
+insert into Weapons values(WeaponsSeq.nextval,'BocekCompoundBow','Marksman','/resources/images/ApexGuns/BocekCompoundBow.svg','25-70/35-84','31-122(1.25×)-(1.75×)/42-105(1.25×)','20-63(0.8×)-(0.9×)/28-84(0.8x)-(1×)','180-92','75-107/105-129','∞',null,null);
+-- Sniper 
+insert into Weapons values(WeaponsSeq.nextval,'ChargeRifle','Sniper','/resources/images/ApexGuns/ChargeRifle.svg','3×15+45','4×15+56(1.25×)','3×15+45','26','39','6(3shots)','4/3.87/3.73/3.6','5.1/4.93/4.76/4.59');
+insert into Weapons values(WeaponsSeq.nextval,'LongbowDMR','Sniper','/resources/images/ApexGuns/LongbowDMR.svg','55','118(2.15×)/138(2.5×)','44(0.8×)','78','72','6/8/10/12','2.66/2.57/2.48/2.39','3.66/3.54/3.41/3.29');
+insert into Weapons values(WeaponsSeq.nextval,'Kraber.50-CalSniper','Sniper','/resources/images/ApexGuns/Kraber.50-CalSniper.svg','140','280(2×)','112(0.8×)','25','58','4','3.2','4.3');
+insert into Weapons values(WeaponsSeq.nextval,'Sentinel','Sniper','/resources/images/ApexGuns/Sentinel.svg','70/88','140(2×)/176(2×)','63(0.9×)/79(0.9×)','31-38','36-45/44-58','4/5/6/7','2.5/2.42/2.33/2.25','3.6/3.48/3.36/3.24');
+--Shotguns
+insert into Weapons values(WeaponsSeq.nextval,'EVA-8Auto','Shotgun','/resources/images/ApexGuns/EVA-8Auto.svg','7×8','9×8(1.25×)','7×8','138/152/166/179','129/142/155/167','8','2.75/2.65/2.56/2.475','3.0/2.9/2.79/2.7');
+insert into Weapons values(WeaponsSeq.nextval,'MastiffShotgun','Shotgun','/resources/images/ApexGuns/MastiffShotgun.svg','11×8','14×8(1.25×)','11×8','66/73/76/79','97/107/111/116','5','Segmented','Segmented');
+insert into Weapons values(WeaponsSeq.nextval,'MozambiqueShotgun','Shotgun','/resources/images/ApexGuns/MozambiqueShotgun.svg','15×3/20x3','19×3(1.25×)/25×3(1.25×)','15×3/20×3','132/152/165/178','99/114/124/134','6','1.9','2.4');
+insert into Weapons values(WeaponsSeq.nextval,'Peacekeeper','Shotgun','/resources/images/ApexGuns/Peacekeeper.svg','9×11','11×11(1.25×)','9×11','44/47/50/51','73/78/83/84','5','2.5/2.42/2.33/2.25','3.5/3.38/3.27/3.15');
+--pistols
+insert into Weapons values(WeaponsSeq.nextval,'RE-45Auto','Pistol','/resources/images/ApexGuns/RE-45Auto.svg','12/16','18(1.5×)/24(1.5x)','11(0.9×)/14(0.9x)','780','182/208','25','1.5','1.95');
+insert into Weapons values(WeaponsSeq.nextval,'P2020','Pistol','/resources/images/ApexGuns/P2020.svg','18/27','27(1.5×)/41(1.5×)','16 (0.9×)/24(0.9×)','420','126','14/16/18/21',null,'1.25');
+insert into Weapons values(WeaponsSeq.nextval,'Wingman','Pistol','/resources/images/ApexGuns/Wingman.svg','45','97(2.15×)/113(2.5x)','41(0.9×)','156','117','6/7/8/9',null,'2.1');
+
+
+
+CREATE TABLE AmmoType (
+    id NUMBER(30) PRIMARY KEY,
+    name VARCHAR2(255),
+    Ammoname varchar2(255),
+    AmmoImg VARCHAR2(255),
+    FOREIGN KEY (name) REFERENCES Weapons(name)
+);
+
+--ar
+insert into AmmoType values(AmmoTypeseq.nextval,'R-301Carbine','LightRounds','/resources/images/Round/LightRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'NemesisBurstAR','EnergyAmmo','/resources/images/Round/EnergyAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'HemlokBurstAR','MythicHeavyRounds','/resources/images/Round/MythicHeavyRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'HAVOCRifle','EnergyAmmo','/resources/images/Round/EnergyAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'VK-47Flatline','HeavyRounds','/resources/images/Round/HeavyRounds.png');
+--smg
+insert into AmmoType values(AmmoTypeseq.nextval,'AlternatorSMG','LightRounds','/resources/images/Round/LightRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'ProwlerBurstPDW','HeavyRounds','/resources/images/Round/HeavyRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'R-99SMG','LightRounds','/resources/images/Round/LightRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'VoltSMG','EnergyAmmo','/resources/images/Round/EnergyAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'C.A.R.SMG','HeavyRounds/LightRounds','/resources/images/Round/HeavyLightRounds.png');
+--lmg
+insert into AmmoType values(AmmoTypeseq.nextval,'DevotionLMG','EnergyAmmo','/resources/images/Round/EnergyAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'L-STAREMG','MythicEnergyAmmo','/resources/images/Round/MythicEnergyAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'M600Spitfire','LightRounds','/resources/images/Round/LightRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'RampageLMG','HeavyRounds','/resources/images/Round/HeavyRounds.png');
+-- Marksman
+insert into AmmoType values(AmmoTypeseq.nextval,'G7Scout','LightRounds','/resources/images/Round/LightRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'TripleTake','EnergyAmmo','/resources/images/Round/EnergyAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'30-30Repeater','HeavyRounds','/resources/images/Round/HeavyRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'BocekCompoundBow','MythicArrows','/resources/images/Round/MythicArrows.png');
+
+--sniper
+insert into AmmoType values(AmmoTypeseq.nextval,'ChargeRifle','SniperAmmo','/resources/images/Round/SniperAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'LongbowDMR','SniperAmmo','/resources/images/Round/SniperAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'Kraber.50-CalSniper','MythicSniperAmmo','/resources/images/Round/MythicSniperAmmo.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'Sentinel','SniperAmmo','/resources/images/Round/SniperAmmo.png');
+
+
+--shotguns
+insert into AmmoType values(AmmoTypeseq.nextval,'EVA-8Auto','ShotgunShells','/resources/images/Round/ShotgunShells.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'MastiffShotgun','ShotgunShells','/resources/images/Round/ShotgunShells.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'MozambiqueShotgun','ShotgunShells','/resources/images/Round/ShotgunShells.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'Peacekeeper','ShotgunShells','/resources/images/Round/ShotgunShells.png');
+
+--pistol
+insert into AmmoType values(AmmoTypeseq.nextval,'RE-45Auto','LightRounds','/resources/images/Round/LightRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'P2020','LightRounds','/resources/images/Round/LightRounds.png');
+insert into AmmoType values(AmmoTypeseq.nextval,'Wingman','SniperAmmo','/resources/images/Round/SniperAmmo.png');
+
+
+
+CREATE TABLE modeType (
+    id NUMBER(30) PRIMARY KEY,
+    name VARCHAR2(255),
+    modeImg VARCHAR2(255),
+    modeImg2 Varchar2(255),
+    modetype varchar2(255),
+    modetype2 VARCHAR2(255),
+    FOREIGN KEY (name) REFERENCES Weapons(name)
+);
+
+--ar
+insert into modeType values(modeTypeseq.nextval,'R-301Carbine','/resources/images/ModeType/AutoIcon.png','/resources/images/ModeType/SinglefireIcon.png','Auto','Single');
+insert into modeType values(modeTypeseq.nextval,'NemesisBurstAR','/resources/images/ModeType/BurstIcon.png',null,'Burst(4)',null);
+insert into modeType values(modeTypeseq.nextval,'HemlokBurstAR','/resources/images/ModeType/BurstIcon.png','/resources/images/ModeType/SinglefireIcon.png','Burst(3)','Single');
+insert into modeType values(modeTypeseq.nextval,'HAVOCRifle','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'VK-47Flatline','/resources/images/ModeType/AutoIcon.png','/resources/images/ModeType/SinglefireIcon.png','Auto','Single');
+--smg
+insert into modeType values(modeTypeseq.nextval,'AlternatorSMG','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'ProwlerBurstPDW','/resources/images/ModeType/BurstIcon.png',null,'Burst(5)',null);
+insert into modeType values(modeTypeseq.nextval,'R-99SMG','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'VoltSMG','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'C.A.R.SMG','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+ --lmg
+ insert into modeType values(modeTypeseq.nextval,'DevotionLMG','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'L-STAREMG','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'M600Spitfire','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'RampageLMG','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+--marksman
+ insert into modeType values(modeTypeseq.nextval,'G7Scout','/resources/images/ModeType/SinglefireIcon.png','/resources/images/ModeType/BurstIcon.png','Single','Burst(2)');
+insert into modeType values(modeTypeseq.nextval,'TripleTake','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+insert into modeType values(modeTypeseq.nextval,'30-30Repeater','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+insert into modeType values(modeTypeseq.nextval,'BocekCompoundBow','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+--sniper
+insert into modeType values(modeTypeseq.nextval,'ChargeRifle','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+insert into modeType values(modeTypeseq.nextval,'LongbowDMR','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+insert into modeType values(modeTypeseq.nextval,'Kraber.50-CalSniper','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+insert into modeType values(modeTypeseq.nextval,'Sentinel','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+--shotguns
+insert into modeType values(modeTypeseq.nextval,'EVA-8Auto','/resources/images/ModeType/AutoIcon.png','/resources/images/ModeType/BurstIcon.png','Auto','Burst(2)');
+insert into modeType values(modeTypeseq.nextval,'MastiffShotgun','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+insert into modeType values(modeTypeseq.nextval,'MozambiqueShotgun','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'Peacekeeper','/resources/images/ModeType/ChokeActiveIcon.png','/resources/images/ModeType/SinglefireIcon.png','Single','Single');
+--pistols
+insert into modeType values(modeTypeseq.nextval,'RE-45Auto','/resources/images/ModeType/AutoIcon.png',null,'Auto',null);
+insert into modeType values(modeTypeseq.nextval,'P2020','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+insert into modeType values(modeTypeseq.nextval,'Wingman','/resources/images/ModeType/SinglefireIcon.png',null,'Single',null);
+
+
+
+create table AttachmentSlots (
+id number(30) primary key,
+name VARCHAR2(255),
+Attachment1 varchar(255),
+Attachment2 varchar(255),
+Attachment3 varchar(255),
+Attachment4 varchar(255),
+Attachment5 varchar(255),
+ FOREIGN KEY (name) REFERENCES Weapons(name)
+);
+
+--ar
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'R-301Carbine','/resources/images/Attachment/BarrelAttachment.png','/resources/images/Attachment/MagAttachmentLight.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'NemesisBurstAR','/resources/images/Attachment/BarrelAttachment.png','/resources/images/Attachment/MagAttachmentEnergy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'HemlokBurstAR','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/BoostedLoaderAttachment.png',null,null,null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'HAVOCRifle','/resources/images/Attachment/MagAttachmentEnergy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png','/resources/images/Attachment/TurbochargerAttachment.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'VK-47Flatline','/resources/images/Attachment/MagAttachmentHeavy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null,null);
+
+
+
+--smg
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'AlternatorSMG','/resources/images/Attachment/LaserSightAttachment.png','/resources/images/Attachment/MagAttachmentLight.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'ProwlerBurstPDW','/resources/images/Attachment/LaserSightAttachment.png','/resources/images/Attachment/MagAttachmentHeavy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'R-99SMG','/resources/images/Attachment/LaserSightAttachment.png','/resources/images/Attachment/MagAttachmentLight.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'VoltSMG','/resources/images/Attachment/LaserSightAttachment.png','/resources/images/Attachment/MagAttachmentEnergy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'C.A.R.SMG','/resources/images/Attachment/MagAttachmentCAR.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null,null);
+
+--lmg
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'DevotionLMG','/resources/images/Attachment/BarrelAttachment.png','/resources/images/Attachment/MagAttachmentEnergy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png','/resources/images/Attachment/TurbochargerAttachment.png');
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'L-STAREMG','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/DisruptorRoundsAttachment.png',null,null,null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'M600Spitfire','/resources/images/Attachment/MagAttachmentLight.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null,null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'RampageLMG','/resources/images/Attachment/BarrelAttachment.png','/resources/images/Attachment/MagAttachmentHeavy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null);
+
+
+-- Marksman
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'G7Scout','/resources/images/Attachment/BarrelAttachment.png','/resources/images/Attachment/MagAttachmentLight.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentSniper.png','/resources/images/Attachment/DoubleTapTriggerAttachment.png');
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'TripleTake','/resources/images/Attachment/MagAttachmentEnergy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentSniper.png',null,null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'30-30Repeater','/resources/images/Attachment/MagAttachmentHeavy.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentSniper.png','/resources/images/Attachment/SkullpiercerAttachment.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'BocekCompoundBow','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/ShatterCapsAttachment.png',null,null,null);
+
+
+
+--sniper
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'ChargeRifle','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentSniper.png',null,null,null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'LongbowDMR','/resources/images/Attachment/BarrelAttachment.png','/resources/images/Attachment/MagAttachmentSniper.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentSniper.png','/resources/images/Attachment/SkullpiercerAttachment.png');
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'Kraber.50-CalSniper',null,null,null,null,null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'Sentinel','/resources/images/Attachment/MagAttachmentSniper.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentSniper.png',null,null);
+
+--shotguns
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'EVA-8Auto','/resources/images/Attachment/MagAttachmentBolt.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png','/resources/images/Attachment/DoubleTapTriggerAttachment.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'MastiffShotgun','/resources/images/Attachment/MagAttachmentBolt.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null,null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'MozambiqueShotgun','/resources/images/Attachment/MagAttachmentBolt.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/HammerpointRoundsAttachment.png',null,null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'Peacekeeper','/resources/images/Attachment/MagAttachmentBolt.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/StockAttachmentStandard.png',null,null);
+
+--pistol
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'RE-45Auto','/resources/images/Attachment/LaserSightAttachment.png','/resources/images/Attachment/MagAttachmentLight.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/HammerpointRoundsAttachment.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'P2020','/resources/images/Attachment/LaserSightAttachment.png','/resources/images/Attachment/MagAttachmentLight.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/HammerpointRoundsAttachment.png',null);
+insert into AttachmentSlots values(AttachmentSlotsseq.nextval,'Wingman','/resources/images/Attachment/MagAttachmentSniper.png','/resources/images/Attachment/OpticsAttachment.png','/resources/images/Attachment/SkullpiercerAttachment.png',null,null);
+
+commit;
