@@ -201,6 +201,22 @@ a {
 	filter: none;
 }
 
+
+
+/* -----글로벌 숨기기 입니다----- */
+#global{
+	display: none;
+}
+/* ------------------------- */
+
+
+
+
+
+
+
+
+
 @font-face {
 	font-family: 'Hanson';
 	src: url('fonts/Hanson-Bold.otf') format('opentype');
@@ -331,7 +347,7 @@ footer {
 
 			<div class="legendname">
 				<div class="legendname_img">
-					<img src="">
+					<img src="<c:url value='/resources/images/legends/profile/'/>${player.legendName.toLowerCase().replaceAll('\\s', '')}_square.png" />
 				</div>
 				<div class="lastlegend">
 					<p>${player.legendName}</p>
@@ -355,12 +371,12 @@ footer {
 		
 				<c:forEach var="legendInfo" items="${player.legendInfo}">
 				
-			<div class="legends" style="margin-left: 470px;">
+			<div id="${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}" class="legends" style="margin-left: 470px;">
 				<div class="legendsname">
-						${legendInfo.legendname.toLowerCase().replaceAll("\\s", "")} <br>
+						${legendInfo.legendname} <br>
 				</div>			
 				<div class="legends_img2">
-					<img src="">
+					<img src="<c:url value='/resources/images/legends/profile/'/>${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}_square.png">
 				</div>	
 				
 				<div class="legendsinfo">
