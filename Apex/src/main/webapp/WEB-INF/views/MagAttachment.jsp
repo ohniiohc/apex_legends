@@ -125,7 +125,7 @@ color:#c94912;
 	<h3>Extended Energy Mag</h3>
 	<hr>
 	</div>
-	<p style="color:#F5F5F5">Note: the <span class="yellowspan">L-STAR EMG</span> doesn't have a mag per se, <span class="yellowspan">Extended Energy Mag.svg Extended Energy Mags</span> only increase the number <br>
+	<p style="color:#F5F5F5">Note: the <span class="yellowspan">L-STAR EMG</span> doesn't have a mag perse, <span class="yellowspan">Extended Energy Mags</span> only increase the number <br>
 	of shots that can be fired continuously before overheating.</p>
 	<div class="mag" style="margin-top: 5px">
 	<div>

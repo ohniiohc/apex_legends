@@ -6,6 +6,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
+
 <meta charset="UTF-8">
 <title>Weapon Information</title>
 <style>
@@ -118,7 +119,7 @@ text-decoration: none;
 						Fire modes: <img src="/apex${weapon.modeimg }" style="filter: invert(100%);">${weapon.modetype }</p>
 					<c:if test="${not empty weapon.modeimg2}">
 						<p class="WeaponFire">
-							<img src="/apex${weapon.modeimg2}"  style="filter: invert(100%); margin-left: 90px;">
+							<img src="/apex${weapon.modeimg2}"  style="filter: invert(100%); margin-left: 130px;">
 							${weapon.modetype2}
 						</p>
 					</c:if>
@@ -179,14 +180,35 @@ text-decoration: none;
 
 					<p class="dps">DPS: ${weapon.dps }</p>
 
-					<p class="magazine">Magazine: ${weapon.magazine }</p>
-					<c:if test="${not empty weapon.tac}">
-						<p class="tac">Tac reload time : ${weapon.tac }</p>
-					</c:if>
+					
+					
+					
+					<c:if test="${not empty weapon.magazine}">
+    <p class="magazine">Magazine:
+        <c:if test="${not empty weapon.magazine.split('/')[0]}"><span>${weapon.magazine.split('/')[0]}</span></c:if>
+        <c:if test="${not empty weapon.magazine.split('/')[1]}">/<span style="color: #a8a8a8;">${weapon.magazine.split('/')[1]}</span></c:if>
+        <c:if test="${not empty weapon.magazine.split('/')[2]}">/<span style="color: #51a8d6;">${weapon.magazine.split('/')[2]}</span></c:if>
+        <c:if test="${not empty weapon.magazine.split('/')[3]}">/<span style="color: #b237c8">${weapon.magazine.split('/')[3]}</span></c:if>
+    </p>
+</c:if>
 
-					<c:if test="${not empty weapon.full}">
-						<p class="full">Full reload time: ${weapon.full }</p>
-					</c:if>
+<c:if test="${not empty weapon.tac}">
+    <p class="tac">Tac reload time:
+        <c:if test="${not empty weapon.tac.split('/')[0]}"><span>${weapon.tac.split('/')[0]}</span></c:if>
+        <c:if test="${not empty weapon.tac.split('/')[1]}">/<span style="color: #a8a8a8;">${weapon.tac.split('/')[1]}</span></c:if>
+        <c:if test="${not empty weapon.tac.split('/')[2]}">/<span style="color: #51a8d6;">${weapon.tac.split('/')[2]}</span></c:if>
+        <c:if test="${not empty weapon.tac.split('/')[3]}">/<span style="color: #b237c8">${weapon.tac.split('/')[3]}</span></c:if>
+    </p>
+</c:if>
+
+<c:if test="${not empty weapon.full}">
+    <p class="full">Full reload time:
+        <c:if test="${not empty weapon.full.split('/')[0]}"><span>${weapon.full.split('/')[0]}</span></c:if>
+        <c:if test="${not empty weapon.full.split('/')[1]}">/<span style="color: #a8a8a8;">${weapon.full.split('/')[1]}</span></c:if>
+        <c:if test="${not empty weapon.full.split('/')[2]}">/<span style="color: #51a8d6;">${weapon.full.split('/')[2]}</span></c:if>
+        <c:if test="${not empty weapon.full.split('/')[3]}">/<span style="color: #b237c8">${weapon.full.split('/')[3]}</span></c:if>
+    </p>
+</c:if>
 				</div>
 		</c:forEach>
 	</section>
@@ -232,5 +254,22 @@ text-decoration: none;
     // 동적으로 생성한 href 값으로 페이지 이동
     window.location.href = filename;
   }
+
+  function highlightValues(value) {
+     var parts = value.split('/');
+     var highlightedValue = '';
+     for (var i = 0; i < parts.length; i++) {
+        if (i > 0) {
+           highlightedValue += '/';
+        }
+        if (i > 0 && i < parts.length - 1) {
+           highlightedValue += '<span class="highlight">' + parts[i] + '</span>';
+        } else {
+           highlightedValue += '<span>' + parts[i] + '</span>';
+        }
+     }
+     return highlightedValue;
+  }
+
 </script>
 </html>

@@ -48,7 +48,7 @@ hr {
 
 .image2 {
 	position: absolute;
-	right: 400px;
+	right: 100px;
 	filter: invert(100%);
 }
 
@@ -77,7 +77,7 @@ left:50px;
 
 .seasonhopup{
 display: flex;
-margin-left:200px;
+margin-left:0px;
 }
 .seasonp{
 color:#cead21;
@@ -90,12 +90,21 @@ color:#cead21;
 <body>
 	<header>
 		<div id="header_top">
-			<a id="h_t_logo" href="">FUSE.GG</a>
+			<a id="h_t_logo" href="<c:url value='/index'/>">FUSE.GG</a>
 		</div>
 		<div id="header_bottom">
-			<a class="h_b_link" href=""> Legends </a> <a class="h_b_link" href="">
-				Weapons </a> <a class="h_b_link" href=""> Maps </a> <a class="h_b_link"
-				href=""> Forums </a>
+			<a class="h_b_link" href="<c:url value='/legends'/>">
+				Legends
+			</a>
+			<a class="h_b_link" href="<c:url value='/WeaponsHome'/>">
+				Weapons
+			</a>
+			<a class="h_b_link" href="<c:url value='/maps'/>">
+				Maps
+			</a>
+			<a class="h_b_link" href="">
+				Community
+			</a>
 		</div>
 	</header>
 
@@ -162,7 +171,7 @@ color:#cead21;
 			<hr>
 			<p style="color: #F5F5F5; padding-bottom: 20px;">
 				<img src="/apex/resources/images/Hopupinfo/Apex_Legends_Icon.webp"style="vertical-align: middle; margin-right: 10px;">
-				This section presents the content as it appears in <span>Apex Legends</span>. The functionality in <span>Apex Legends Mobile</span><br>
+				This section presents the content as it appears in <span>Apex Legends</span>. The functionality in <br><span>Apex Legends Mobile</span>
 				 may differ.	
 			</p>
 			</div>

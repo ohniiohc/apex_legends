@@ -83,6 +83,7 @@ section{
 
  li:hover {
         background-color: #27CD66;
+        color:#DA292A;
         border-bottom: 10px solid gray;
     }
 

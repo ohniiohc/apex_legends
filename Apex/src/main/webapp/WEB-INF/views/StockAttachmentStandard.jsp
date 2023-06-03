@@ -50,6 +50,14 @@ hr {
 .image2 {
 	position: absolute;
 	right: 400px;
+	top:250px;
+	filter: invert(100%);
+}
+
+.image3 {
+	position: absolute;
+	right: 400px;
+	top:850px;
 	filter: invert(100%);
 }
 
@@ -148,7 +156,7 @@ span>img {
 			</div>
 			<div>
 				<img src="/apex/resources/images/Stockinfo/Standard_Stock.png"
-					class="image2">
+					class="image3">
 
 
 			</div>
