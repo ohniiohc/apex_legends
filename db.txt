@@ -1,0 +1,49 @@
+
+
+
+CREATE TABLE board (
+  postId VARCHAR2(50) PRIMARY KEY NOT NULL,
+  id VARCHAR2(50) NOT NULL,
+  writeDate DATE,
+  up INT,
+  views INT,
+  title VARCHAR2(30),
+  content CLOB
+);
+
+
+INSERT INTO board VALUES ('1', '1', '2023-06-01', 0, 0, '첫 번째 게시글', '안녕하세요. 첫 번째 게시글입니다.');
+INSERT INTO board VALUES ('2', '2', '2023-06-01', 0, 0, '두 번째 게시글', '안녕하세요. 두 번째 게시글입니다.');
+
+insert into board values('');
+
+
+
+CREATE TABLE boardwriting (
+  boardnumber NUMBER PRIMARY KEY,
+  title VARCHAR2(100) NOT NULL,
+  content CLOB NOT NULL,
+  id VARCHAR2(50) NOT NULL
+);
+
+CREATE SEQUENCE boardwriting_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER boardwriting_trigger
+BEFORE INSERT ON boardwriting
+FOR EACH ROW
+BEGIN
+  SELECT boardwriting_seq.NEXTVAL INTO :new.boardnumber FROM dual;
+END;
+
+
+
+create sequence start with 1 increment by 1;
+
+create table user_table (
+    user_number number(30) primary key,
+    name varchar2(50),
+    id varchar(50),
+    pw varchar(50),
+    email varchar(100),
+    sex varchar(10)
+);
