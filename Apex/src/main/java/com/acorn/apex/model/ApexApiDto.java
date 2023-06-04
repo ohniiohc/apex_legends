@@ -81,6 +81,9 @@ public class ApexApiDto {
 					+ ", rankScore=" + rankScore + ", rankName=" + rankName + ", rankImg=" + rankImg + ", legendName="
 					+ legendName + ", selecteddata=" + selecteddata + ", legendInfo=" + legendInfo + "]";
 		}
+		public ApexApiDto() {
+			// TODO Auto-generated constructor stub
+		}
 		public ApexApiDto(String name, String avatar, String platform, int level, int rankScore, String rankName,
 				String rankImg, String legendName, List<SelectDto> selecteddata, List<LegendInfoDTO> legendInfo) {
 			super();
@@ -95,11 +98,5 @@ public class ApexApiDto {
 			this.selecteddata = selecteddata;
 			this.legendInfo = legendInfo;
 		}
-		public ApexApiDto() {
-			super();
-			// TODO Auto-generated constructor stub
-		}
-
-	    
 		
 }

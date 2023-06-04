@@ -1,8 +1,14 @@
-package com.acorn.apex.model;
+package com.acorn.apex.service;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
+
+import com.acorn.apex.model.ApexApiDto;
+import com.acorn.apex.model.ImgAssetsDTO;
+import com.acorn.apex.model.LegendDataDTO;
+import com.acorn.apex.model.LegendInfoDTO;
+import com.acorn.apex.model.SelectDto;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 @Component
-public class ApexApi {
+public class ApiService {
 	
 	public String getPlayerInfo(String name) {
 	    try {

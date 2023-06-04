@@ -5,20 +5,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
-	<link rel="stylesheet" href="<c:url value='/resources/css/index.css'/>">
-<meta charset="UTF-8">
-<title>Weapon Information</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weapon Information - FUSE.GG</title>
+	<link rel="icon" href="<c:url value='resources/images/icon/fuse_gg_16.ico'/>" type="image/x-icon">
+	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
+	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
 <style>
 * {
 	padding: 0;
 	margin: 0;
 }
-p{
-color:#F5F5F5;
-}
-
 section {
+	color:#F5F5F5;
 	text-Align: Center;
 }
 
@@ -194,11 +194,11 @@ text-decoration: none;
 	
 	
 	<footer>
-		<div id="footer_left">
-			<p id="f_l_title">
+		<div id="footer_wrap">
+			<p id="f_w_title">
 				2023 © Acorn Academy
 			</p>
-			<p id="f_l_content">
+			<p id="f_w_content">
 				Apex Legends is a registered trademark of Electronic Arts. Trademarks are the property of their respective owners. 
 				<br/>
 				Game materials copyright Electronic Arts. Electronic Arts has not endorsed and is not responsible for this site or its content.

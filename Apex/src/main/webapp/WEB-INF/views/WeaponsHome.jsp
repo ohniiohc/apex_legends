@@ -4,53 +4,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
-	<link rel="stylesheet" href="<c:url value='/resources/css/index.css'/>">
-<meta charset="UTF-8">
-<title>Weapons Home</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-function handleClick(element) {
-    var aaa = $(element).find(".weapon-text").text();
-
-    $.ajax({
-        url: "/apex/WeaponsHome",
-        type: "POST",
-        data: {
-            aaa: aaa
-        },
-        success: function (response) {
-            var weaponsTypeDiv = $(".WeaponsType");
-            weaponsTypeDiv.empty();
-
-            for (var i = 0; i < response.length; i++) {
-                var weapon = response[i];
-                var weaponName = weapon.name;
-                var weaponImg = weapon.img;
-
-                var weaponDiv = $("<div>").addClass("weapon");
-                var weaponImgElement = $("<img>").attr("src", "${pageContext.request.contextPath}" + weaponImg);
-                var weaponNameElement = $("<p>").text(weaponName);
-
-                weaponDiv.append(weaponImgElement, weaponNameElement);
-                weaponsTypeDiv.append(weaponDiv);
-            }
-
-         // 추가 코드 시작
-            $(".weapon").click(function() {
-                var name = $(this).find("p").text();
-
-                // infoWeapon.jsp로 이동
-                window.location.href = "/apex/infoWeapon?name=" + encodeURIComponent(name);
-            });
-            // 추가 코드 끝
-        },
-        error: function (xhr, status, error) {
-            console.error(error);
-        }
-    });
-}
-</script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weapons - FUSE.GG</title>
+	<link rel="icon" href="<c:url value='resources/images/icon/fuse_gg_16.ico'/>" type="image/x-icon">
+	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
+	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script>
+		function handleClick(element) {
+		    var aaa = $(element).find(".weapon-text").text();
+		
+		    $.ajax({
+		        url: "/apex/WeaponsHome",
+		        type: "POST",
+		        data: {
+		            aaa: aaa
+		        },
+		        success: function (response) {
+		            var weaponsTypeDiv = $(".WeaponsType");
+		            weaponsTypeDiv.empty();
+		
+		            for (var i = 0; i < response.length; i++) {
+		                var weapon = response[i];
+		                var weaponName = weapon.name;
+		                var weaponImg = weapon.img;
+		
+		                var weaponDiv = $("<div>").addClass("weapon");
+		                var weaponImgElement = $("<img>").attr("src", "${pageContext.request.contextPath}" + weaponImg);
+		                var weaponNameElement = $("<p>").text(weaponName);
+		
+		                weaponDiv.append(weaponImgElement, weaponNameElement);
+		                weaponsTypeDiv.append(weaponDiv);
+		            }
+		
+		         // 추가 코드 시작
+		            $(".weapon").click(function() {
+		                var name = $(this).find("p").text();
+		
+		                // infoWeapon.jsp로 이동
+		                window.location.href = "/apex/infoWeapon?name=" + encodeURIComponent(name);
+		            });
+		            // 추가 코드 끝
+		        },
+		        error: function (xhr, status, error) {
+		            console.error(error);
+		        }
+		    });
+		}
+	</script>
 
 <style>
 section{
@@ -168,7 +171,7 @@ section{
     </style>
 </head>
 <body>
-<header>
+	<header>
 		<div id="header_top">
 			<a id="h_t_logo" href="<c:url value='/index'/>">FUSE.GG</a>
 		</div>
@@ -211,11 +214,11 @@ section{
 		</div>
 	</section>
 	<footer>
-		<div id="footer_left">
-			<p id="f_l_title">
+		<div id="footer_wrap">
+			<p id="f_w_title">
 				2023 © Acorn Academy
 			</p>
-			<p id="f_l_content">
+			<p id="f_w_content">
 				Apex Legends is a registered trademark of Electronic Arts. Trademarks are the property of their respective owners. 
 				<br/>
 				Game materials copyright Electronic Arts. Electronic Arts has not endorsed and is not responsible for this site or its content.

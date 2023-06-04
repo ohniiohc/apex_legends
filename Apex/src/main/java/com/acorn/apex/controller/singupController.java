@@ -22,7 +22,6 @@ public class singupController{
 		return "signup";
 	}
 	
-	
 	@PostMapping("/signup2")
 	public String singup2(Model model, HttpServletRequest request) {
 		
