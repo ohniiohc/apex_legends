@@ -1,40 +1,5 @@
 @charset "UTF-8";
 
-
-#header_mid{
-	display: flex;
-	justify-content: center;
-}
-#h_m_form{
-	width: 600px;
-	padding: 0 2px 0 8px;
-	display: flex;
-	justify-content: space-between;
-	border-radius: 4px;
-	background-color: #F5F5F5;
-}
-#h_m_f_input,#h_m_f_button{
-	height: 28px;
-	background: none;
-	border: none;
-	outline: none;
-	box-sizing: border-box;
-}
-#h_m_f_input{
-	width: 480px;
-}
-#h_m_f_button{
-	width: 28px;
-	background: center no-repeat url("../images/icon/search.svg");
-	background-size: 50%;
-	filter: invert(25%)
-}
-#h_m_f_button:hover{
-	cursor: pointer;
-}
-
-
-
 section {
 	color: #F5F5F5;
 }

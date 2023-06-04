@@ -4,8 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login - FUSE.GG</title>
+	<link rel="icon" href="<c:url value='resources/images/icon/fuse_gg_16.ico'/>" type="image/x-icon">
+	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
+	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
 <link rel='stylesheet' href="resources/login.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -82,7 +87,7 @@
 </script>
 </head>
 <body>
-<%@ include file="/header.jsp"%>
+	<%@ include file="/WEB-INF/views/header.jsp"%>
 	<input type="hidden" id="idfalse" value="${idfalse}">
 	<input type="hidden" id="loginsuccess" value="${loginsuccess}">
 	<input type="hidden" id="loginfalse" value="${loginfalse}">
@@ -100,6 +105,6 @@
 			<input id="make_id" type="button" value="계정 생성" onclick="maketheid()">
 		</div>
 	</form>
-<%@ include file="/footer.jsp"%>
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 </html>

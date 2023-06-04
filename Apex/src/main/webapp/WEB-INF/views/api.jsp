@@ -102,7 +102,7 @@
 			<div id="legends_warp">
 				<div class="legendname">
 				    <div class="legendname_img">
-				       <img class="legend_profile_img" src="<c:url value='/resources/images/legends/profile/'/>${player.legendName.toLowerCase().replaceAll('\\s', '')}_square.png" />
+				       <img class="legend_profile_img" src="<%=rootPath%>/resources/images/legends/profile/${player.legendName.toLowerCase().replaceAll('\\s', '')}_square.png" />
 				    </div>
 				    <div class="legends_con">
 					    <div class="lastlegend">
@@ -122,7 +122,7 @@
 				<c:forEach var="legendInfo" items="${player.legendInfo}">
 					<div id="${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}" class="legends">
 						<div class="legends_img2">
-							<img class="legend_profile_img" src="<c:url value='/resources/images/legends/profile/'/>${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}_square.png">
+							<img class="legend_profile_img" src="<%=rootPath%>/resources/images/legends/profile/${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}_square.png">
 						</div>
 						<div class="legends_con">
 							<div class="legendsname">
