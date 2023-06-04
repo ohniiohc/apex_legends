@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
+	<link rel="stylesheet" href="<c:url value='/resources/css/index.css'/>">
 <meta charset="UTF-8">
 <title>Weapon Information</title>
 <style>
@@ -32,28 +34,29 @@ section {
 	text-align: center;
 	width: 500px;
 	height: 150px;
-	border: 1px solid;
+	/*border: 1px solid;*/
 	margin: 0 auto;
-		display: flex;
-		
-		gap: 10px; /* Adjust the value as needed */
+	display: flex;
+	gap: 10px; /* Adjust the value as needed */
 }
 
 .playerinfo img {
-
-		width: 100px;
-		height: 100px; /* Set the width and height to the same value for a circular shape */
-		border-radius: 50%; /
+	
+	width: 100px;
+	height: 100px; /* Set the width and height to the same value for a circular shape */
+	border-radius: 50%;
 	margin: 0 auto;
 	margin-left:20px;
 	vertical-align: middle;
+	
+	
 	
 }
 
 .playerinfo > span {
 	font-size: 60px;
 	margin: 0 auto;
-		line-height: 1;
+	line-height: 1;
 		
 
 }
@@ -61,7 +64,8 @@ section {
 .playerlevel {
 	width: 300px;
 	height: 300px;
-	border: 1px solid;
+	border: 2px solid #8F94A5;
+	background-color: #313443E0;
 	margin-left: 100px;
 	margin-top: 40px;
 	text-align: center;
@@ -80,13 +84,13 @@ section {
 	font-size: 20px;
 }
 .legendname {
-	border: 1px solid;
+	border: 2px solid #8F94A5;
+	background-color: #313443E0;
 	width: 900px;
 	height: 325px;
 	margin-left: 470px;
 	margin-top: -325px;
 	position:absolute;	
-	
 	box-sizing: border-box;
 }
 
@@ -96,12 +100,6 @@ section {
 	font-size: 20px;
 }
 
-.legendname ul li {
-	list-style: none;
-	margin-top: 10px;
-	margin-left: 50px;
-	text-align: left;
-}
 
 .technical p {
 	margin-bottom: 20px;
@@ -110,7 +108,7 @@ section {
 
 
 .legendname_img {
-	border: 1px solid yellow;
+	/*border: 1px solid yellow;*/
 	width: 250px;
 	height: 320px;
 	
@@ -120,9 +118,9 @@ section {
 .lastlegend {
 	width: 400px;
 	height: 100px;
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 	position: relative;
-	left:300px;
+	left:320px;
 	top: -280px;
 	
 }
@@ -140,14 +138,15 @@ section {
 	width: 550px;
 	height: 90px;
 	position: relative;
-	font-size: 35px;
-	border: 1px solid blue;
-	left:300px;
-	top: -250px;
+	font-size: 32px;
+	/*border: 1px solid blue;*/
+	left:320px;
+	top: -270px;
 }
 
 .legends {
-	border: 1px solid;
+	border: 2px solid #8F94A5;
+	background-color: #313443E0;
 	width: 900px;
 	height: 325px;
 	box-sizing: border-box;
@@ -156,18 +155,18 @@ section {
 }
 .legendsname{
 	
-	width: 400px;
+	width: 480px;
 	height: 100px;
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 	position: relative;
-	left:300px;
+	left:320px;
 	top: 30px;
 	font-weight: bold;
 	font-size: 55px;
 	text-align: left;
 }
 .legends_img2{
-	border: 1px solid yellow;
+	/*border: 1px solid yellow;*/
 	width: 250px;
 	height: 320px;;
 	position: relative;
@@ -179,9 +178,9 @@ section {
 	width: 500px;
 	height: 90px;
 	position: relative;
-	font-size: 32px;
-	border: 1px solid blue;
-	left:300px;
+	font-size: 30px;
+	/*border: 1px solid blue;*/
+	left:320px;
 	top: -250px;
 	text-align: left;
 }
@@ -209,120 +208,80 @@ a {
 }
 /* ------------------------- */
 
-
-
-
-
-
-
-
-
-@font-face {
-	font-family: 'Hanson';
-	src: url('fonts/Hanson-Bold.otf') format('opentype');
-	font-weight: normal;
-	font-style: normal;
+#remote {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 500px;
+  left: 1400px;
+  transform: translateY(-50%);
 }
 
-@font-face {
-	font-family: 'YdestreetB';
-	src: url('fonts/YdestreetB.otf') format('opentype');
-	font-weight: normal;
-	font-style: normal;
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.updown{
+display: flex;
+width: 200px;
+height: 200px;
 }
 
-body {
-	min-width: 1440px;
-	position: relative;
-	font-family: 'Hanson';
-	background: #05162B;
-	
-}
-/* ------------------------------ */
-/* ----------header_start---------- */
-/* ------------------------------ */
-header {
-	width: 100%;
-}
 
-#header_top, #header_bottom {
-	padding: 0 36px;
-	background: linear-gradient(90deg, #0B1422 0%, #042D56 100%);
-}
-
-#header_top {
-	height: 60px;
-	display: flex;
-	align-items: center;
-}
-
-#h_t_logo {
-	font-size: 24px;
-	color: #F5F5F5;
-	text-decoration: none;
-	border-bottom: 4px solid #DA292A;
-}
-
-#header_bottom {
-	height: 40px;
-	display: flex;
-}
-
-.h_b_link {
-	height: 100%;
-	padding: 0 12px;
-	color: #F5F5F5;
-	line-height: 40px;
-	text-decoration: none;
-	box-sizing: border-box;
-}
-
-.h_b_link:hover {
-	color: #DA292A;
-	/* border-bottom: 4px solid #DA292A; */
-}
-/* ------------------------------ */
-/* ----------header_end---------- */
-/* ------------------------------ */
-
-/* ------------------------------ */
-/* ----------footer_start---------- */
-/* ------------------------------ */
-footer {
-	height: 180px;
-	padding-top: 36px;
-	font-family: 'YdestreetB';
-	color: #445C76;
-	background-color: #0B1422;
-}
-
-#footer_left {
-	padding: 36px;
-	border-top: 1px solid #445C76;
-}
-
-#f_l_title {
-	font-size: 14px;
-	margin-bottom: 12px;
-}
-
-#f_l_content {
-	font-size: 10px;
-}
-/* ------------------------------ */
-/* ----------footer_end---------- */
-/* ------------------------------ */
 </style>
+<script>
+let currentPosition = 0;
+let isTopClicked = false;
+const stepSize = 150;
+
+function move(direction) {
+  if (direction === 'up') {
+    currentPosition -= stepSize;
+  } else if (direction === 'down') {
+    if (isTopClicked) {
+      currentPosition = 0;
+      isTopClicked = false;
+    } else {
+      currentPosition += stepSize;
+    }
+  }
+
+  window.scrollTo({
+    top: currentPosition,
+    behavior: 'smooth'
+  });
+}
+
+function scrollToTop() {
+  isTopClicked = true;
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+	
+
+</script>
 </head>
 <body>
 	<header>
 		<div id="header_top">
-			<a id="h_t_logo" href="">FUSE.GG</a>
+			<a id="h_t_logo" href="<c:url value='/index'/>">FUSE.GG</a>
 		</div>
 		<div id="header_bottom">
-			<a class="h_b_link" href=""> Legends </a> <a class="h_b_link" href="">
-				Weapons </a> <a class="h_b_link" href=""> Maps </a> <a class="h_b_link"
-				href=""> Forums </a>
+			<a class="h_b_link" href="<c:url value='/legends'/>">
+				Legends
+			</a>
+			<a class="h_b_link" href="<c:url value='/WeaponsHome'/>">
+				Weapons
+			</a>
+			<a class="h_b_link" href="<c:url value='/maps'/>">
+				Maps
+			</a>
+			<a class="h_b_link" href="">
+				Community
+			</a>
 		</div>
 	</header>
 
@@ -340,6 +299,7 @@ footer {
 				<div class="playerranking">
 					<img src="${player.rankImg}">
 					<div class="rankinginfo">
+					
 						RP : ${player.rankScore} <br> <br> Tier : ${player.rankName}
 					</div>
 				</div>
@@ -392,6 +352,14 @@ footer {
 							</c:forEach>
 	</c:forEach>
 		
+	<div class="updown">
+		<div id="remote">
+			<button class="button" onclick="scrollToTop()"> Top  </button>
+  			<button class="button" onclick="move('up')">Up</button>
+  			<button class="button" onclick="move('down')">Down</button>
+		</div>
+	</div>
+<div id="result"></div>
 	</section>
 
 
