@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.acorn.apex.Model.MapsDTO" %>
+<%@ page import="com.acorn.apex.model.MapsDTO" %>
 <% String rootPath = request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="en">

@@ -4,7 +4,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.HashMap" %>
-<%@ page import="com.acorn.apex.Model.LegendsDTO" %>
+<%@ page import="com.acorn.apex.model.LegendsDTO" %>
 <% String rootPath = request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="en">

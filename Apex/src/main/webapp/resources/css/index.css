@@ -53,3 +53,6 @@ section{
 	background-size: 50%;
 	filter: invert(25%)
 }
+#s_w_s_f_button:hover{
+	cursor: pointer;
+}

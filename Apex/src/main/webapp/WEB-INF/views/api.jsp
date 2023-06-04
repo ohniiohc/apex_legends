@@ -8,266 +8,206 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Insert title here</title>
+	<c:forEach var="player" items="${playerInfo}">
+		<title>${player.name} Stats - FUSE.GG</title>
+	</c:forEach>
 	<link rel="icon" href="<c:url value='resources/images/icon/fuse_gg_16.ico'/>" type="image/x-icon">
 	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
-	<style>
-		* {
-		   padding: 0;
-		   margin: 0;
+	<link rel="stylesheet" href="<c:url value='/resources/css/api.css'/>">
+<style>
+section {
+	color: #F5F5F5;
+}
+.playerclass {
+	width 100%;
+	height: 360px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+	color: #F5F5F5;
+	background-position: 50% 10%;
+	background-size: cover;
+}
+#player_avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+#player_nm_wrap{
+	display: flex;
+	flex-direction: column;
+	font-size: 60px;
+}
+.player_nm:nth-child(1){
+	z-index: 3;
+}
+.player_nm:nth-child(2){
+	z-index: 2;
+	opacity: 0.5;
+}
+.player_nm:nth-child(3){
+	z-index: 1;
+	opacity: 0.25;
+}
+.player_nm:nth-child(2),.player_nm:nth-child(3){
+	margin-top: -36px;
+	-webkit-text-stroke: 2px #F5F5F5;
+	-webkit-text-fill-color: transparent;
+}
+#gradient{
+	width: 100%;
+	height: 96px;
+	position: relative;
+	top: -96px;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #05162B 100%);
+}
+#player_legend_wrap{
+	width: 1440px;
+	margin: -48px auto 48px auto;
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+}
+.playerlevel,.legendname,.legends{
+	box-sizing: border-box;
+	border: 2px solid #8F94A5;
+	background-color: #313443E0;
+}
+.playerlevel {
+	width: 300px;
+	height: 300px;
+	text-align: center;
+	padding: 10px;
+	font-size: 20px;
+}
+.playerlevel img {
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.rankinginfo {
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 20px;
+}
+#legends_warp{
+	display: flex;
+	flex-direction: column;
+}
+.legendname,.legends{
+	width: 900px;
+	height: 244px;
+	display: flex;
+}
+.legend_profile_img{
+	width: 240px;
+}
+.legends_con{
+	display: flex;
+	flex-direction: column;
+	margin: 12px 24px;
+}
+.lastpickinfo,.legendsinfo{
+	margin-top: 24px;
+}
+.legendname p {
+	font-size: 20px;
+}
+.legendname_img {
+	width: 250px;
+	height: 320px;
+}
+.lastlegend {
+	width: 400px;
+}
+.lastlegend>p {
+	font-size: 48px;
+}
+.lastpickinfo {
+	width: 550px;
+	height: 90px;
+	font-size: 24px;
+}
+.legendsname{
+	width: 480px;
+	font-weight: bold;
+	font-size: 48px;
+	text-align: left;
+}
+.legends_img2{
+	width: 250px;
+	height: 320px;
+}
+.legendsinfo{
+	display: flex;
+	width: 500px;
+	height: 90px;
+	font-size: 24px;
+	text-align: left;
+}
+/* -----글로벌 숨기기 입니다----- */
+#global{
+	display: none;
+}
+/* ------------------------- */
+#remote{
+	padding: 10px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	position: fixed;
+	top: 520px;
+	right: 200px;
+}
+.scroll_btn{
+	box-sizing: border-box;
+	padding: 10px 20px;
+	font-size: 16px;
+}
+</style>
+<script>
+	let isTopClicked=false;
+	const stepSize=480;
+	
+	function move(direction) {
+		let currentPosition=window.scrollY||window.pageYOffset;
+			
+		if (direction==='up') {
+			currentPosition-=stepSize;
+		} else if (direction==='down') {
+			if (isTopClicked) {
+				currentPosition=0;
+				isTopClicked=false;
+			} else {
+				currentPosition+=stepSize;
+			}
 		}
+		window.scrollTo({
+			top: currentPosition,
+			behavior: 'smooth'
+		});
+	}
 		
-		p {
-		   color: #F5F5F5;
-		}
-		
-		section {
-		   text-Align: Center;
-		   font-family: 'Hanson';
-		   color: #F5F5F5;
-		}
-		
-		.playerclass {
-		   color: #F5F5F5;
-		   border: 1px solid white;
-		}
-		
-		.playerinfo {
-		   align-items: center;
-		   text-align: center;
-		   width: 500px;
-		   height: 150px;
-		   /*border: 1px solid;*/
-		   margin: 0 auto;
-		   display: flex;
-		   gap: 10px; /* Adjust the value as needed */
-		}
-		
-		.playerinfo img {
-		   
-		   width: 100px;
-		   height: 100px; /* Set the width and height to the same value for a circular shape */
-		   border-radius: 50%;
-		   margin: 0 auto;
-		   margin-left:20px;
-		   vertical-align: middle;
-		   
-		   
-		   
-		}
-		
-		.playerinfo > span {
-		   font-size: 60px;
-		   margin: 0 auto;
-		   line-height: 1;
-		      
-		
-		}
-		
-		.playerlevel {
-		   width: 300px;
-		   height: 300px;
-		   border: 2px solid #8F94A5;
-		   background-color: #313443E0;
-		   margin-left: 100px;
-		   margin-top: 40px;
-		   text-align: center;
-		   padding: 10px;
-		   font-size: 20px;
-		}
-		
-		.playerlevel img {
-		   margin: 0 auto;
-		   margin-top: 20px;
-		}
-		
-		.rankinginfo {
-		   margin: 0 auto;
-		   margin-top: 20px;
-		   font-size: 20px;
-		}
-		.legendname {
-		   border: 2px solid #8F94A5;
-		   background-color: #313443E0;
-		   width: 900px;
-		   height: 325px;
-		   margin-left: 470px;
-		   margin-top: -325px;
-		   position:absolute;   
-		   box-sizing: border-box;
-		}
-		
-		.legendname p {
-		   margin-top: 15px;
-		   margin-bottom: 20px;
-		   font-size: 20px;
-		}
-		
-		
-		.technical p {
-		   margin-bottom: 20px;
-		}
-		
-		
-		
-		.legendname_img {
-		   /*border: 1px solid yellow;*/
-		   width: 250px;
-		   height: 320px;
-		   
-		}
-		
-		
-		.lastlegend {
-		   width: 400px;
-		   height: 100px;
-		   /*border: 1px solid blue;*/
-		   position: relative;
-		   left:320px;
-		   top: -280px;
-		   
-		}
-		
-		
-		.lastlegend>p {
-		   float: left;
-		   font-size: 55px;
-		   margin-left: 20px;
-		   font-weight: bold;
-		}
-		
-		.lastpickinfo {
-		   display: flex;
-		   width: 550px;
-		   height: 90px;
-		   position: relative;
-		   font-size: 32px;
-		   /*border: 1px solid blue;*/
-		   left:320px;
-		   top: -270px;
-		}
-		
-		.legends {
-		   border: 2px solid #8F94A5;
-		   background-color: #313443E0;
-		   width: 900px;
-		   height: 325px;
-		   box-sizing: border-box;
-		   position: relative;
-		   
-		}
-		.legendsname{
-		   
-		   width: 480px;
-		   height: 100px;
-		   /*border: 1px solid blue;*/
-		   position: relative;
-		   left:320px;
-		   top: 30px;
-		   font-weight: bold;
-		   font-size: 55px;
-		   text-align: left;
-		}
-		.legends_img2{
-		   /*border: 1px solid yellow;*/
-		   width: 250px;
-		   height: 320px;;
-		   position: relative;
-		   bottom: 100px;
-		   
-		}
-		.legendsinfo{
-		   display: flex;
-		   width: 500px;
-		   height: 90px;
-		   position: relative;
-		   font-size: 30px;
-		   /*border: 1px solid blue;*/
-		   left:320px;
-		   top: -250px;
-		   text-align: left;
-		}
-		
-		.technical p {
-		   margin-bottom: 20px;
-		}
-		
-		a {
-		   list-style: none;
-		   text-decoration: none;
-		}
-		
-		.Attachment.Slots p {
-		   color: #0A0A0A;
-		   margin-bottom: 20px;
-		   filter: none;
-		}
-		
-		
-		
-		/* -----글로벌 숨기기 입니다----- */
-		#global{
-		   display: none;
-		}
-		/* ------------------------- */
-		
-		#remote {
-		  display: flex;
-		  flex-direction: column;
-		  gap: 10px;
-		  position: fixed;
-		  top: 500px;
-		  left: 1400px;
-		  transform: translateY(-50%);
-		}
-		
-		.button {
-		  padding: 10px 20px;
-		  font-size: 16px;
-		}
-		.updown{
-		display: flex;
-		width: 200px;
-		height: 200px;
-		}
-	</style>
-	<script>
-		let currentPosition = 0;
-		let isTopClicked = false;
-		const stepSize = 150;
-		
-		function move(direction) {
-		  if (direction === 'up') {
-		    currentPosition -= stepSize;
-		  } else if (direction === 'down') {
-		    if (isTopClicked) {
-		      currentPosition = 0;
-		      isTopClicked = false;
-		    } else {
-		      currentPosition += stepSize;
-		    }
-		  }
-		
-		  window.scrollTo({
-		    top: currentPosition,
-		    behavior: 'smooth'
-		  });
-		}
-		
-		function scrollToTop() {
-		  isTopClicked = true;
-		  window.scrollTo({
-		    top: 0,
-		    behavior: 'smooth'
-		  });
-		}
-	</script>
+	function scrollToTop() {
+		isTopClicked=true;
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
+</script>
 </head>
 <body>
 	<header>
 		<div id="header_top">
 			<a id="h_t_logo" href="<c:url value='/index'/>">FUSE.GG</a>
+		</div>
+		<div id="header_mid">
+			<form id="h_m_form" name="frm" action="<c:url value='/getPlayerInfo'/>" method="get">
+				<input id="h_m_f_input" type="text" name="name" placeholder="Enter User Name">
+				<button id="h_m_f_button"></button>
+			</form>
 		</div>
 		<div id="header_bottom">
 			<a class="h_b_link" href="<c:url value='/legends'/>">
@@ -287,73 +227,76 @@
 	<section>
    
 	<c:forEach var="player" items="${playerInfo}">
-		<div class="playerclass">
-			<div class="playerinfo">
-				<img src="${player.avatar}"> <span>${player.name}</span>
+		<div class="playerclass" style="background-image: url(<%=rootPath%>/resources/images/legends/back/${player.legendName.toLowerCase().replaceAll('\\s', '')}_32_crop_bg.png)">
+			<img id="player_avatar" src="${player.avatar}">
+			<div id="player_nm_wrap">
+				<div class="player_nm">${player.name}</div>
+				<div class="player_nm">${player.name}</div>
+				<div class="player_nm">${player.name}</div>
 			</div>
 		</div>
-		<div class="playerlevel">
-			<p>Player Lever</p>
-			${player.level}
-			<div class="playerranking">
-				<img src="${player.rankImg}">
-				<div class="rankinginfo">
-					RP : ${player.rankScore}
-					<br>
-					<br>
-					Tier : ${player.rankName}
+		<div id="gradient"></div>
+		<div id="player_legend_wrap">
+			<div class="playerlevel">
+				<p>Player Lever</p>
+				${player.level}
+				<div class="playerranking">
+					<img src="${player.rankImg}">
+					<div class="rankinginfo">
+						RP : ${player.rankScore}
+						<br>
+						<br>
+						Tier : ${player.rankName}
+					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="legendname">
-            <div class="legendname_img">
-               <img src="<c:url value='/resources/images/legends/profile/'/>${player.legendName.toLowerCase().replaceAll('\\s', '')}_square.png" />
-            </div>
-            <div class="lastlegend">
-            	<p>${player.legendName}</p>
-            </div>
-            <br>
-			<div class="lastpickinfo">
-				<c:forEach  var="legendData" items="${player.selecteddata}">
-					<div>
-						${legendData.name}
-						${legendData.value}
+			<div id="legends_warp">
+				<div class="legendname">
+				    <div class="legendname_img">
+				       <img class="legend_profile_img" src="<c:url value='/resources/images/legends/profile/'/>${player.legendName.toLowerCase().replaceAll('\\s', '')}_square.png" />
+				    </div>
+				    <div class="legends_con">
+					    <div class="lastlegend">
+					    	<p>${player.legendName}</p>
+					    </div>
+					    <br>
+						<div class="lastpickinfo">
+							<c:forEach  var="legendData" items="${player.selecteddata}">
+								<div>
+									${legendData.name}
+									${legendData.value}
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+				</div>
+				<c:forEach var="legendInfo" items="${player.legendInfo}">
+					<div id="${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}" class="legends">
+						<div class="legends_img2">
+							<img class="legend_profile_img" src="<c:url value='/resources/images/legends/profile/'/>${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}_square.png">
+						</div>
+						<div class="legends_con">
+							<div class="legendsname">
+								${legendInfo.legendname}
+								<br>
+							</div>         
+							<div class="legendsinfo">
+								<c:forEach var="data" items="${legendInfo.data}">
+									${data.name}
+									${data.value}
+								</c:forEach> 
+							</div>
+						</div>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
-         
-		<c:forEach var="legendInfo" items="${player.legendInfo}">
-			<div id="${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}" class="legends" style="margin-left: 470px;">
-				<div class="legendsname">
-					${legendInfo.legendname}
-					<br>
-				</div>         
-				<div class="legends_img2">
-					<img src="<c:url value='/resources/images/legends/profile/'/>${legendInfo.legendname.toLowerCase().replaceAll('\\s', '')}_square.png">
-				</div>
-				<div class="legendsinfo">
-					<c:forEach var="data" items="${legendInfo.data}">
-                               
-						${data.name}
-						${data.value}
-                  
-					</c:forEach> 
-				</div>
-			</div>
-		</c:forEach>
 	</c:forEach>
-	
-	<div class="updown">
-		<div id="remote">
-			<button class="button" onclick="scrollToTop()">Top</button>
-			<button class="button" onclick="move('up')">Up</button>
-			<button class="button" onclick="move('down')">Down</button>
-		</div>
+	<div id="remote">
+		<button class="scroll_btn" onclick="scrollToTop()">Top</button>
+		<button class="scroll_btn" onclick="move('up')">Up</button>
+		<button class="scroll_btn" onclick="move('down')">Down</button>
 	</div>
-	
-	<div id="result"></div>
 	</section>
 	<footer>
 		<div id="footer_wrap">

@@ -42,7 +42,7 @@
 			</div>
 			<div id="section_wrap_search">
 				<form id="s_w_s_form" name="frm" action="<c:url value='/getPlayerInfo'/>" method="get">
-					<input id="s_w_s_f_input" type="text" name="name" placeholder="UID">
+					<input id="s_w_s_f_input" type="text" name="name" placeholder="Enter User Name">
 					<button id="s_w_s_f_button"></button>
 				</form>
 			</div>
