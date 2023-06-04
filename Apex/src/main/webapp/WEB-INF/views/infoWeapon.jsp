@@ -83,23 +83,8 @@ text-decoration: none;
 </head>
 <body>
 	<header>
-			<div id="header_top">
-			<a id="h_t_logo" href="<c:url value='/index'/>">FUSE.GG</a>
-		</div>
-		<div id="header_bottom">
-			<a class="h_b_link" href="<c:url value='/legends'/>">
-				Legends
-			</a>
-			<a class="h_b_link" href="<c:url value='/WeaponsHome'/>">
-				Weapons
-			</a>
-			<a class="h_b_link" href="<c:url value='/maps'/>">
-				Maps
-			</a>
-			<a class="h_b_link" href="">
-				Community
-			</a>
-		</div>
+		<%@ include file="/WEB-INF/views/header_top.jsp"%>
+		<%@ include file="/WEB-INF/views/header_bottom.jsp"%>
 	</header>
 	<section>
 		<!-- 총기 정보 출력 -->
@@ -194,16 +179,7 @@ text-decoration: none;
 	
 	
 	<footer>
-		<div id="footer_wrap">
-			<p id="f_w_title">
-				2023 © Acorn Academy
-			</p>
-			<p id="f_w_content">
-				Apex Legends is a registered trademark of Electronic Arts. Trademarks are the property of their respective owners. 
-				<br/>
-				Game materials copyright Electronic Arts. Electronic Arts has not endorsed and is not responsible for this site or its content.
-			</p>
-		</div>
+		<%@ include file="/WEB-INF/views/footer.jsp"%>
 	</footer>
 </body>
 <script>

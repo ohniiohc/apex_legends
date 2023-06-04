@@ -11,21 +11,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.acorn.apex.service.LoginService;
 import com.acorn.apex.service.duplicationService;
- 
 
 @Controller
-public class loginController {
+public class LogController {
 
 	@Autowired
 	LoginService loginservice;
 	@Autowired
 	duplicationService duplicationservice;
-
+	
 	@GetMapping("/login")
-	public String login() {
-		return "login";
+	public void login() {}
+	
+	@GetMapping("/logout")
+	public String logout(HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		session.invalidate();
+		return "redirect:/index";
 	}
-
+	
 	@PostMapping("/login2")
 	public String login(HttpServletRequest request  , Model model ) {
 		
@@ -56,8 +60,5 @@ public class loginController {
 			return "login";
 		}
 	}
-
 	
-	
-
 }

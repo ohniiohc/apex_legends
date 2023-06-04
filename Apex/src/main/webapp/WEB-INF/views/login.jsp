@@ -12,86 +12,88 @@
 	<link rel="stylesheet" href="<c:url value='/resources/css/reset.css'/>">
 	<link rel="stylesheet" href="<c:url value='/resources/css/header_footer.css'/>">
 <link rel='stylesheet' href="resources/login.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-	window.addEventListener("load", function() {
-		let idfalse = document.getElementById("idfalse");
-		let idfalseMsg = idfalse.value; // value  , innerHTML 
-		if (idfalseMsg.length > 0) {
-			alert(idfalseMsg);
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		window.addEventListener("load", function() {
+			let idfalse = document.getElementById("idfalse");
+			let idfalseMsg = idfalse.value; // value  , innerHTML 
+			if (idfalseMsg.length > 0) {
+				alert(idfalseMsg);
+			}
+	
+		});
+		
+		window.addEventListener("load", function() {
+			let loginsuccess = document.getElementById("loginsuccess");
+			let loginsuccessMsg = loginsuccess.value; // value  , innerHTML 
+			if (loginsuccessMsg.length > 0) {
+				alert(loginsuccessMsg);
+			}
+	
+		});
+		
+		window.addEventListener("load", function() {
+			let loginfalse = document.getElementById("loginfalse");
+			let loginfalseMsg = loginfalse.value; // value  , innerHTML 
+			if (loginfalseMsg.length > 0) {
+				alert(loginfalseMsg);
+			}
+	
+		});
+	
+	
+		function login() {
+			let id = document.getElementById("id_put").value;
+			let pw = document.getElementById("pw_put").value;
+	
+			if (id == "") {
+				alert("아이디를 입력해주세요");
+			} else if (pw == "") {
+				alert("비밀번호를 입력해주세요");
+			} else {
+				document.forms['loginform'].submit();
+			}
 		}
-
-	});
 	
-	window.addEventListener("load", function() {
-		let loginsuccess = document.getElementById("loginsuccess");
-		let loginsuccessMsg = loginsuccess.value; // value  , innerHTML 
-		if (loginsuccessMsg.length > 0) {
-			alert(loginsuccessMsg);
+		function goToLostIdPage() {
+			window.location.href = 'lostid';
 		}
-
-	});
 	
-	window.addEventListener("load", function() {
-		let loginfalse = document.getElementById("loginfalse");
-		let loginfalseMsg = loginfalse.value; // value  , innerHTML 
-		if (loginfalseMsg.length > 0) {
-			alert(loginfalseMsg);
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('lost_id').addEventListener('click',
+					goToLostIdPage);
+		});
+	
+		function goToLostPwPage() {
+			window.location.href = 'lostpw';
 		}
-
-	});
-
-
-	function login() {
-		let id = document.getElementById("id_put").value;
-		let pw = document.getElementById("pw_put").value;
-
-		if (id == "") {
-			alert("아이디를 입력해주세요");
-		} else if (pw == "") {
-			alert("비밀번호를 입력해주세요");
-		} else {
-			document.forms['loginform'].submit();
+	
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('lost_pw').addEventListener('click',
+					goToLostPwPage);
+		});
+		
+		function maketheid() {
+			window.location.href = 'signup';
 		}
-	}
-
-	function goToLostIdPage() {
-		window.location.href = 'lostid';
-	}
-
-	document.addEventListener('DOMContentLoaded', function() {
-		document.getElementById('lost_id').addEventListener('click',
-				goToLostIdPage);
-	});
-
-	function goToLostPwPage() {
-		window.location.href = 'lostpw';
-	}
-
-	document.addEventListener('DOMContentLoaded', function() {
-		document.getElementById('lost_pw').addEventListener('click',
-				goToLostPwPage);
-	});
 	
-	function maketheid() {
-		window.location.href = 'signup';
-	}
-
-	document.addEventListener('DOMContentLoaded', function() {
-		document.getElementById('make_id').addEventListener('click',
-				maketheid);
-	});
-	
-	
-</script>
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('make_id').addEventListener('click',
+					maketheid);
+		});
+		
+		
+	</script>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
+	<header>
+		<%@ include file="/WEB-INF/views/header_top.jsp"%>
+		<%@ include file="/WEB-INF/views/header_bottom.jsp"%>
+	</header>
 	<input type="hidden" id="idfalse" value="${idfalse}">
 	<input type="hidden" id="loginsuccess" value="${loginsuccess}">
 	<input type="hidden" id="loginfalse" value="${loginfalse}">
-
+		
 	<form action="<%=request.getContextPath()%>/login2" name="loginform"
 		method="post">
 		<div id="login_form">
@@ -105,6 +107,8 @@
 			<input id="make_id" type="button" value="계정 생성" onclick="maketheid()">
 		</div>
 	</form>
-	<%@ include file="/WEB-INF/views/footer.jsp"%>
+	<footer>
+		<%@ include file="/WEB-INF/views/footer.jsp"%>
+	</footer>
 </body>
 </html>
