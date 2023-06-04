@@ -168,6 +168,9 @@ section{
         height: 150px;
     }
     
+    #header_bottom a:nth-child(2){
+	border-bottom: 4px solid #DA292A;
+}
     </style>
 </head>
 <body>
