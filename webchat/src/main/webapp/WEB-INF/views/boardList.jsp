@@ -176,7 +176,7 @@ width: 1000px;
 height: 716px;
 left: 415px;
 top: 267px;
-
+overflow-y: scroll;"
 background: #D9D9D9;
 	}
 	.swiper {
@@ -299,9 +299,19 @@ top: 360px;
   overflow-y: scroll;
   border-bottom: 1px solid #ccc;
 }
-
+.post {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.board-container {
+ 
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
 .send{
-    border:1px solid green; 
+   
     text-align:right;
     padding:10px;
     font-size:12px;
@@ -309,7 +319,7 @@ top: 360px;
  }
  
  .recv{
-    border:1px solid gray;
+   
     color:blue;
      font-size:12px;
     text-align:left;
@@ -369,6 +379,34 @@ box-shadow:none !important;
     display:flex;
     
     }
+    td{
+    margin-right:15px;
+    }
+      .board-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    .board-table th, .board-table td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .board-table .title-cell {
+        width: 40%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .board-table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .board-table tbody tr:last-child td {
+        border-bottom: none;
+    }
 </style>
 </head>
 <body>
@@ -382,7 +420,7 @@ box-shadow:none !important;
 <a  href="https://genshin.hoyoverse.com/ko" class="sidebox2" target="_blank"></a>
 
 <div class="box1">
-	<header>
+	<header style="width: 1020px;">
 		<p><a href="">홈</a></p>
 		<p><a href="">전략 게시판</a></p>
 		<p><a href="">게임 소개</a></p>
@@ -391,24 +429,36 @@ box-shadow:none !important;
 		<p><a href="https://www.ea.com/ko-kr/games/apex-legends">공식 사이트</a></p>
 	</header>
 		
-	<section>
-	<table>
-        <tr>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>조회수</th>
-            <th>추천수</th>
-        </tr>
-        <c:forEach items="${boardList}" var="board">
-            <tr>
-                <td>${board.title}</td>
-                <td>${board.writer}</td>
-                <td>${board.views}</td>
-                <td>${board.likes}</td>
-            </tr>
-        </c:forEach>
-    </table>
-	</section>
+<section class="board-container" style="width: 1000px;" >
+    <h2>자유게시판</h2>
+    <div class="post-list">
+        <div class="post">
+            <table class="board-table">
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>조회수</th>
+                        <th>추천수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${boardList}" var="board">
+                        <tr>
+                            <td class="title-cell">
+                                <h3>${board.title}</h3>
+                            </td>
+                            <td>${board.writer}</td>
+                            <td>${board.views}</td>
+                            <td>${board.likes}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
 </div>
 
 <!-- box1끝 -->
