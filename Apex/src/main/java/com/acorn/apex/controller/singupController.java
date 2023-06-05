@@ -1,4 +1,4 @@
-package com.acorn.apex.controller;
+package com.acorn.Apex.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.acorn.apex.model.MemberDto;
-import com.acorn.apex.service.MemberService;
+import com.acorn.Apex.Dto.MemberDto;
+import com.acorn.Apex.Service.MemberService;
 
 @Controller
 public class singupController{
@@ -18,19 +18,23 @@ public class singupController{
 	MemberService service;
 	
 	@GetMapping("/signup")
-	public String singup(Model model) {
+	public String signup(Model model) {
 		return "signup";
 	}
 	
+	
 	@PostMapping("/signup2")
-	public String singup2(Model model, HttpServletRequest request) {
+	public String signup2(Model model, HttpServletRequest request) {
 		
 		String NAME = request.getParameter("name_put");
 		String ID = request.getParameter("id_put");
 		String PW = request.getParameter("pw_put");
 		String PW_check = request.getParameter("pw_check");
 		String EMAIL = request.getParameter("email");
-		String SEX = request.getParameter("gender"); 	
+		String SEX = request.getParameter("gender"); 
+		
+		System.out.println(ID);
+		System.out.println(PW);
 		
 		if(PW.equals(PW_check)) {
 			MemberDto member = new MemberDto(NAME,ID,PW,EMAIL,SEX);
