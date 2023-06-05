@@ -1,0 +1,23 @@
+CREATE TABLE boardlist (
+  postid varchar2(30) PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  id VARCHAR(255) NOT NULL,
+  views INT DEFAULT 0,
+  likes INT DEFAULT 0
+);
+
+INSERT INTO boardlist VALUES ('0001','제목1', '작성자1', 10, 5);
+INSERT INTO boardlist VALUES ('0002','제목2', '작성자2', 123, 4);
+
+CREATE TABLE board (
+  postId VARCHAR2(50) PRIMARY KEY NOT NULL,
+  id VARCHAR2(50) NOT NULL,
+  writeDate DATE,
+  up INT,
+  views INT,
+  title VARCHAR2(30),
+  content CLOB
+);
+
+INSERT INTO board VALUES ('1', '1', '2023-06-01', 0, 0, '첫 번째 게시글', '안녕하세요. 첫 번째 게시글입니다.');
+INSERT INTO board VALUES ('2', '2', '2023-06-01', 0, 0, '두 번째 게시글', '안녕하세요. 두 번째 게시글입니다.');
