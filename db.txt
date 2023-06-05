@@ -37,7 +37,10 @@ END;
 
 
 
-create sequence start with 1 increment by 1;
+drop table user_table;
+drop sequence user_sequence;
+
+create sequence user_sequence start with 1 increment by 1;
 
 create table user_table (
     user_number number(30) primary key,
@@ -47,3 +50,6 @@ create table user_table (
     email varchar(100),
     sex varchar(10)
 );
+
+insert into user_table valuse(user_sequence.nextval,'OMGAble','choi','0000','choi@acorn.com','male');
+insert into user_table valuse(user_sequence.nextval,'yakgom','kang','0000','kang@acorn.com','male');
